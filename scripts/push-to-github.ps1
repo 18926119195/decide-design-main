@@ -43,6 +43,16 @@ function Write-Warn { param($t) Write-Host ('[WARN] ' + $t) -ForegroundColor Yel
 function Write-Err  { param($t) Write-Host ('[ERR]  ' + $t) -ForegroundColor Red }
 function Write-Info { param($t) Write-Host ('[INFO] ' + $t) -ForegroundColor Gray }
 
+# ---------- 0. 修正 PATH（处理非标准安装位置） ----------
+$customPath = @(
+    'C:\GitPortable\cmd',
+    'C:\Program Files\GitHub CLI',
+    'C:\Program Files (x86)\GitHub CLI',
+    'C:\Program Files\Git',
+    'C:\Program Files (x86)\Git\cmd'
+) -join ';'
+$env:PATH = $customPath + ';' + $env:PATH
+
 # ---------- 1. 工具自检 ----------
 function Assert-Tool {
     param([string]$Cmd, [string]$InstallHint)
