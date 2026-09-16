@@ -1,0 +1,2560 @@
+# S1 residual batching rules
+
+## User
+
+帮我梳理清楚就是Untitled-1 这个聊天记录最新确定的规则抽取名词的最近的下一步到底是如何切割分批的掩盖后的文本给补缺llm的
+
+## Assistant
+
+我先从名为 Untitled-1 的聊天记录里定位你们最近定稿的「掩盖文本如何切割分批给补缺 LLM」规则。
+
+### Tool Unspecified
+
+```
+{"query":"Untitled-1","toolCallId":"call-a02a2369-6367-411b-b721-4a76d981ac30-0\nfc_8bf0addf-8b9a-974b-ac48-884173efdf06_0"}
+```
+
+### Tool Unspecified
+
+```
+{"query":"切割分批 掩盖","toolCallId":"call-a02a2369-6367-411b-b721-4a76d981ac30-1\nfc_8bf0addf-8b9a-974b-ac48-884173efdf06_1"}
+```
+
+### Tool Unspecified
+
+```
+{"query":"补缺 llm 名词","toolCallId":"call-a02a2369-6367-411b-b721-4a76d981ac30-2\nfc_8bf0addf-8b9a-974b-ac48-884173efdf06_2"}
+```
+
+### Tool Glob File Search
+
+```
+{"globPattern":"**/*Untitled*"}
+```
+
+### Tool Get Mcp Tools
+
+```
+{"pattern":"rename|chat|dialog|conversation","toolCallId":"call-a02a2369-6367-411b-b721-4a76d981ac30-4\nfc_8bf0addf-8b9a-974b-ac48-884173efdf06_4"}
+```
+
+## Assistant
+
+相关聊天已定位；接着读 Untitled-1 与「Yesterday's project tasks」末尾，核对分批切割的定稿口径。
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts","globPattern":"**/*"}
+```
+
+### Tool Unspecified
+
+```
+{"query":"\"送 LLM\"","toolCallId":"call-05a4f109-920e-4285-952d-ad8c47dc33da-6\nfc_7a1cef02-2ac8-9a5f-832c-996feb4b5642_1"}
+```
+
+### Tool Unspecified
+
+```
+{"query":"\"前缀\" 间隙","toolCallId":"call-05a4f109-920e-4285-952d-ad8c47dc33da-7\nfc_7a1cef02-2ac8-9a5f-832c-996feb4b5642_2"}
+```
+
+### Tool Unspecified
+
+```
+{"query":"Untitled-1 掩盖","toolCallId":"call-05a4f109-920e-4285-952d-ad8c47dc33da-8\nfc_7a1cef02-2ac8-9a5f-832c-996feb4b5642_3"}
+```
+
+### Tool Mcp
+
+```
+{"name":"cursor-app-control-cursor_dialog","args":{"item":"rule","scope":"user","action":"list"},"toolCallId":"call-05a4f109-920e-4285-952d-ad8c47dc33da-9\nfc_7a1cef02-2ac8-9a5f-832c-996feb4b5642_4","providerIdentifier":"cursor-app-control","toolName":"cursor_dialog","smartModeApprovalOnly":false,"skipApproval":true,"serverIdentifier":"cursor-app-control"}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"送 LLM|前缀|间隙|掩盖|分批|补缺|名词","path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts","caseInsensitive":false,"multiline":false,"toolCallId":"call-1fb50940-b9f6-4a60-b9fc-a65f025168f2-11\nfc_9d070ccb-03ff-9202-8043-1124fde079ac_1","offset":0}
+```
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\AppData\\Local\\Cursor\\AgentStores\\cursor_agent_stores\\u417522049\\files","globPattern":"**/*"}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{}
+```
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\AppData\\Local\\Cursor","globPattern":"**/*Untitled*"}
+```
+
+## Assistant
+
+继续在 Untitled-1 / 昨日任务记录里对齐「残文切批」定稿，并对照协议文档与现码。
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"buildS1Batches|priorNouns|间隙|mask|S1|S₀|S0","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-cc52a962-ed69-4299-ac69-637b6f20e940-16\nfc_9670da67-4e3a-9efb-830d-e62ff77b2841_2","offset":0}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"priorNouns|送 LLM|前缀|间隙|buildS1|默写|切批|12k|跨 S₀","path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts\\44215623-db7c-4fc8-8842-fab0d4e57475","caseInsensitive":false,"multiline":false,"toolCallId":"call-cc52a962-ed69-4299-ac69-637b6f20e940-14\nfc_9670da67-4e3a-9efb-830d-e62ff77b2841_0","offset":0}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"priorNouns|送 LLM|间隙|切批|默写|buildS1|分批","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs","caseInsensitive":false,"multiline":false,"toolCallId":"call-cc52a962-ed69-4299-ac69-637b6f20e940-15\nfc_9670da67-4e3a-9efb-830d-e62ff77b2841_1","offset":0}
+```
+
+### Tool Get Mcp Tools
+
+```
+{"server":"cursor-app-control","toolName":"open_resource","toolCallId":"call-cc52a962-ed69-4299-ac69-637b6f20e940-18\nfc_9670da67-4e3a-9efb-830d-e62ff77b2841_4"}
+```
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index","globPattern":"**/book-noun*"}
+```
+
+## Assistant
+
+协议与切批实现已定位；接着读定稿段落和 `buildS1BatchesByS0Gaps` 的具体逻辑。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":270,"limit":230}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"分批|间隙|priorNouns|送 LLM|切批|残文|默写|12.?000|maxChars","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","caseInsensitive":false,"multiline":false,"toolCallId":"call-c108b63d-406d-4558-8479-cf5ad9d50061-19\nfc_3ade50e8-dcf3-93df-9379-d7d2d2fabd2e_0","offset":0}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"送 LLM|前缀 \\+|priorNouns|间隙①|本间隙|overlapSuffix|跨 S₀","path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts\\44215623-db7c-4fc8-8842-fab0d4e57475\\44215623-db7c-4fc8-8842-fab0d4e57475.jsonl","caseInsensitive":false,"multiline":false,"toolCallId":"call-c108b63d-406d-4558-8479-cf5ad9d50061-21\nfc_3ade50e8-dcf3-93df-9379-d7d2d2fabd2e_2","offset":0}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"送 LLM|前缀|间隙①|priorNouns|跨 S₀|切批","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\chat-archive\\2026-09-14-book-noun-pipeline-a1-global-44215623.jsonl","caseInsensitive":false,"multiline":false,"toolCallId":"call-c108b63d-406d-4558-8479-cf5ad9d50061-22\nfc_3ade50e8-dcf3-93df-9379-d7d2d2fabd2e_3","offset":0}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","offset":70,"limit":80}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\2026-09-14-noun-pipeline-and-engram-progress.md","limit":80}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"间隙①|本间隙 body|crossCutPrefix|送 LLM =|前缀 \\+|Jacques","path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts\\44215623-db7c-4fc8-8842-fab0d4e57475\\44215623-db7c-4fc8-8842-fab0d4e57475.jsonl","caseInsensitive":false,"multiline":false,"toolCallId":"call-a00d641d-605d-4805-a263-abb354c337da-24\nfc_50c54cf5-cefd-9e5a-acc8-4cfc7aa67404_1","offset":0}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"两个掩码|送 LLM：|本间隙起点|前缀|间隙①|间隙②|详细","path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts\\44215623-db7c-4fc8-8842-fab0d4e57475\\44215623-db7c-4fc8-8842-fab0d4e57475.jsonl","caseInsensitive":false,"headLimit":40,"multiline":false,"toolCallId":"call-21e354ea-f1d5-4b5c-8cee-eb9855b10ff9-26\nfc_a4c8a767-5c49-9b3a-b346-7dd9dacac73e_0","offset":0}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts\\44215623-db7c-4fc8-8842-fab0d4e57475\\44215623-db7c-4fc8-8842-fab0d4e57475.jsonl","offset":224,"limit":15}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts\\44215623-db7c-4fc8-8842-fab0d4e57475\\44215623-db7c-4fc8-8842-fab0d4e57475.jsonl","offset":233,"limit":10}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts\\44215623-db7c-4fc8-8842-fab0d4e57475\\44215623-db7c-4fc8-8842-fab0d4e57475.jsonl","offset":233,"limit":20}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"重新模拟|如何切批|送 LLM =|本间隙起点","path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts\\44215623-db7c-4fc8-8842-fab0d4e57475\\44215623-db7c-4fc8-8842-fab0d4e57475.jsonl","caseInsensitive":false,"multiline":false,"toolCallId":"call-f07305e7-fc1b-4647-9c03-32777d0cf518-29\nfc_f2d5bae1-50af-9faf-8036-9fd6196575d6_0","offset":0}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"送 LLM = 前缀|本间隙 body|纯 █ 不算|最右一个名词","path":"C:\\Users\\Administrator\\.cursor\\projects\\c-Users-Administrator-Desktop-docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\agent-transcripts","caseInsensitive":false,"multiline":false,"toolCallId":"call-2d106119-6f2f-4146-969a-069e732b1b51-31\nfc_cd3efcc6-4f51-9450-9111-467dd9e20977_0","offset":0}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"送 LLM = 前缀|本间隙 body|纯 █ 不算|最右一个名词","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs","caseInsensitive":false,"multiline":false,"toolCallId":"call-2d106119-6f2f-4146-969a-069e732b1b51-32\nfc_cd3efcc6-4f51-9450-9111-467dd9e20977_1","offset":0}
+```
+
+### Tool Unspecified
+
+```
+{"query":"\"送 LLM = 前缀\"","toolCallId":"call-2d106119-6f2f-4146-969a-069e732b1b51-33\nfc_cd3efcc6-4f51-9450-9111-467dd9e20977_2"}
+```
+
+### Tool Mcp
+
+```
+{"name":"cursor-app-control-rename_chat","args":{"title":"S1 residual batching rules"},"toolCallId":"call-2d106119-6f2f-4146-969a-069e732b1b51-34\nfc_cd3efcc6-4f51-9450-9111-467dd9e20977_3","providerIdentifier":"cursor-app-control","toolName":"rename_chat","smartModeApprovalOnly":false,"skipApproval":true,"serverIdentifier":"cursor-app-control"}
+```
+
+## Assistant
+
+依据 [Yesterday's project tasks](44215623-db7c-4fc8-8842-fab0d4e57475) 末段定稿（约 13:04「两块掩码」走通），**下一步切批给补缺 LLM** 口径如下。已落在 `buildS1BatchesByS0Gaps`。
+
+### 前置：先制残文，再切刀
+1. 全书合法 `T` 拼成一根长串（**禁止** trim/filter，保下标对齐）
+2. 在原文上找 `S₀` 落点 → 残文同位置换成同长 `█`
+3. 得到残文 `R`（词被盖住，缝还在）
+
+### 主切刀：按 `S₀` 相邻落点之间的「间隙」分批
+不是按页/按 chunk 硬切。每个间隙可做一批，**可并行**（互不依赖上一批 LLM）。
+
+```text
+原文：… Jacques Lacan 学派成员 …
+残文：… Jacques █████ 学派成员 …
+             ↑S₀ 落点（刀口）
+
+裸切：
+间隙①：… Jacques      （停在 Lacan 前）
+间隙②： 学派成员 …    （从 Lacan 后起）
+```
+
+### 重叠规则（最新钉死）：`priorNouns=2`
+两处切口同一药方 `overlapSuffixByPriorNouns`：
+
+| 场景 | 做法 |
+|------|------|
+| **跨 S₀ 切口** | 下一间隙前粘上：切口左侧往前 **2 个「名词样串」**（纯 █ 不算）+ **中间经过的 █** |
+| **单间隙过长**（默认 >12k） | 间隙内再串联硬切；批界同样 priorNouns=2；尽量空白处软切 |
+
+公式：
+
+```text
+左侧 = R[0, 本间隙起点)   （含前面明文 + 已跨过的 █）
+在左侧扫名词样串 → 从最右一个再往前数 2 个 → 切到左侧末尾 = 前缀
+送 LLM = 前缀 + 本间隙 body
+```
+
+两块掩码时，间隙③实际送进 LLM 的是：
+
+```text
+N2 █████ 与 Jacques █████ 学派成员 …
+└──── priorNouns 前缀（可含多块 █）────┘└── 本间隙 ──┘
+```
+
+- `priorNouns=2` 数的是 **名词样串个数**，不是掩码块数；往回跨几个 S₀，前缀里就自然有几块 █。
+- 重叠只是 **残文上下文副本**（可含 █），**不是**把 S₀ 词表当可抄清单。
+- 硬闸拒含 `█` 的抄写，盖住的词抄不出来。
+
+### 每批喂给 LLM 的内容
+只有：本批残文正文 + 默写任务（抄连续原文）。  
+没有：bookKey / 坐标 / S₀ 可抄词表。
+
+**一句定心：切刀 = S₀ 间隙；并行；跨刀与长隙都用 priorNouns=2 前缀重叠。**
+
+## User
+
+重新梳理清楚，我仅仅想要你梳理清楚的是送进去补缺llm的那一步输入是如何并行分批的，因为串联仅仅发生在第一步的补缺llm已经激活了的
+
+## Assistant
+
+只梳理「补缺 LLM 输入如何并行分批」；串联只作过长间隙的次要说明。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":404,"limit":80}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"buildS1BatchesByS0Gaps|runBatchesParallel|chunkLongTextSerial|priorNouns","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-a55fdce6-e131-49e1-855b-a8b6c5d919d2-35\nfc_bb33bedc-0e99-959f-9342-7c58f21f6a67_0","offset":0}
+```
+
+## Assistant
+
+补缺 LLM **并行分批**只做一件事：用 `S₀` 落点把残文切成互不依赖的间隙批。
+
+### 并行切法（这一步的全部）
+
+1. 全书 `T` 拼成一根串 → 把已入 `S₀` 的表面形换成同长 `█` → 得残文 `R`
+2. 在原文上找所有 `S₀` 落点；**相邻落点之间的缝** = 一个 gap
+3. 每个 gap 做成一批输入（可同时打给补缺 LLM）：
+
+```text
+送 LLM = 前缀 + 本间隙 body
+```
+
+- **本间隙 body**：该缝里的残文（S₀ 落点本身是 █，不进 body）
+- **前缀**（首隙没有）：取切口左侧 `R[0, gap.start)`，扫名词样串（**纯 █ 不算**），从最右一个再往前 `priorNouns=2` 个名词起点切到左侧末尾  
+  → 前缀里可以带着已跨过的 █，但那是上下文副本，不是可抄词表
+
+各批互不等待：前缀是从残文**复制**的，不依赖任何一批 LLM 先写完。
+
+### 刻意不混进来的
+
+间隙内按字数 **串联**切：只在「某一批已经进补缺路径、且单隙超长」时才发生；**不是**并行分批的定义。并行边界永远是 **S₀ 间隙**，不是页、不是 chunk、也不是字数刀。
+
+## User
+
+场景化详细点
+
+## Assistant
+
+用一个完整小场景，只讲「并行分批送补缺 LLM」长什么样。
+
+### 场景设定
+
+规则已抽到 `S₀ = {Freud, Lacan}`，并在原文上同长 mask：
+
+```text
+原文：比较 N1 N2 Freud 与 Jacques Lacan 学派成员 的说法
+残文：比较 N1 N2 █████ 与 Jacques █████ 学派成员 的说法
+              └MASK1┘              └MASK2┘
+```
+
+`S₀` 两个落点把残文切成 **3 个间隙**（刀口 = 掩码块，块本身不进 body）：
+
+```text
+比较 N1 N2 █████ 与 Jacques █████ 学派成员 的说法
+│← gap① →│█████│← gap② →│█████│←── gap③ ──→│
+```
+
+| 间隙 | 裸切 body（还没加重叠） |
+|------|------------------------|
+| ① | `比较 N1 N2 ` |
+| ② | ` 与 Jacques ` |
+| ③ | ` 学派成员 的说法` |
+
+若只裸切、不加重叠：③ 看不见 `Jacques`，短语被拆开。所以并行时仍要给后隙贴 **priorNouns=2 前缀**。
+
+---
+
+### 三批各自怎么拼（可同时打出去）
+
+**批①（首隙，左侧为空）**
+
+```text
+送 LLM = body
+       = 比较 N1 N2 
+```
+
+**批②（刚跨过 MASK1）**
+
+1. 左侧 = `比较 N1 N2 █████`
+2. 扫名词样（跳过纯 █）：… → 最右起数 2 个 = `N1`、`N2`
+3. 前缀从 `N1` 起切到左侧末尾：
+
+```text
+前缀 = N1 N2 █████
+送 LLM = N1 N2 █████ 与 Jacques 
+         └─ priorNouns 前缀 ─┘└─ gap② ─┘
+```
+
+**批③（跨过 MASK1 + MASK2）**
+
+1. 左侧 = `比较 N1 N2 █████ 与 Jacques █████`
+2. 从右数名词样：最近 = `Jacques`，再前 = `N2`
+3. 前缀从 `N2` 起（两块 █ 都包在里面）：
+
+```text
+前缀 = N2 █████ 与 Jacques █████
+送 LLM = N2 █████ 与 Jacques █████ 学派成员 的说法
+         └──── priorNouns 前缀（含两块掩码）────┘└── gap③ ──┘
+```
+
+---
+
+### 并行时各自「看得见」什么
+
+| 批 | 输入里关键可见 | 作用 |
+|----|--------------|------|
+| ① | 开头 `N1 N2` | 与后文无关的前段 |
+| ② | `Jacques` 贴着第一块 █ | 看见 Lacan 前半语境 |
+| ③ | `Jacques` + `学派成员` 同窗（中间隔着 Lacan 的 █） | 短语不被 S₀ 短词切开 |
+
+三批 **同时**发给补缺 LLM：前缀是残文复制，不靠①写完再开②。
+
+---
+
+### 这批输入里故意没有什么
+
+- 没有 `bookKey` / 坐标  
+- 没有「请从 `S₀=[Freud,Lacan]` 里抄」这类词表  
+- Freud / Lacan 位置仍是 `█`；硬闸拒含 `█` 的抄写，也拒本批明文里没有的串  
+
+**场景一句话：** 并行 = 每个 S₀ 缝一批；后一批多贴左侧「往前 2 个名词样串 + 路过的 █」，好让被短词切开的短语在同一窗里。
+
+## User
+
+我的看法和你不一样，我认为是每两个s0即mask为一组，每组并行，然后一组之后再可以串联分割，这步完成之后，送分割后的第一个包给第一次的补缺llm（这个时候是并行给的），然后第二轮返回第一个包的处理后的结果给每一组串联第二个包
+
+## Assistant
+
+你的模型和现码不是同一套。先把你的看法钉成可对照的场景，方便你确认我没听偏。
+
+### 你的看法（按你说的重述）
+
+**并行单元 =「每两个 S₀ / 两块 mask」成一组**，不是「每一个 S₀ 缝」一批。
+
+```text
+残文：… [█₁] … [█₂] … [█₃] … [█₄] …
+         └─ 组A（两 mask）─┘  └─ 组B（两 mask）─┘
+              ↕ 组间并行              ↕ 组间并行
+```
+
+组内若还要再切（过长），才 **串联**成包₁、包₂、…
+
+| 轮次 | 谁进补缺 LLM | 怎么并行 / 串联 |
+|------|--------------|-----------------|
+| **第 1 轮** | 每组的 **第一个包** | 各组的包₁ **彼此并行**送出 |
+| **第 2 轮** | 每组的 **第二个包** | 等本组包₁ 返回后，把包₁ 的处理结果带进包₂，再送；组与组之间仍可并行 |
+
+也就是说：  
+**组间并行；组内串联；串联的后包要吃前包补缺结果**——不是「所有缝一次性并行、互不等待」。
+
+---
+
+### 和现码 / 上次定稿的差别（对照一句）
+
+| | 你现在的看法 | 现码 `buildS1BatchesByS0Gaps` |
+|--|--------------|------------------------------|
+| 并行刀口 | **每 2 个 S₀ 一组** | **每个 S₀ 相邻间隙** 一批 |
+| 组内后包 | **等前包 LLM 结果**再送 | 各批 **互不等待**；只复制残文前缀 `priorNouns` |
+| 前缀含义 | 前包 **处理后的结果** | 残文上扫到的明文+█ 副本（无 LLM 结果） |
+
+---
+
+若这就是你要的主路径，下一步应改协议/切批：按「双 mask 成组 → 组内串联包 → 轮1并行包₁ → 轮2用包₁结果喂包₂」。你确认后我按这个口径改。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+残文：… [█₁] … [█₂] … [█₃] … [█₄] …
+         └─ 组A（两 mask）─┘  └─ 组B（两 mask）─┘
+              ↕ 组间并行              ↕ 组间并行
+```
+ 你这里括号错了吧
+
+## Assistant
+
+对，是我括号画歪了，看起来像跨错了 mask。按「每两个 S₀ 一组、互不重叠」应是：
+
+```text
+残文：… [█₁] … [█₂] … [█₃] … [█₄] …
+         └── 组A ──┘         └── 组B ──┘
+         (█₁ 与 █₂)         (█₃ 与 █₄)
+              ↕                    ↕
+           组间并行              组间并行
+```
+
+组A 只含第 1、2 块 mask 及其之间（及组内再切的包）；组B 只含第 3、4 块。不是 █₂–█₃ 那一跨。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+残文：… [█₁] … [█₂] … [█₃] … [█₄] …
+         └── 组A ──┘         └── 组B ──┘
+         (█₁ 与 █₂)         (█₃ 与 █₄)
+              ↕                    ↕
+           组间并行              组间并行
+```
+ 括号错了，但是你的描述对了。我认为就是两个mask组成一个组，组内太长需要切，才分成串联的。不同组是并行的。然后其实规则提取的名词会不会出错呢？如果会出错，其实是否有必要就是每组的前后mask，前面多加一点，后多加一点呢
+
+## Assistant
+
+括号用对齐画容易再歪，改成不靠位置的写法：
+
+- **组A** = `█₁ … █₂`（两块 mask + 中间正文）  
+- **组B** = `█₃ … █₄`  
+- 组间并行；**仅组内过长**才切成串联包₁→包₂  
+
+描述上我们已对齐。
+
+---
+
+### 规则抽 `S₀` 会不会错？
+
+**会。** 常见不只漏，还有：
+
+| 错法 | 例子 | 对「双 mask 成组」的影响 |
+|------|------|-------------------------|
+| 短词落刀 | 只抽到 `Lacan`，没抽 `Jacques` | `Jacques` 若在组A **左边界外**，本组窗里没有 |
+| 短语后半在组外 | `Lacan` 在 `█₂`，`学派` 在 `█₂` **之后** | 后半不在组A |
+| 该抽没抽 | 真名词从未变 █ | 它不会当组界，但若落在组外填充区也看不见 |
+
+所以：**双 mask 成组本身不消灭切界风险**；组的前后缘仍可能把短语劈开。
+
+---
+
+### 有没有必要「前多加一点、后多加一点」？
+
+**有必要**——而且和当初 `priorNouns` 是同一类药，只是贴在 **组的两端**，不是每个单缝都贴：
+
+```text
+送组A ≈  [█₁ 前的一点] + █₁ … █₂ + [█₂ 后的一点]
+              ↑ 防左缘劈开              ↑ 防右缘劈开
+```
+
+建议口径（可产品钉死）：
+
+- 前后各加 **同一套**：往外再带 `priorNouns=2` 个名词样串（或固定 N 字软窗）  
+- 带的是 **残文副本**（可含别组的 █），不是把 `S₀` 词表当可抄清单  
+- 硬闸仍拒含 `█` / 非本批子串  
+
+组间仍并行；填充只是多复制上下文，不依赖别组 LLM 结果。组内串联后包要不要吃前包结果，是下一层问题，和「组缘填充」正交。
+
+**一句：`S₀` 会切错边界 → 每组前后缘加一点上下文是值得做的；否则双 mask 组只是换了并行粒度，劈短语问题还在。**
+
+## User
+
+那这样子有可能会否定规则提取的名词的呀
+
+## Assistant
+
+会有这种张力，但可以钉死成「补漏加上下文」，而不是「让模型重审 S₀」。
+
+### 你担心的点
+组前后多贴一点（尤其带着 █）时，模型容易把任务理解成：**猜方块里是什么** → 等于在质疑/改写规则已经抽走的词。
+
+### 协议上不该允许「否定 S₀」
+| 闸 | 作用 |
+|----|------|
+| **发明权** | `S₁` 只许 **加** 漏网明文；**不许删、改、替换** `S₀` |
+| **硬闸** | 只收本批里 **看得见的连续明文**；含 `█` 的串直接丢；方块下的词若本批没有明文，抄出来也配不上 |
+| **合成** | `S = dedupe(S₀ ∪ S₁)`，并集不是「用 S₁ 覆盖 S₀」 |
+
+所以即使用户侧看起来像在猜 `█████`，收卷也不该把规则词否掉。
+
+### 和「前后多加一点」怎么共存
+- 前后填充的目的：让 **组缘外的明文**（如 `Jacques` / `学派`）和组内正文同窗，防短语被劈开。  
+- **不是**请模型给 █ 填空、也不是请它投票「规则抽错了」。  
+- 提示词应写死：`█` = 已入表、跳过；只默写 **仍可见** 的专名/名词。
+
+若仍怕「看见方块就想填」：前缀/后缀可以只带 **明文名词样串**，把路过的 █ 收成中性占位或不展示——上下文还在，填空诱惑更弱。
+
+**一句：会有「想否定 S₀」的模型行为；应用发明权 + 子串硬闸挡住，补缺只加不砍。**
+
+## User
+
+我认为其实这一步不可能短语被劈开，仅仅有可能是规则提取本身是劈开了，所以问题就是要防止规则出现提取错或者兜底，但是兜底的话就会出现矛盾的。
+
+## Assistant
+
+你的判断更准：**这一步的分批本身不会把「规则已正确收成一条」的短语再劈开**；窗里看起来像劈开，根因几乎都是 **S₀ 当年就抽短了**。
+
+### 两件事要分开
+
+| | 是什么 | 例 |
+|--|--------|-----|
+| **规则劈开** | 书上是 `Jacques Lacan`，规则只收进 `Lacan` 并 mask | 残文变 `Jacques █████` |
+| **分批劈开** | 一条已正确入 S₀ 的连续表面形，被批界切成两半 | 若规则当初收的就是整串，mask 是一整块，批界切的是缝不是词中腰 |
+
+所以：并行/双 mask 成组，解决的是 **怎么送窗**；治不了 **规则边界错**。`priorNouns` 像在批界上补救，其实是在补规则的锅。
+
+### 矛盾在哪
+
+要兜「规则抽短/抽错」，补缺就得在 **已 mask 的邻域**里看见更长合法串 → 等于允许模型说「真正的单位不是你 mask 的那截」。
+
+但本步前提又是：`S₀` 已入表、已盖住、**只许补漏、不许改判**。
+
+于是：
+
+- **严守 S₀** → 兜不住「抽短了的短语」  
+- **用力兜短语** → 必然和「S₀ 不可否定」打架（`Lacan` 与 `Jacques Lacan` 并存、或暗含规则错了）
+
+这不是实现细节，是 **发明权** 上的矛盾。
+
+### 可走的干净方向（择一作主，别两头加满）
+
+1. **把边界做对放在规则侧**：宁长勿短 / 禁止「已是更长专名真子串」的短串单独入 S₀；补缺只补 **完全没进 S₀ 的漏网**，不修短语。  
+2. **允许有限改判**：补缺可以产出更长串，台侧用「更长合法连续表面形」升格，短 S₀ 降级或挂从属——这就不是纯补漏，要另写协议。  
+3. **承认不兜这类错**：S₀ 抽短就抽短；`Lacan` 与后来的 `Jacques` 分列，靠提问/定位不靠补缺圆回来。
+
+**一句：分批不制造短语劈开；要兜规则劈开就会和「不否定 S₀」矛盾——先定发明权，再谈前后加窗有没有意义。**
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+把边界做对放在规则侧：宁长勿短 / 禁止「已是更长专名真子串」的短串单独入 S₀；补缺只补 完全没进 S₀ 的漏网，不修短语。
+```
+ 这个可以     然后并行的就按照s0吧，切成不同组（mask前，mask后），然后组内按照串联的前后带上前面给出的mask进行下去直至到一开始分组规定的各自组的最后一个mask
+
+## Assistant
+
+定稿按你这两句对齐如下。
+
+### 1. 规则侧（已采纳）
+- **宁长勿短**：禁止「已是更长专名真子串」的短串单独进 `S₀`
+- 补缺 **只补完全没进 S₀ 的漏网**，不修短语、不改判已 mask 的词  
+→ 不再靠批界填充去圆「规则劈开」
+
+### 2. 并行切组（按 S₀）
+按 mask 切成不同组；组的范围 = 该组约定的 **从「mask 前」走到「组内最后一个 mask」** 这一段（你之前的双 mask 成组仍适用：组A=`█₁…█₂`，组B=`█₃…█₄`）。
+
+```text
+组A（并行）:  …(█₁前)… █₁ … █₂
+组B（并行）:  …(█₃前)… █₃ … █₄
+```
+
+组与组 **并行**，互不等待。
+
+### 3. 组内串联（仅组内过长或按 mask 推进时）
+组内按顺序往下走，**后包带上前面已给出的 mask（残文里的 █）**，一直送到 **本组最后一个 mask** 为止：
+
+```text
+组A 包₁：… █₁前 … █₁ …（本包窗）
+     ↓ 返回后
+组A 包₂：带上 █₁ … 继续 … 直到 █₂（组末）
+```
+
+- 第 1 轮：各组的 **包₁ 并行** 送补缺 LLM  
+- 第 2 轮起：用前包结果推进本组下一包（组间仍可并行）
+
+### 和旧口径的差别
+| 旧（现码倾向） | 现（你定） |
+|----------------|------------|
+| 每个 S₀ 缝一批、互不等待 | **双（或多）mask 成组**；组间并行 |
+| `priorNouns` 修短语劈开 | **规则宁长勿短**；补缺不修短语 |
+| 批间只复制残文前缀 | **组内后包串联，带上前面的 mask** |
+
+要我按这套改协议 + `buildS1BatchesByS0Gaps` / 默写调度的话，直接说一声。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+宁长勿短：禁止「已是更长专名真子串」的短串单独进 S₀
+```
+ 你怎么设计的呢？给我代码
+
+## Assistant
+
+先看现有 S₀ 抽取与去重实现，再按「宁长勿短」落码。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","limit":250}
+```
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index","globPattern":"**/*bookNoun*"}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"extractS0|dedupeNoun|nounCanonical|STOP_SURFACES","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src","caseInsensitive":false,"multiline":false,"toolCallId":"call-0c231d6a-2890-4630-9fdb-2c11326967bd-39\nfc_36a64fa1-0eec-964b-b4c4-c2651b4147da_2","offset":0}
+```
+
+## Assistant
+
+现有拉丁已在同落点拼长串；还缺「候选集里短串是更长专名真子串则丢掉」。正在把这层闸写进代码。
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"宁长勿短|S₀|规则抽","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","caseInsensitive":false,"headLimit":40,"multiline":false,"toolCallId":"call-8f5c662d-658f-4336-a3fc-f07296e1ed7d-41\nfc_fd3e842b-b2eb-9504-8fab-56a067b3fc02_1","offset":0}
+```
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index","globPattern":"**/*noun*"}
+```
+
+## Assistant
+
+协议已是「同落点宁长勿短、别处独立短串可留」。按落点覆盖实现，避免全局误删独立出现的短串。
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":"export function nounCanonical(text: string): string {\n  return text.replace(/\\s+/g, ' ').trim().toLowerCase()\n}\n\nexport function stripMarkupNoise(text: string): string {\n  return text\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/^#{1,6}\\s+/gm, '')\n    .replace(/\\r\\n/g, '\\n')\n    .replace(/[ \\t]+\\n/g, '\\n')\n    .replace(/\\n{3,}/g, '\\n\\n')\n    .replace(/[ \\t]{2,}/g, ' ')\n    .trim()\n}\n\nconst LATIN_TOKEN =\n  \"[A-ZÁÉÍÓÚÄÖÜÂÊÎÔÛÀÈÌÒÙÇ][A-Za-zÁÉÍÓÚÄÖÜÂÊÎÔÛÀÈÌÒÙÄÖÜäöüâêîôûàèìòùç\\\\-']{0,40}\"\nconst LATIN_PHRASE_RE = new RegExp(\n  `\\\\b(?:${LATIN_TOKEN})(?:\\\\s+${LATIN_TOKEN})*\\\\b`,\n  'g',\n)\nconst LATIN_TOKEN_RE = new RegExp(`\\\\b(?:${LATIN_TOKEN})\\\\b`, 'g')\nconst CJK_RE = /[\\u4e00-\\u9fff]{2,8}/g\n\nexport type S0Span = { start: number; end: number; text: string }\n\nfunction isNoiseSurface(text: string): boolean {\n  const t = text.replace(/\\s+/g, ' ').trim()\n  if (!t || t.length < 2) return true\n  if (STOP_SURFACES.has(nounCanonical(t))) return true\n  if (/^[\\d\\W_]+$/.test(t)) return true\n  return false\n}\n\n/** 短 span 是否被更长 span 在同落点严格覆盖（真子串跨度） */\nexport function isStrictSubspan(\n  inner: Pick<S0Span, 'start' | 'end'>,\n  outer: Pick<S0Span, 'start' | 'end'>,\n): boolean {\n  return (\n    outer.start <= inner.start &&\n    outer.end >= inner.end &&\n    outer.end - outer.start > inner.end - inner.start\n  )\n}\n\n/**\n * 同落点宁长勿短：若短串跨度被更长候选严格覆盖，丢掉短串。\n * 别处独立落点的短串（不被任何更长 span 覆盖）保留。\n *\n * 例：`Jacques Lacan` 与同跨度内的 `Lacan` → 只留长的；\n * 文末另有独立 `Lacan` → 仍可进 S₀。\n */\nexport function preferLongestNounSpans(spans: S0Span[]): S0Span[] {\n  if (spans.length <= 1) return spans\n  return spans.filter(\n    (s) => !spans.some((o) => o !== s && isStrictSubspan(s, o)),\n  )\n}\n\n/**\n * 规则候选 span（未做宁长勿短）。\n * 拉丁：整段首大写短语 + 各 token（供同落点覆盖过滤）。\n * 汉字：连续 2–8 字。\n */\nexport function listS0CandidateSpans(T: string): S0Span[] {\n  const spans: S0Span[] = []\n  const push = (start: number, end: number, raw: string) => {\n    const text = raw.replace(/\\s+/g, ' ').trim()\n    if (isNoiseSurface(text)) return\n    spans.push({ start, end, text })\n  }\n\n  let m: RegExpExecArray | null\n  const phraseRe = new RegExp(LATIN_PHRASE_RE.source, 'g')\n  while ((m = phraseRe.exec(T))) {\n    push(m.index, m.index + m[0].length, m[0])\n  }\n  const tokenRe = new RegExp(LATIN_TOKEN_RE.source, 'g')\n  while ((m = tokenRe.exec(T))) {\n    push(m.index, m.index + m[0].length, m[0])\n  }\n  const cjkRe = new RegExp(CJK_RE.source, 'g')\n  while ((m = cjkRe.exec(T))) {\n    push(m.index, m.index + m[0].length, m[0])\n  }\n  return spans\n}\n\n/** 仅纯原文 T；不含 bookKey / page（材料面与地址分离） */\nexport function collectPlainTexts(bookIndex: BookIndex): PlainText[] {\n  const plains: PlainText[] = []\n  for (const c of bookIndex.chunks) {\n    if (!isRetrievableAtom(c)) continue\n    const T = stripMarkupNoise(atomSearchText(c))\n    if (T.trim().length < 4) continue\n    plains.push({ T })\n  }\n  return plains\n}\n\nexport function extractS0FromPlainTexts(plains: PlainText[]): BookNounDraft[] {\n  const map = new Map<string, string>() // canon → first text\n  const hit = new Map<string, number>()\n\n  const bump = (raw: string) => {\n    const text = raw.replace(/\\s+/g, ' ').trim()\n    if (isNoiseSurface(text)) return\n    const canon = nounCanonical(text)\n    if (!map.has(canon)) map.set(canon, text)\n    hit.set(canon, (hit.get(canon) ?? 0) + 1)\n  }\n\n  for (const { T } of plains) {\n    // 先收短语+token/汉字 span，再同落点宁长勿短，最后才并进词表\n    const kept = preferLongestNounSpans(listS0CandidateSpans(T))\n    for (const s of kept) bump(s.text)\n  }\n\n  const drafts: BookNounDraft[] = []\n  for (const [canon, text] of map) {\n    if ((hit.get(canon) ?? 0) >= 80 && canon.length <= 2) continue\n    drafts.push({ text })\n  }\n  drafts.sort((a, b) =>\n    nounCanonical(a.text).localeCompare(nounCanonical(b.text)),\n  )\n  return drafts\n}"}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"extractS0FromPlainTexts|preferLongest|listS0","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-5d50ac2c-05b4-4aee-81bc-44a9482134df-44\nfc_bc428a49-227a-91df-909e-205e31219fcb_1","offset":0}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":" * 去重：ignore-case(text) 整串全等；禁止子串吞并。\n * S₀ 边界：同落点宁长勿短（短跨度被更长候选覆盖则丢；别处独立短串可留）。\n * 无 df；**建表不做 locate**。门牌在提问：`S_q` → NounHit 时再 locate。\n */"}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","offset":540,"limit":40}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{}
+```
+
+### Tool Read Lints
+
+```
+{"paths":["C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts"]}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","streamContent":"export {\n  collectPlainTexts,\n  extractS0FromBookIndex,\n  extractS0FromPlainTexts,\n  listS0CandidateSpans,\n  preferLongestNounSpans,\n  isStrictSubspan,\n  attachBookKeysByLocate,\n  buildResidualPlainTexts,\n  buildS1BatchesByS0Gaps,\n  chunkLongTextSerial,\n  joinResidualBatchText,\n  buildBookNounIndexRulesOnly,\n  maskSurfacesInText,\n  dedupeNounDrafts,\n  mergeS0S1,\n  mergeS0S1Drafts,\n  surfacesToDrafts,\n} from '../arch/bookNounIndex'\nexport type {\n  BookNounDraft,\n  BookNounEntry,\n  BookNounIndex,\n  PlainText,\n  ResidualBatch,\n  S0Span,\n} from '../arch/bookNounIndex'"}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":84,"limit":120}
+```
+
+## Assistant
+
+设计按协议：**同落点宁长勿短**（不是全局「凡是更长短串的子串就删」）。
+
+### 设计
+1. 先收候选 span（带起止）：拉丁整段首大写短语 + 各 token；汉字 2–8  
+2. `preferLongestNounSpans`：短跨度被更长候选**严格覆盖** → 丢  
+3. 别处独立落点的短串（无更长覆盖）→ 仍可进 `S₀`
+
+例：`Jacques Lacan` 处只留长串；文末单独 `Lacan` 仍可进表。
+
+### 核心代码（已写入 `bookNounIndex.ts`）
+
+```119:202:src/arch/bookNounIndex.ts
+/** 短 span 是否被更长 span 在同落点严格覆盖（真子串跨度） */
+export function isStrictSubspan(
+  inner: Pick<S0Span, 'start' | 'end'>,
+  outer: Pick<S0Span, 'start' | 'end'>,
+): boolean {
+  return (
+    outer.start <= inner.start &&
+    outer.end >= inner.end &&
+    outer.end - outer.start > inner.end - inner.start
+  )
+}
+
+export function preferLongestNounSpans(spans: S0Span[]): S0Span[] {
+  if (spans.length <= 1) return spans
+  return spans.filter(
+    (s) => !spans.some((o) => o !== s && isStrictSubspan(s, o)),
+  )
+}
+
+export function listS0CandidateSpans(T: string): S0Span[] {
+  // 短语 + token + 汉字 …
+}
+
+export function extractS0FromPlainTexts(plains: PlainText[]): BookNounDraft[] {
+  // …
+  for (const { T } of plains) {
+    const kept = preferLongestNounSpans(listS0CandidateSpans(T))
+    for (const s of kept) bump(s.text)
+  }
+  // …
+}
+```
+
+`S₀∪S₁` 的整串去重仍禁止「因子串关系并条」；宁长勿短只发生在 **S₀ 规则入表前的落点过滤**。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+组A 包₁：… █₁前 … █₁ …（本包窗）
+     ↓ 返回后
+组A 包₂：带上 █₁ … 继续 … 直到 █₂（组末）
+第 1 轮：各组的 包₁ 并行 送补缺 LLM
+第 2 轮起：用前包结果推进本组下一包（组间仍可并行）
+```
+ 这个的规则给我看看代码
+
+## Assistant
+
+先查现码里有没有按「双 mask 成组 → 组内串联 → 轮次并行」实现；有就直接指给你，没有就说明现状。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":400,"limit":120}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"组|mask.*组|包₁|serial|runBatchesParallel|buildS1Batches|priorNouns|round","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch","caseInsensitive":false,"multiline":false,"toolCallId":"call-01801060-7d6f-4a5c-9906-c4d59b0fbb6c-52\nfc_e7bd9abd-f0d4-9aea-acdb-577d1b24a792_0","offset":0}
+```
+
+## Assistant
+
+**还没有这段规则的代码。** 你标的「双 mask 成组 → 组内串联带上前 mask → 第 1 轮各组包₁并行 → 第 2 轮用前包结果推下一包」只停在对话定稿，**没落进仓库**。
+
+现码仍是旧主路径：**每个 S₀ 间隙一批、批间一次并行、互不等待**。
+
+### 现码实际在做什么
+
+**切批**（按 S₀ 缝，不是按双 mask 组）：
+
+```484:560:src/arch/bookNounIndex.ts
+ * 1) 规则 S₀ 相邻落点之间的残文间隙 → **可并行**
+ * 2) 跨 S₀ 切口 priorNouns 前缀重叠
+ * 3) 单间隙过长 → 间隙内串联
+ */
+export function buildS1BatchesByS0Gaps(input: { ... }): ResidualBatch[] {
+  // anchors = S₀ 落点 → gaps
+  // 每 gap：前缀 + body → 一批（可立刻并行）
+}
+```
+
+**调度**（所有批一起并行，没有「组内包₂等包₁结果」）：
+
+```441:480:src/arch/bookNounS1Dictation.ts
+  const batches = buildS1BatchesByS0Gaps({ ... priorNouns: 2 })
+  const parallel = await runBatchesParallel({
+    batches,
+    concurrency,
+    run: (batch) => runS1DictationOnBatch({ batch, maxRounds: ... }),
+  })
+```
+
+这里的 `maxRounds` 是**同一批残文上的掩串二轮默写**，不是「组内包₁→包₂ 串联推进」。
+
+---
+
+要按你那套改，需要新写例如：`buildS1MaskGroups({ masksPerGroup: 2 })` + `runS1GroupsWaveSerial`（波次 1 并行各组包₁，波次 2 带前包结果/已见 mask 推包₂）。说一声我按那个口径落码。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+设计按协议：同落点宁长勿短（不是全局「凡是更长短串的子串就删」）。
+
+设计
+先收候选 span（带起止）：拉丁整段首大写短语 + 各 token；汉字 2–8
+preferLongestNounSpans：短跨度被更长候选严格覆盖 → 丢
+别处独立落点的短串（无更长覆盖）→ 仍可进 S₀
+例：Jacques Lacan 处只留长串；文末单独 Lacan 仍可进表。
+```
+ 我发现还是按照就是短的吧，我发现就是可以后面用llm去审查就是按照a1表格的前后顺序，哪些mask是紧紧贴在一起的，然后分批给llm看看能否合并成同一个
+
+## Assistant
+
+改回「规则抽短串」，合并交给后续 LLM 按 A1 顺序审相邻 mask。正在改抽取逻辑，并加上相邻 mask 合并审查的骨架。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":100,"limit":130}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","limit":100}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"宁长勿短|边界口径|同落点","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","context":3,"caseInsensitive":false,"multiline":false,"toolCallId":"call-29ef399b-3dfa-4707-aa24-091438dc2e19-56\nfc_97c26bca-c919-9a74-a19c-c884ca4e4e30_2","offset":0}
+```
+
+### Tool Todo Write
+
+```
+{"todos":[{"id":"1","content":"S₀ 改回短串抽取（拉丁 token，不用宁长勿短）","status":"TODO_STATUS_IN_PROGRESS","createdAt":"1789368727745","updatedAt":"1789368727745","dependencies":[]},{"id":"2","content":"相邻 mask 聚类 + LLM 合并审查骨架","status":"TODO_STATUS_PENDING","createdAt":"1789368727745","updatedAt":"1789368727745","dependencies":[]},{"id":"3","content":"同步协议口径 §2","status":"TODO_STATUS_PENDING","createdAt":"1789368727745","updatedAt":"1789368727745","dependencies":[]}],"merge":false}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":" * 去重：ignore-case(text) 整串全等；禁止子串吞并。\n * S₀：规则抽 **短串**（拉丁 token / 汉字 2–8）；短语合并交给后续「相邻 mask → LLM 审查」。\n * 无 df；**建表不做 locate**。门牌在提问：`S_q` → NounHit 时再 locate。\n */"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":"const LATIN_TOKEN =\n  \"[A-ZÁÉÍÓÚÄÖÜÂÊÎÔÛÀÈÌÒÙÇ][A-Za-zÁÉÍÓÚÄÖÜÂÊÎÔÛÀÈÌÒÙÄÖÜäöüâêîôûàèìòùç\\\\-']{0,40}\"\nconst LATIN_TOKEN_RE = new RegExp(`\\\\b(?:${LATIN_TOKEN})\\\\b`, 'g')\nconst CJK_RE = /[\\u4e00-\\u9fff]{2,8}/g\n\n/** 两 mask 之间只允许空白/轻标点才算「紧紧贴在一起」 */\nconst TIGHT_GAP_RE = /^[\\s,.;:·\\-–—'/]*$/\n\nexport type S0Span = { start: number; end: number; text: string }\n\nexport type S0MaskHit = S0Span & {\n  /** plains 下标；全书拼接时用 plainIndex + 局部偏移 */\n  plainIndex: number\n}\n\nexport type S0TightCluster = {\n  clusterId: string\n  /** A1/正文顺序下的相邻短 mask 命中 */\n  hits: S0MaskHit[]\n  /** 覆盖整簇的原文切片（含中间缝） */\n  originalSlice: string\n  /** 同区间残文（█ 已盖） */\n  residualSlice: string\n}\n\nfunction isNoiseSurface(text: string): boolean {\n  const t = text.replace(/\\s+/g, ' ').trim()\n  if (!t || t.length < 2) return true\n  if (STOP_SURFACES.has(nounCanonical(t))) return true\n  if (/^[\\d\\W_]+$/.test(t)) return true\n  return false\n}\n\n/** 短 span 是否被更长 span 在同落点严格覆盖（工具函数；S₀ 主路径不再用宁长勿短） */\nexport function isStrictSubspan(\n  inner: Pick<S0Span, 'start' | 'end'>,\n  outer: Pick<S0Span, 'start' | 'end'>,\n): boolean {\n  return (\n    outer.start <= inner.start &&\n    outer.end >= inner.end &&\n    outer.end - outer.start > inner.end - inner.start\n  )\n}\n\nexport function preferLongestNounSpans(spans: S0Span[]): S0Span[] {\n  if (spans.length <= 1) return spans\n  return spans.filter(\n    (s) => !spans.some((o) => o !== s && isStrictSubspan(s, o)),\n  )\n}\n\n/**\n * 规则候选 span = **短串**。\n * 拉丁：单 token（首大写词）；汉字：连续 2–8。\n * 不在规则侧拼 `Jacques Lacan`；相邻短 mask 的合并见 `clusterTightS0MaskHits`。\n */\nexport function listS0CandidateSpans(T: string): S0Span[] {\n  const spans: S0Span[] = []\n  const push = (start: number, end: number, raw: string) => {\n    const text = raw.replace(/\\s+/g, ' ').trim()\n    if (isNoiseSurface(text)) return\n    spans.push({ start, end, text })\n  }\n\n  let m: RegExpExecArray | null\n  const tokenRe = new RegExp(LATIN_TOKEN_RE.source, 'g')\n  while ((m = tokenRe.exec(T))) {\n    push(m.index, m.index + m[0].length, m[0])\n  }\n  const cjkRe = new RegExp(CJK_RE.source, 'g')\n  while ((m = cjkRe.exec(T))) {\n    push(m.index, m.index + m[0].length, m[0])\n  }\n  return spans\n}\n\n/** 在一段 T 上找出 s0 短串的全部落点（ignore-case） */\nexport function listS0MaskHitsInText(\n  T: string,\n  s0: BookNounDraft[],\n  plainIndex = 0,\n): S0MaskHit[] {\n  const hits: S0MaskHit[] = []\n  const lowerHay = T.toLowerCase()\n  for (const d of s0) {\n    const needle = d.text.trim()\n    if (needle.length < 2) continue\n    const lower = needle.toLowerCase()\n    let from = 0\n    while (from < lowerHay.length) {\n      const at = lowerHay.indexOf(lower, from)\n      if (at < 0) break\n      hits.push({\n        plainIndex,\n        start: at,\n        end: at + needle.length,\n        text: T.slice(at, at + needle.length),\n      })\n      from = at + Math.max(1, needle.length)\n    }\n  }\n  hits.sort((a, b) => a.start - b.start || a.end - b.end)\n  // 同起点留更长（极少）；重叠短击可先留下给紧贴聚类\n  return hits\n}\n\nexport function isTightMaskGap(between: string): boolean {\n  return TIGHT_GAP_RE.test(between)\n}\n\n/**\n * 按 A1/正文前后顺序：相邻且中间只有空白/轻标点的 mask 收成一簇。\n * 单点不成簇（无需合并审查）。\n */\nexport function clusterTightS0MaskHits(input: {\n  original: string\n  residual: string\n  hits: S0MaskHit[]\n  clusterIdPrefix?: string\n}): S0TightCluster[] {\n  const sorted = [...input.hits].sort(\n    (a, b) => a.start - b.start || a.end - b.end,\n  )\n  if (sorted.length < 2) return []\n\n  const clusters: S0TightCluster[] = []\n  let cur: S0MaskHit[] = [sorted[0]!]\n  let n = 0\n\n  const flush = () => {\n    if (cur.length < 2) {\n      cur = []\n      return\n    }\n    const start = cur[0]!.start\n    const end = cur[cur.length - 1]!.end\n    n += 1\n    clusters.push({\n      clusterId: `${input.clusterIdPrefix ?? 'mrg'}_${String(n).padStart(3, '0')}`,\n      hits: [...cur],\n      originalSlice: input.original.slice(start, end),\n      residualSlice: input.residual.slice(start, end),\n    })\n    cur = []\n  }\n\n  for (let i = 1; i < sorted.length; i++) {\n    const prev = cur[cur.length - 1]!\n    const next = sorted[i]!\n    if (next.start < prev.end) {\n      // 重叠命中：并进当前簇\n      cur.push(next)\n      continue\n    }\n    const gap = input.original.slice(prev.end, next.start)\n    if (isTightMaskGap(gap)) {\n      cur.push(next)\n    } else {\n      flush()\n      cur = [next]\n    }\n  }\n  flush()\n  return clusters\n}\n\n/** 全书 plains：按 unit 顺序扫紧贴 mask 簇（保持 A1 前后序） */\nexport function buildS0TightMergeClusters(input: {\n  plains: PlainText[]\n  residualPlains: PlainText[]\n  s0: BookNounDraft[]\n}): S0TightCluster[] {\n  if (input.plains.length !== input.residualPlains.length) {\n    throw new Error('buildS0TightMergeClusters: plains 与 residual 长度必须一致')\n  }\n  const out: S0TightCluster[] = []\n  for (let i = 0; i < input.plains.length; i++) {\n    const original = input.plains[i]!.T\n    const residual = input.residualPlains[i]!.T\n    const hits = listS0MaskHitsInText(original, input.s0, i)\n    out.push(\n      ...clusterTightS0MaskHits({\n        original,\n        residual,\n        hits,\n        clusterIdPrefix: `p${String(i).padStart(4, '0')}`,\n      }),\n    )\n  }\n  return out\n}\n\n/**\n * 合并审查通过后：用更长连续原文替换被合并的短串。\n * 短串若仍在别处独立出现，保留（只删「整串全等且本次被合并掉」的条目需由调用方传 removed）。\n */\nexport function applyS0MergeSurfaces(\n  s0: BookNounDraft[],\n  merges: Array<{ mergedText: string; parts: string[] }>,\n): BookNounDraft[] {\n  const remove = new Set<string>()\n  const add: string[] = []\n  for (const m of merges) {\n    const merged = m.mergedText.replace(/\\s+/g, ' ').trim()\n    if (merged.length < 2) continue\n    add.push(merged)\n    for (const p of m.parts) {\n      const c = nounCanonical(p)\n      if (c) remove.add(c)\n    }\n  }\n  const kept = s0.filter((d) => !remove.has(nounCanonical(d.text)))\n  return dedupeNounDrafts([\n    ...kept,\n    ...add.map((text) => ({ text })),\n  ])\n}\n\n/** 仅纯原文 T；不含 bookKey / page（材料面与地址分离） */\nexport function collectPlainTexts(bookIndex: BookIndex): PlainText[] {\n  const plains: PlainText[] = []\n  for (const c of bookIndex.chunks) {\n    if (!isRetrievableAtom(c)) continue\n    const T = stripMarkupNoise(atomSearchText(c))\n    if (T.trim().length < 4) continue\n    plains.push({ T })\n  }\n  return plains\n}\n\nexport function extractS0FromPlainTexts(plains: PlainText[]): BookNounDraft[] {\n  const map = new Map<string, string>() // canon → first text\n  const hit = new Map<string, number>()\n\n  const bump = (raw: string) => {\n    const text = raw.replace(/\\s+/g, ' ').trim()\n    if (isNoiseSurface(text)) return\n    const canon = nounCanonical(text)\n    if (!map.has(canon)) map.set(canon, text)\n    hit.set(canon, (hit.get(canon) ?? 0) + 1)\n  }\n\n  for (const { T } of plains) {\n    // 短串入表；短语合并留给相邻 mask → LLM\n    for (const s of listS0CandidateSpans(T)) bump(s.text)\n  }\n\n  const drafts: BookNounDraft[] = []\n  for (const [canon, text] of map) {\n    if ((hit.get(canon) ?? 0) >= 80 && canon.length <= 2) continue\n    drafts.push({ text })\n  }\n  drafts.sort((a, b) =>\n    nounCanonical(a.text).localeCompare(nounCanonical(b.text)),\n  )\n  return drafts\n}"}
+```
+
+## Assistant
+
+修正合并逻辑：只把合并后的长串加入 S₀，短串保留（单独出现处仍要盖住）；并把该函数挪到 `dedupeNounDrafts` 之后。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":300,"limit":50}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"applyS0MergeSurfaces|export function dedupeNounDrafts","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-4a654dec-5cb8-4855-baf7-ceb3f7542321-60\nfc_b9ebffab-c5d2-9643-86d3-235de89f965d_0","offset":0}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":"/**\n * 合并审查通过后：把更长连续原文 **加进** S₀。\n * 短串默认保留（别处独立落点仍要 mask）；mask 时按长串优先盖。\n */\nexport function applyS0MergeSurfaces(\n  s0: BookNounDraft[],\n  merges: Array<{ mergedText: string; parts: string[] }>,\n): BookNounDraft[] {\n  const add = merges\n    .map((m) => m.mergedText.replace(/\\s+/g, ' ').trim())\n    .filter((t) => t.length >= 2)\n    .map((text) => ({ text }))\n  return dedupeNounDrafts([...s0, ...add])\n}\n\n/** 仅纯原文 T；不含 bookKey / page（材料面与地址分离） */"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","streamContent":"/**\n * S₀ 相邻短 mask → LLM 合并审查\n *\n * 规则先抽短串并 mask；按 A1/正文顺序找出「紧紧贴在一起」的 mask 簇，\n * 分批问 LLM：能否合并成同一个连续专名；通过者必须是本簇 originalSlice 的连续子串。\n */\n\nimport { demoAuthHeaders } from '../reasoning/demoAuth'\nimport { extractJsonObject } from '../reasoning/inferPath'\nimport { llmThinkingField } from '../reasoning/llmThinking'\nimport {\n  loadDualModelConfig,\n  reasonEndpointReady,\n  LOCKED_LLM,\n} from '../reasoning/modelRuntimeConfig'\nimport {\n  type BookNounDraft,\n  type S0TightCluster,\n  applyS0MergeSurfaces,\n  buildS0TightMergeClusters,\n  buildResidualPlainTexts,\n  nounCanonical,\n} from './bookNounIndex'\nimport { runBatchesParallel } from './parallelLlmBatch'\n\nexport const S0_MERGE_SYSTEM = [\n  '【任务】下面是一段原文切片，其中若干专名已被规则拆成短词并用 █ 标出落点示意。',\n  '请判断：哪些相邻短词在原文里其实是同一个连续专名/名词短语，应当合并。',\n  '【硬约束】合并结果必须是【原文切片】里的连续原文（含中间空格）；禁止翻译、禁止改写、禁止跨簇拼词。',\n  '【输出】仅 JSON：{\"merges\":[{\"parts\":[\"短1\",\"短2\"],\"merged\":\"原文连续串\"}]}',\n  '若不应合并：{\"merges\":[]}',\n].join('\\n')\n\nexport function buildS0MergeUserPrompt(cluster: S0TightCluster): string {\n  const parts = cluster.hits.map((h, i) => `  [${i + 1}] ${h.text}`).join('\\n')\n  return [\n    `clusterId: ${cluster.clusterId}`,\n    '',\n    '【相邻短 mask（正文顺序）】',\n    parts,\n    '',\n    '【原文切片】',\n    cluster.originalSlice,\n    '',\n    '【残文示意（█=已盖短串）】',\n    cluster.residualSlice,\n    '',\n    '请只输出 JSON：{\"merges\":[{\"parts\":[\"...\"],\"merged\":\"...\"}]}',\n  ].join('\\n')\n}\n\nasync function flashChat(input: {\n  system: string\n  user: string\n  signal?: AbortSignal\n}): Promise<{ ok: true; content: string } | { ok: false; note: string }> {\n  const { reason } = loadDualModelConfig()\n  if (!reasonEndpointReady(reason)) {\n    return { ok: false, note: '推理槽未配置（/api/llm）' }\n  }\n  const base = (reason.baseUrl.trim() || '/api/llm').replace(/\\/$/, '')\n  const url = `${base}/chat/completions`\n  const headers: Record<string, string> = {\n    'Content-Type': 'application/json',\n    ...demoAuthHeaders(),\n  }\n  if (reason.apiKey.trim() && !base.startsWith('/api/')) {\n    headers.Authorization = `Bearer ${reason.apiKey.trim()}`\n  }\n  try {\n    if (input.signal?.aborted) return { ok: false, note: 'LLM 已取消' }\n    const res = await fetch(url, {\n      method: 'POST',\n      headers,\n      body: JSON.stringify({\n        model: reason.model || LOCKED_LLM.chatModel,\n        temperature: 0,\n        max_tokens: 2048,\n        ...llmThinkingField('disabled'),\n        messages: [\n          { role: 'system', content: input.system },\n          { role: 'user', content: input.user },\n        ],\n      }),\n      signal: input.signal,\n    })\n    if (!res.ok) {\n      return { ok: false, note: `LLM HTTP ${res.status}` }\n    }\n    const data = (await res.json()) as {\n      choices?: Array<{ message?: { content?: string } }>\n    }\n    const content = data.choices?.[0]?.message?.content ?? ''\n    if (!content.trim()) return { ok: false, note: 'LLM 空响应' }\n    return { ok: true, content }\n  } catch (e) {\n    const msg = e instanceof Error ? e.message : String(e)\n    return { ok: false, note: `LLM 失败：${msg}` }\n  }\n}\n\nexport type S0MergeAccepted = {\n  mergedText: string\n  parts: string[]\n}\n\nexport function parseS0MergesFromLlm(raw: string): Array<{\n  parts: string[]\n  merged: string\n}> {\n  const obj = extractJsonObject(raw) as {\n    merges?: Array<{ parts?: unknown; merged?: unknown }>\n  } | null\n  if (!obj || !Array.isArray(obj.merges)) return []\n  const out: Array<{ parts: string[]; merged: string }> = []\n  for (const m of obj.merges) {\n    const merged = String(m?.merged ?? '')\n      .replace(/\\s+/g, ' ')\n      .trim()\n    const parts = Array.isArray(m?.parts)\n      ? m.parts.map((p) => String(p).replace(/\\s+/g, ' ').trim()).filter(Boolean)\n      : []\n    if (!merged || parts.length < 2) continue\n    out.push({ parts, merged })\n  }\n  return out\n}\n\n/** 硬闸：merged 必须是本簇原文连续子串；parts 须能在 hits 里对上 */\nexport function gateS0MergesAgainstCluster(\n  cluster: S0TightCluster,\n  candidates: Array<{ parts: string[]; merged: string }>,\n): { accepted: S0MergeAccepted[]; rejected: string[] } {\n  const accepted: S0MergeAccepted[] = []\n  const rejected: string[] = []\n  const hitCanon = new Set(cluster.hits.map((h) => nounCanonical(h.text)))\n  const slice = cluster.originalSlice\n  const lowerSlice = slice.toLowerCase()\n\n  for (const c of candidates) {\n    const merged = c.merged.replace(/\\s+/g, ' ').trim()\n    const at = lowerSlice.indexOf(merged.toLowerCase())\n    if (at < 0) {\n      rejected.push(`not_substring:${merged}`)\n      continue\n    }\n    const grounded = slice.slice(at, at + merged.length)\n    if (grounded.includes('█')) {\n      rejected.push(`has_mask:${merged}`)\n      continue\n    }\n    const partsOk = c.parts.every((p) => hitCanon.has(nounCanonical(p)))\n    if (!partsOk) {\n      rejected.push(`parts_not_in_hits:${merged}`)\n      continue\n    }\n    // merged 应覆盖各 part（ignore-case）\n    const lowerMerged = grounded.toLowerCase()\n    const covers = c.parts.every((p) =>\n      lowerMerged.includes(nounCanonical(p)),\n    )\n    if (!covers) {\n      rejected.push(`parts_not_in_merged:${merged}`)\n      continue\n    }\n    accepted.push({ mergedText: grounded, parts: c.parts })\n  }\n  return { accepted, rejected }\n}\n\nexport type S0MergeClusterResult = {\n  clusterId: string\n  accepted: S0MergeAccepted[]\n  rejected: string[]\n  raw?: string\n  note: string\n}\n\nexport async function runS0MergeOnCluster(input: {\n  cluster: S0TightCluster\n  signal?: AbortSignal\n}): Promise<S0MergeClusterResult> {\n  const user = buildS0MergeUserPrompt(input.cluster)\n  const llm = await flashChat({\n    system: S0_MERGE_SYSTEM,\n    user,\n    signal: input.signal,\n  })\n  if (!llm.ok) {\n    return {\n      clusterId: input.cluster.clusterId,\n      accepted: [],\n      rejected: [],\n      note: llm.note,\n    }\n  }\n  const parsed = parseS0MergesFromLlm(llm.content)\n  const gated = gateS0MergesAgainstCluster(input.cluster, parsed)\n  return {\n    clusterId: input.cluster.clusterId,\n    accepted: gated.accepted,\n    rejected: gated.rejected,\n    raw: llm.content,\n    note: `acc×${gated.accepted.length} · rej×${gated.rejected.length}`,\n  }\n}\n\n/**\n * 短串 S₀ → 制残文 → 紧贴簇 → 并行 LLM 合并审查 → 长串加回 S₀\n */\nexport async function refineS0ByAdjacentMergeLlm(input: {\n  plains: { T: string }[]\n  s0: BookNounDraft[]\n  concurrency?: number\n  signal?: AbortSignal\n  onProgress?: (msg: string) => void\n}): Promise<{\n  s0: BookNounDraft[]\n  clusters: S0TightCluster[]\n  results: S0MergeClusterResult[]\n  note: string\n}> {\n  const residualPlains = buildResidualPlainTexts(input.plains, input.s0)\n  const clusters = buildS0TightMergeClusters({\n    plains: input.plains,\n    residualPlains,\n    s0: input.s0,\n  })\n  if (clusters.length === 0) {\n    return {\n      s0: input.s0,\n      clusters: [],\n      results: [],\n      note: '无紧贴 mask 簇 · S₀ 不变',\n    }\n  }\n\n  const concurrency = Math.max(1, input.concurrency ?? 3)\n  input.onProgress?.(\n    `S₀ 合并审查 · 紧贴簇 ×${clusters.length} · 并行≤${concurrency}…`,\n  )\n\n  const parallel = await runBatchesParallel({\n    batches: clusters,\n    concurrency,\n    signal: input.signal,\n    run: (cluster, _i, signal) =>\n      runS0MergeOnCluster({ cluster, signal }),\n  })\n\n  const results: S0MergeClusterResult[] = []\n  const merges: S0MergeAccepted[] = []\n  for (const r of parallel.results) {\n    if (!r.ok) continue\n    results.push(r.value)\n    merges.push(...r.value.accepted)\n  }\n\n  const refined = applyS0MergeSurfaces(input.s0, merges)\n  return {\n    s0: refined,\n    clusters,\n    results,\n    note: `簇×${clusters.length} · 合并采纳×${merges.length} · S₀ ${input.s0.length}→${refined.length}`,\n  }\n}\n"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":"/** 仅纯原文 T；不含 bookKey / page（材料面与地址分离） */"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":"export function dedupeNounDrafts(drafts: BookNounDraft[]): BookNounDraft[] {\n  const map = new Map<string, BookNounDraft>()\n  for (const e of drafts) {\n    const text = e.text.replace(/\\s+/g, ' ').trim()\n    const canon = nounCanonical(text)\n    if (!canon) continue\n    if (map.has(canon)) continue\n    map.set(canon, { text })\n  }\n  return [...map.values()].sort((a, b) =>\n    nounCanonical(a.text).localeCompare(nounCanonical(b.text)),\n  )\n}\n\n/**\n * 合并审查通过后：把更长连续原文 **加进** S₀。\n * 短串默认保留（别处独立落点仍要 mask）；mask 时按长串优先盖。\n */\nexport function applyS0MergeSurfaces(\n  s0: BookNounDraft[],\n  merges: Array<{ mergedText: string; parts: string[] }>,\n): BookNounDraft[] {\n  const add = merges\n    .map((m) => m.mergedText.replace(/\\s+/g, ' ').trim())\n    .filter((t) => t.length >= 2)\n    .map((text) => ({ text }))\n  return dedupeNounDrafts([...s0, ...add])\n}\n\nexport function dedupeNounEntries(entries: BookNounEntry[]): BookNounEntry[] {"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"  const s0Raw = dedupeNounDrafts(\n    input.s0?.length ? input.s0 : extractS0FromPlainTexts(plains),\n  )\n  input.onProgress?.(`S₀ 短串 Draft ×${s0Raw.length} · 相邻 mask 合并审查…`)\n\n  const mergeRefine = await refineS0ByAdjacentMergeLlm({\n    plains,\n    s0: s0Raw,\n    concurrency: input.concurrency ?? 3,\n    signal: input.signal,\n    onProgress: input.onProgress,\n  })\n  const s0 = mergeRefine.s0\n  input.onProgress?.(\n    `S₀ 合并后 ×${s0.length}（${mergeRefine.note}）· 制残文…`,\n  )\n\n  const residualPlains = buildResidualPlainTexts(plains, s0)"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"import { runBatchesParallel } from './parallelLlmBatch'\nimport { refineS0ByAdjacentMergeLlm } from './bookNounS0Merge'"}
+```
+
+### Tool Edit File V2
+
+```
+{}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","streamContent":"export {\n  collectPlainTexts,\n  extractS0FromBookIndex,\n  extractS0FromPlainTexts,\n  listS0CandidateSpans,\n  listS0MaskHitsInText,\n  clusterTightS0MaskHits,\n  buildS0TightMergeClusters,\n  applyS0MergeSurfaces,\n  isTightMaskGap,\n  preferLongestNounSpans,\n  isStrictSubspan,\n  attachBookKeysByLocate,\n  buildResidualPlainTexts,\n  buildS1BatchesByS0Gaps,\n  chunkLongTextSerial,\n  joinResidualBatchText,\n  buildBookNounIndexRulesOnly,\n  maskSurfacesInText,\n  dedupeNounDrafts,\n  mergeS0S1,\n  mergeS0S1Drafts,\n  surfacesToDrafts,\n} from '../arch/bookNounIndex'\nexport type {\n  BookNounDraft,\n  BookNounEntry,\n  BookNounIndex,\n  PlainText,\n  ResidualBatch,\n  S0Span,\n  S0MaskHit,\n  S0TightCluster,\n} from '../arch/bookNounIndex'\nexport {\n  S0_MERGE_SYSTEM,\n  buildS0MergeUserPrompt,\n  parseS0MergesFromLlm,\n  gateS0MergesAgainstCluster,\n  runS0MergeOnCluster,\n  refineS0ByAdjacentMergeLlm,\n} from '../arch/bookNounS0Merge'"}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","offset":44,"limit":90}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":430,"limit":40}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"export function dedupeNounDrafts|export function applyS0MergeSurfaces|export function dedupeNounEntries","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-28417173-667b-49aa-bf8a-2a65dfc4bbc9-71\nfc_4865f88b-636b-920f-80c2-4bac45885f5c_1","offset":0}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","streamContent":"**工序**\n\n1. 扫全部合法 `T`（禁用 `tokenizeQuery` 作抽词器）。  \n2. 候选形态（可配置，默认）——**规则抽短串**：  \n   - 拉丁：单 token（首大写词），例：`Jacques` / `Lacan` 分条入 `S₀`；  \n   - 汉字：连续 2–8 字。  \n3. **短语合并（2026-09-14 改）**：不在规则侧宁长勿短；按 A1/正文顺序找出 **紧紧贴在一起** 的 mask 落点簇，分批交给 LLM 审查能否合并为同一连续原文串（硬闸：合并结果 ⊆ 本簇原文切片）。采纳后 **长串加进** `S₀`（短串默认保留，便于别处独立落点仍 mask；盖码时长串优先）。实现：`bookNounS0Merge.ts`。  \n4. 停用表 + 极端频次过滤（过高功能串 / 过低碎屑可闸）。  \n5. 忽略大小写整串归并；展示形保留首见大小写。  \n6. 抽词阶段只产出 Draft；**不含** `bookKeys` / 坐标。频次不预存（回 A1 再算）。\n\n| 字段 | 必填 | 说明 |\n|------|------|------|\n| `text` | ✓ | 书中连续原文串（规则抠出） |\n\n- 抽词/默写阶段只有 `BookNounDraft = { text }`，**不含** `bookKeys`。  \n- `S₀ ∪ S₁` 在 Draft 上整串去重后即得权威表 **`S`（仍是 Draft）**。  \n- **建表不做 locate**；门牌留到提问：`S_q` → 在 A1/`T` 上定位 → `NounHit`。\n\n**风险与分工**\n\n| 问题 | 谁负责 |\n|------|--------|\n| 短语被规则拆成相邻短串 | **相邻 mask → LLM 合并审查**（`refineS0ByAdjacentMergeLlm`） |\n| 完全没进 `S₀` 的漏网专名 | `S₁` 默写补漏 |\n| 规则脏（功能词等） | 停用/频次 + 后续定位无命中则难进拓扑（见 §6） |\n\n**明确不做**：用 `S₁` 否定或删除已入表短串；合并审查只 **加长串**，不靠补缺猜 █。\n"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","streamContent":"- **表级去重**禁止子串/超串吞并：若表中同时有 `Lacan` 与 `Jacques Lacan`，**必须分列**（不得因「是子串」互删）。  \n- 短语合并只通过 §2 相邻 mask LLM 审查 **加长串**；表级去重不做宁长勿短。  \n- **禁止**模糊并簇、别名折叠。\n"}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","offset":320,"limit":20}
+```
+
+### Tool Read Lints
+
+```
+{"paths":["C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts"]}
+```
+
+### Tool Todo Write
+
+```
+{"todos":[{"id":"1","content":"S₀ 改回短串抽取（拉丁 token，不用宁长勿短）","status":"TODO_STATUS_COMPLETED","createdAt":"1789368727747","updatedAt":"1789368943901","dependencies":[]},{"id":"2","content":"相邻 mask 聚类 + LLM 合并审查骨架","status":"TODO_STATUS_COMPLETED","createdAt":"1789368727747","updatedAt":"1789368943901","dependencies":[]},{"id":"3","content":"同步协议口径 §2","status":"TODO_STATUS_COMPLETED","createdAt":"1789368727747","updatedAt":"1789368943901","dependencies":[]}],"merge":true}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","streamContent":"| 2026-09-14 | **S₀ 边界**：同落点宁长勿短；补缺只补未进 S₀ 的漏网、不修短语、不否定 S₀ |\n| 2026-09-14 | **S₀ 改短串 + 相邻 mask LLM 合并**：规则只抽 token；`bookNounS0Merge` 紧贴簇并行审查；长串加进 S₀ |"}
+```
+
+## Assistant
+
+已按你的口径改完：**规则抽短串；相邻 mask 交给 LLM 合并审查**。
+
+### 新链路
+```text
+短串 S₀ → mask → 按 A1 顺序找「紧贴」簇 → 分批 LLM 能否合并
+       → 通过则把长串加进 S₀（短串保留）→ 再制残文做 S₁ 补缺
+```
+
+### 代码位置
+| 做什么 | 哪里 |
+|--------|------|
+| 只抽拉丁 token / 汉字 2–8 | `listS0CandidateSpans` / `extractS0FromPlainTexts` |
+| 紧贴判定 + 聚类 | `isTightMaskGap` / `clusterTightS0MaskHits` / `buildS0TightMergeClusters` |
+| LLM 合并审查 | `src/arch/bookNounS0Merge.ts`（`refineS0ByAdjacentMergeLlm`） |
+| 建表入口已串上 | `runBookNounS1Dictation` 在制残文前先跑合并审查 |
+
+紧贴 = 两 mask 之间只有空白/轻标点。合并硬闸：`merged` 必须是本簇**原文切片**的连续子串。
+
+## User
+
+你说错了，而是当llm补缺之后，所有已经提取的名词，再用llm查那些紧贴的mask看看能否本来是同一个的
+
+## Assistant
+
+纠正顺序：先完成 S₀→补缺 S₁，再对全部已提取名词做紧贴 mask 合并审查。正在改调度与协议。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":480,"limit":50}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","limit":40}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"  const s0 = dedupeNounDrafts(\n    input.s0?.length ? input.s0 : extractS0FromPlainTexts(plains),\n  )\n  input.onProgress?.(`S₀ 短串 Draft ×${s0.length} · 制残文…`)\n\n  const residualPlains = buildResidualPlainTexts(plains, s0)"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"  const s1 = dedupeNounDrafts(s1Acc)\n  const beforeMerge = dedupeNounDrafts([...s0, ...s1])\n\n  /** 补缺之后：对全部已提取名词的紧贴 mask 做合并审查 */\n  input.onProgress?.(\n    `名词合并审查 · 已提取 ×${beforeMerge.length} · 紧贴簇…`,\n  )\n  const mergeRefine = await refineS0ByAdjacentMergeLlm({\n    plains,\n    s0: beforeMerge,\n    concurrency,\n    signal: input.signal,\n    onProgress: input.onProgress,\n  })\n  const S = mergeRefine.s0\n\n  const index: BookNounIndex = {\n    docId: input.bookIndex.docId,\n    builtAt: Date.now(),\n    s0,\n    s1,\n    S,\n  }\n\n  return {\n    ok: true,\n    index,\n    batchResults,\n    note: `S₀×${s0.length} · S₁×${s1.length} · S×${S.length}（合并后）· 批×${batchResults.length} · ${mergeRefine.note}`,\n  }\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","streamContent":"/**\n * 已提取名词的相邻 mask → LLM 合并审查\n *\n * 时机：**S₁ 补缺完成之后**。对 S₀∪S₁（全部已提取名词）在原文上定位落点，\n * 按 A1/正文顺序找出「紧紧贴在一起」的 mask 簇，分批问 LLM 能否合并成同一个连续专名。\n * 通过者必须是本簇 originalSlice 的连续子串；长串加进权威表 S。\n */"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","streamContent":"export const S0_MERGE_SYSTEM = [\n  '【任务】下面是一段原文切片。其中若干名词/专名已由规则+补缺提取，并在落点用 █ 标出。',\n  '请判断：哪些相邻已提取词在原文里其实是同一个连续专名/名词短语，应当合并。',\n  '【硬约束】合并结果必须是【原文切片】里的连续原文（含中间空格）；禁止翻译、禁止改写、禁止跨簇拼词。',\n  '【输出】仅 JSON：{\"merges\":[{\"parts\":[\"短1\",\"短2\"],\"merged\":\"原文连续串\"}]}',\n  '若不应合并：{\"merges\":[]}',\n].join('\\n')"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","streamContent":"/**\n * 补缺之后：全部已提取名词 → 制残文示意 → 紧贴簇 → 并行 LLM 合并审查 → 长串加回表\n */\nexport async function refineS0ByAdjacentMergeLlm(input: {\n  plains: { T: string }[]\n  /** 此处传入 S₀∪S₁（全部已提取），参数名历史兼容 */\n  s0: BookNounDraft[]\n  concurrency?: number\n  signal?: AbortSignal\n  onProgress?: (msg: string) => void\n}): Promise<{\n  s0: BookNounDraft[]\n  clusters: S0TightCluster[]\n  results: S0MergeClusterResult[]\n  note: string\n}> {\n  const residualPlains = buildResidualPlainTexts(input.plains, input.s0)\n  const clusters = buildS0TightMergeClusters({\n    plains: input.plains,\n    residualPlains,\n    s0: input.s0,\n  })\n  if (clusters.length === 0) {\n    return {\n      s0: input.s0,\n      clusters: [],\n      results: [],\n      note: '无紧贴 mask 簇 · 表不变',\n    }\n  }\n\n  const concurrency = Math.max(1, input.concurrency ?? 3)\n  input.onProgress?.(\n    `名词合并审查 · 紧贴簇 ×${clusters.length} · 并行≤${concurrency}…`,\n  )\n\n  const parallel = await runBatchesParallel({\n    batches: clusters,\n    concurrency,\n    signal: input.signal,\n    run: (cluster, _i, signal) =>\n      runS0MergeOnCluster({ cluster, signal }),\n  })\n\n  const results: S0MergeClusterResult[] = []\n  const merges: S0MergeAccepted[] = []\n  for (const r of parallel.results) {\n    if (!r.ok) continue\n    results.push(r.value)\n    merges.push(...r.value.accepted)\n  }\n\n  const refined = applyS0MergeSurfaces(input.s0, merges)\n  return {\n    s0: refined,\n    clusters,\n    results,\n    note: `簇×${clusters.length} · 合并采纳×${merges.length} · 表 ${input.s0.length}→${refined.length}`,\n  }\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","streamContent":"3. **短语合并（2026-09-14 改）**：规则侧抽短串；**等 S₁ 补缺完成之后**，对全部已提取名词（`S₀∪S₁`）按 A1/正文顺序找 **紧紧贴在一起** 的 mask 落点簇，分批 LLM 审查能否合并为同一连续原文串（硬闸：合并结果 ⊆ 本簇原文切片）。采纳后 **长串加进权威表 `S`**（短串默认保留；盖码时长串优先）。实现：`bookNounS0Merge.ts`，挂在 `runBookNounS1Dictation` 补缺之后。"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","streamContent":"| 短语被规则/补缺拆成相邻短串 | **补缺之后** · 相邻 mask → LLM 合并审查（`refineS0ByAdjacentMergeLlm`） |"}
+```
+
+### Tool Edit File V2
+
+```
+{}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":" * 流水线：\n *   BEFORE  短串 S₀ → 制 R → 分批 R_batch（无门牌/坐标）\n *   PROMPT  system + user（见下方常量）\n *   LLM     /api/llm chat/completions · S₁ 默写补缺\n *   AFTER   本批子串硬闸 → S₁ Draft → 并集\n *   MERGE   对 S₀∪S₁ 紧贴 mask → LLM 合并审查 → 长串加进 S\n */"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","streamContent":"| 2026-09-14 | **S₀ 改短串 + 补缺后相邻 mask LLM 合并**：规则只抽 token；S₁ 完成后再审紧贴簇；长串加进 S |"}
+```
+
+### Tool Read Lints
+
+```
+{"paths":["C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts"]}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":" * S₀：规则抽 **短串**（拉丁 token / 汉字 2–8）；短语合并在 **S₁ 补缺之后** 对全部已提取名词做相邻 mask LLM 审查。\n * 无 df；**建表不做 locate**。门牌在提问：`S_q` → NounHit 时再 locate。\n */"}
+```
+
+## Assistant
+
+对，是我顺序说反了。已改成：
+
+```text
+短串 S₀ → mask → S₁ 补缺
+  → 对全部已提取（S₀∪S₁）找紧贴 mask
+  → LLM 审查能否合并
+  → 长串加进权威表 S
+```
+
+合并审查挂在 `runBookNounS1Dictation` 里 **补缺完成之后**，不再插在补缺前面。
+
+## User
+
+重新梳理完整的顺序然后分别按照已经弄好的代码给我审计
+
+## Assistant
+
+对照现码把完整顺序梳一遍，并逐项审计是否落地。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":1,"limit":80}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":100,"limit":120}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","limit":80}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":400,"limit":120}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"refineS0|buildS1Batches|extractS0|applyS0Merge|clusterTight|runBookNounS1|masksPerGroup|双 mask|组内","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch","caseInsensitive":false,"multiline":false,"toolCallId":"call-9267249a-01a4-4f8d-8a4e-a8843f524117-97\nfc_46875244-808b-967a-8b30-584bade482d1_4","offset":0}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":318,"limit":40}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":440,"limit":40}
+```
+
+## Assistant
+
+### 完整顺序（产品定稿）
+
+```text
+1  collectPlainTexts          只取纯 T
+2  extractS0（短串）          拉丁 token / 汉字 2–8
+3  mask → 残文 R
+4  分批 → S₁ 默写补缺（并行）
+5  本批子串硬闸 → S₁
+6  beforeMerge = dedupe(S₀ ∪ S₁)
+7  对全部已提取名词找紧贴 mask → LLM 合并审查
+8  长串加进权威表 S（短串保留）
+9  建表结束；不 locate
+```
+
+---
+
+### 按现码逐项审计
+
+| # | 步骤 | 现码 | 审计 |
+|---|------|------|------|
+| 1 | 纯 T | `collectPlainTexts` | OK |
+| 2 | 短串 S₀ | `listS0CandidateSpans` 只抽 token，无宁长勿短 | OK |
+| 3 | mask 残文 | `buildResidualPlainTexts`（仅用 **S₀**） | OK |
+| 4 | 补缺分批 | `buildS1BatchesByS0Gaps`：**每个 S₀ 间隙一批** + `priorNouns=2`；`runBatchesParallel` | **与你定的「双 mask 成组 / 组内串联带前 mask」不一致**（仍是旧间隙并行） |
+| 5 | S₁ 硬闸 | `gateNounsAgainstBatchText`；批内 `maxRounds` 掩串二轮 | OK（这是补缺轮次，不是组合并） |
+| 6 | 并集 | `beforeMerge = dedupe(s0∪s1)` | OK |
+| 7 | 补缺**后**合并 | `refineS0ByAdjacentMergeLlm(beforeMerge)` 挂在 `runBookNounS1Dictation` 末尾 | **顺序 OK** |
+| 7a | 紧贴簇 | `clusterTightS0MaskHits`：中间仅空白/轻标点 | OK |
+| 7b | 合并硬闸 | `merged ⊆ originalSlice`；parts 须在 hits 里 | OK |
+| 8 | 长串入 S | `applyS0MergeSurfaces` 只加不删短串 | OK |
+| 9 | 不 locate | 建表末无 `attachBookKeysByLocate` | OK |
+
+入口：`runBookNounS1Dictation`（`bookNounS1Dictation.ts` 437–506 行一带）。
+
+---
+
+### 明确缺口 / 不一致
+
+1. **补缺并行切批**：代码 = S₀ **间隙**并行；你定的 = **每两 mask 一组、组内串联、包₁并行 / 包₂吃前包** → **未实现**。  
+2. **残文为空早退**（`batches.length===0`）：直接 `S=s0`，**跳过合并审查** → 若只跑规则、无补缺窗，紧贴短串不会被合并。  
+3. **`buildBookNounIndexRulesOnly`**：只有短串 S₀，**不跑补缺、不跑合并**。  
+4. 文件头注释已写 MERGE 在补缺后；函数注释仍写「并集→S」，略旧，不影响行为。
+
+---
+
+### 一句结论
+
+**顺序上「短串 → 补缺 → 再审紧贴合并」已按你的纠正落地**；**补缺那一步的「双 mask 组成组串并行」还没改，仍是 S₀ 间隙 + priorNouns。**
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+紧贴簇
+clusterTightS0MaskHits：中间仅空白/轻标点
+OK
+```
+ 我认为这里是必须要在a1中mask，你才能够看得清楚哪些是挨着一起的
+
+## Assistant
+
+你说得对：要紧贴判定，应先在 A1 的 T 上 mask，再看残文里相邻的 █ 块。正在对照现码，改成按 mask 后的 █ 跑来聚类。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":175,"limit":120}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","offset":210,"limit":80}
+```
+
+## Assistant
+
+现码虽已 mask，但紧贴是按「原文串命中位置」判的，不是看残文里的 █。改为：先在 A1 上 mask，再按相邻 █ 跑聚类。
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":"/** 在一段 T 上找出已提取名词的全部落点（ignore-case；调试用） */\nexport function listS0MaskHitsInText(\n  T: string,\n  s0: BookNounDraft[],\n  plainIndex = 0,\n): S0MaskHit[] {\n  const hits: S0MaskHit[] = []\n  const lowerHay = T.toLowerCase()\n  for (const d of s0) {\n    const needle = d.text.trim()\n    if (needle.length < 2) continue\n    const lower = needle.toLowerCase()\n    let from = 0\n    while (from < lowerHay.length) {\n      const at = lowerHay.indexOf(lower, from)\n      if (at < 0) break\n      hits.push({\n        plainIndex,\n        start: at,\n        end: at + needle.length,\n        text: T.slice(at, at + needle.length),\n      })\n      from = at + Math.max(1, needle.length)\n    }\n  }\n  hits.sort((a, b) => a.start - b.start || a.end - b.end)\n  return hits\n}\n\nexport function isTightMaskGap(between: string): boolean {\n  return TIGHT_GAP_RE.test(between)\n}\n\n/** 残文里连续 █ 块（A1 mask 后才能看见的落点） */\nexport type MaskRun = { start: number; end: number }\n\nexport function listMaskRunsInResidual(residual: string): MaskRun[] {\n  const runs: MaskRun[] = []\n  let i = 0\n  while (i < residual.length) {\n    if (residual[i] !== MASK_CHAR) {\n      i += 1\n      continue\n    }\n    const start = i\n    while (i < residual.length && residual[i] === MASK_CHAR) i += 1\n    runs.push({ start, end: i })\n  }\n  return runs\n}\n\n/**\n * 紧贴簇：**必须先在 A1 原文上 mask**，再看残文里相邻 █ 块。\n * 两块 █ 中间只有空白/轻标点 → 收成一簇；单块不成簇。\n * hits[].text = 该 █ 块对应的原文切片（供 LLM parts / 硬闸）。\n */\nexport function clusterTightMaskRunsOnResidual(input: {\n  original: string\n  residual: string\n  plainIndex?: number\n  clusterIdPrefix?: string\n}): S0TightCluster[] {\n  if (input.original.length !== input.residual.length) {\n    throw new Error(\n      'clusterTightMaskRunsOnResidual: original 与 residual 必须同长（同长 █ mask）',\n    )\n  }\n  const runs = listMaskRunsInResidual(input.residual)\n  if (runs.length < 2) return []\n\n  const plainIndex = input.plainIndex ?? 0\n  const clusters: S0TightCluster[] = []\n  let cur: MaskRun[] = [runs[0]!]\n  let n = 0\n\n  const toHit = (r: MaskRun): S0MaskHit => ({\n    plainIndex,\n    start: r.start,\n    end: r.end,\n    text: input.original.slice(r.start, r.end),\n  })\n\n  const flush = () => {\n    if (cur.length < 2) {\n      cur = []\n      return\n    }\n    const start = cur[0]!.start\n    const end = cur[cur.length - 1]!.end\n    n += 1\n    clusters.push({\n      clusterId: `${input.clusterIdPrefix ?? 'mrg'}_${String(n).padStart(3, '0')}`,\n      hits: cur.map(toHit),\n      originalSlice: input.original.slice(start, end),\n      residualSlice: input.residual.slice(start, end),\n    })\n    cur = []\n  }\n\n  for (let i = 1; i < runs.length; i++) {\n    const prev = cur[cur.length - 1]!\n    const next = runs[i]!\n    const gap = input.residual.slice(prev.end, next.start)\n    if (isTightMaskGap(gap)) {\n      cur.push(next)\n    } else {\n      flush()\n      cur = [next]\n    }\n  }\n  flush()\n  return clusters\n}\n\n/** @deprecated 旧：按原文串命中聚簇；主路径请用 clusterTightMaskRunsOnResidual */\nexport function clusterTightS0MaskHits(input: {\n  original: string\n  residual: string\n  hits: S0MaskHit[]\n  clusterIdPrefix?: string\n}): S0TightCluster[] {\n  return clusterTightMaskRunsOnResidual({\n    original: input.original,\n    residual: input.residual,\n    clusterIdPrefix: input.clusterIdPrefix,\n  })\n}\n\n/**\n * 全书 A1 unit：先 mask 成残文，再按 █ 块紧贴聚簇（保持 A1 前后序）。\n */\nexport function buildS0TightMergeClusters(input: {\n  plains: PlainText[]\n  residualPlains: PlainText[]\n  s0: BookNounDraft[]\n}): S0TightCluster[] {\n  if (input.plains.length !== input.residualPlains.length) {\n    throw new Error('buildS0TightMergeClusters: plains 与 residual 长度必须一致')\n  }\n  void input.s0 // 残文须已由调用方用全部已提取名词 mask 好\n  const out: S0TightCluster[] = []\n  for (let i = 0; i < input.plains.length; i++) {\n    const original = input.plains[i]!.T\n    const residual = input.residualPlains[i]!.T\n    out.push(\n      ...clusterTightMaskRunsOnResidual({\n        original,\n        residual,\n        plainIndex: i,\n        clusterIdPrefix: `p${String(i).padStart(4, '0')}`,\n      }),\n    )\n  }\n  return out\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","streamContent":"/**\n * 已提取名词的相邻 mask → LLM 合并审查\n *\n * 时机：**S₁ 补缺完成之后**。\n * 1) 用全部已提取名词（S₀∪S₁）在 A1 原文上 **同长 mask** → 残文\n * 2) 看残文里相邻 █ 块（中间仅空白/轻标点）→ 紧贴簇\n * 3) 分批问 LLM 能否合并；通过者 ⊆ 本簇原文切片；长串加进权威表 S\n */"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","streamContent":"export {\n  collectPlainTexts,\n  extractS0FromBookIndex,\n  extractS0FromPlainTexts,\n  listS0CandidateSpans,\n  listS0MaskHitsInText,\n  listMaskRunsInResidual,\n  clusterTightMaskRunsOnResidual,\n  clusterTightS0MaskHits,\n  buildS0TightMergeClusters,\n  applyS0MergeSurfaces,\n  isTightMaskGap,\n  preferLongestNounSpans,\n  isStrictSubspan,\n  attachBookKeysByLocate,\n  buildResidualPlainTexts,\n  buildS1BatchesByS0Gaps,\n  chunkLongTextSerial,\n  joinResidualBatchText,\n  buildBookNounIndexRulesOnly,\n  maskSurfacesInText,\n  dedupeNounDrafts,\n  mergeS0S1,\n  mergeS0S1Drafts,\n  surfacesToDrafts,\n} from '../arch/bookNounIndex'\nexport type {\n  BookNounDraft,\n  BookNounEntry,\n  BookNounIndex,\n  PlainText,\n  ResidualBatch,\n  S0Span,\n  S0MaskHit,\n  S0TightCluster,\n  MaskRun,\n} from '../arch/bookNounIndex'"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","streamContent":"3. **短语合并（2026-09-14 改）**：规则侧抽短串；**等 S₁ 补缺完成之后**，用全部已提取名词（`S₀∪S₁`）在 A1 原文上 **先 mask**，再看残文里相邻 **█ 块**（中间仅空白/轻标点）成簇，分批 LLM 审查能否合并（硬闸：合并结果 ⊆ 本簇原文切片）。采纳后长串加进 `S`。实现：`clusterTightMaskRunsOnResidual` / `bookNounS0Merge.ts`。"}
+```
+
+### Tool Read Lints
+
+```
+{"paths":["C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts"]}
+```
+
+## Assistant
+
+对，要紧贴必须先在 A1 上 mask。原先虽做了 mask，但聚类仍按「原文串命中位置」，等于没靠 █ 来看。
+
+已改成：
+
+```text
+全部已提取名词 → 在 A1 的 T 上同长 mask
+  → 扫残文里连续 █ 块
+  → 两块中间只有空白/轻标点 → 紧贴簇
+  → 再送 LLM 审能否合并
+```
+
+主函数：`clusterTightMaskRunsOnResidual`（`listMaskRunsInResidual`）。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+3
+mask 残文
+buildResidualPlainTexts（仅用 S₀）
+OK
+```
+ 这个mask是否也回到原来的a1表呢？
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+4
+补缺分批
+buildS1BatchesByS0Gaps：每个 S₀ 间隙一批 + priorNouns=2；runBatchesParallel
+与你定的「双 mask 成组 / 组内串联带前 mask」不一致（仍是旧间隙并行）
+5
+S₁ 硬闸
+gateNounsAgainstBatchText；批内 maxRounds 掩串二轮
+OK（这是补缺轮次，不是组合并）
+```
+ 规范这两处的代码，如何分组的以及如何组内窜连分批的。严格写成代码并且注释
+
+## Assistant
+
+先澄清：mask 作用在从 A1 抽出的 T 副本上，不写回 A1 存储。接着按「双 mask 成组 + 组内串联」重写补缺分批与调度，并加严注释。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":600,"limit":100}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":400,"limit":150}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\parallelLlmBatch.ts","limit":50}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":700,"limit":30}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"buildS1BatchesByS0Gaps","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src","caseInsensitive":false,"multiline":false,"toolCallId":"call-c53a2060-715d-48e4-b68b-12e924cf5ec8-111\nfc_e9b36b55-d4e7-90eb-ba43-76615ee97a2c_1","offset":0}
+```
+
+### Tool Edit File V2
+
+```
+{}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":530,"limit":80}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":720,"limit":50}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":500,"limit":30}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"export type ResidualBatch","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-dd83e43a-2dcf-4665-a24e-d73b68bbf99c-115\nfc_18de8864-4cd4-9b65-b545-9a41125caf31_0","offset":0}
+```
+
+### Tool Edit File V2
+
+````
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":"export type ResidualBatch = {\n  batchId: string\n  text: string\n}\n\n/**\n * 补缺分组（产品定稿）：\n * - **组间并行**：每 **2 个** S₀ 的 █ 块成一组（组A=█₁…█₂，组B=█₃…█₄…）\n * - **组内串联**：仅当组窗过长才切成包₁、包₂…；后包必须带上前面已给出的 █\n * - **波次**：第 1 波各组包₁并行；第 2 波起用前包收卷结果再 mask 后推进\n *\n * 注意：residual 是 A1 抽出来的 T **副本**上盖 █，**不写回** BookIndex.chunks。\n */\nexport type S1MaskGroup = {\n  groupId: string\n  /** 组在全书拼接残文上的 [start,end) */\n  start: number\n  end: number\n  /** 组内包序；packages[0] 可与其它组并行，packages[k>0] 依赖同组前包 */\n  packages: ResidualBatch[]\n  /** 本组覆盖的 █ 块个数（1 或 2；末组可能落单） */\n  maskCount: number\n}\n\n/**\n * 从上一包正文里抽出「已给出的 mask 后缀」：\n * 自该包内最早出现的 █ 起切到包末（含中间明文）。\n * 若无 █，退回包末 ≤64 字，避免空前缀。\n */\nexport function carryPriorMasksSuffix(prevPackageText: string): string {\n  const firstMask = prevPackageText.indexOf(MASK_CHAR)\n  if (firstMask < 0) {\n    return prevPackageText.slice(Math.max(0, prevPackageText.length - 64))\n  }\n  return prevPackageText.slice(firstMask)\n}\n\n/**\n * 组内串联切包（只在单组过长时用）。\n *\n * 规则：\n * 1. 按 maxChars 取下一段 body（尽量在空白处软切）\n * 2. 第 2 包起：正文 = carryPriorMasksSuffix(上一包) + body\n *    → 保证前面给出的 █ 一直带进后续包，直到组末\n */\nexport function splitGroupTextSerial(\n  groupText: string,\n  opts: { maxChars: number; groupId: string },\n): ResidualBatch[] {\n  const maxChars = opts.maxChars\n  const raw = groupText\n  if (!raw.replace(/█/g, '').trim() && !raw.includes(MASK_CHAR)) return []\n\n  if (raw.length <= maxChars) {\n    return [{ batchId: `${opts.groupId}_p01`, text: raw }]\n  }\n\n  const takeBudget = (from: number): { body: string; consumed: number } => {\n    if (from >= raw.length) return { body: '', consumed: 0 }\n    if (from + maxChars >= raw.length) {\n      return { body: raw.slice(from), consumed: raw.length - from }\n    }\n    const hard = from + maxChars\n    const softFloor = from + Math.floor(maxChars * 0.85)\n    for (let i = hard - 1; i >= softFloor; i--) {\n      if (/\\s/.test(raw[i]!)) {\n        return { body: raw.slice(from, i + 1), consumed: i + 1 - from }\n      }\n    }\n    return { body: raw.slice(from, hard), consumed: maxChars }\n  }\n\n  const out: ResidualBatch[] = []\n  let i = 0\n  let prevText = ''\n  let n = 0\n  while (i < raw.length) {\n    const { body, consumed } = takeBudget(i)\n    if (consumed <= 0) break\n    n += 1\n    const text =\n      n === 1 ? body : `${carryPriorMasksSuffix(prevText)}${body}`\n    out.push({\n      batchId: `${opts.groupId}_p${String(n).padStart(2, '0')}`,\n      text,\n    })\n    prevText = text\n    i += consumed\n  }\n  return out\n}\n\n/**\n * 双 mask 成组 → 组内可串联切包。\n *\n * ```\n * 残文（A1.T 副本已按 S₀ 同长 mask）：\n *   … [█₁] … [█₂] … [█₃] … [█₄] …\n *       └── 组A ──┘         └── 组B ──┘\n *         组间并行              组间并行\n * ```\n *\n * 组窗：\n * - 组 g 含 █ 块 runs[2g]、runs[2g+1]（若有）\n * - start = 文首(g=0) 或上一组末 mask 之后\n * - end   = 本组最后一个 mask 之末；**最后一组**延到文末（吃掉尾部明文）\n * - 无任何 █：整份残文视作一组（纯补缺窗）\n */\nexport function buildS1MaskGroups(input: {\n  residual: string\n  maxChars?: number\n  /** 每组几个 mask，默认 2 */\n  masksPerGroup?: number\n}): S1MaskGroup[] {\n  const maxChars = input.maxChars ?? 12_000\n  const masksPerGroup = Math.max(1, input.masksPerGroup ?? 2)\n  const residual = input.residual\n  if (!residual) return []\n\n  const runs = listMaskRunsInResidual(residual)\n  const groups: S1MaskGroup[] = []\n\n  // 无 S₀ 落点：无法按 mask 切组 → 整文一组，仅按字数串联\n  if (runs.length === 0) {\n    if (!residual.replace(/█/g, '').trim()) return []\n    const packages = splitGroupTextSerial(residual, {\n      maxChars,\n      groupId: 'g000',\n    })\n    if (!packages.length) return []\n    return [\n      {\n        groupId: 'g000',\n        start: 0,\n        end: residual.length,\n        packages,\n        maskCount: 0,\n      },\n    ]\n  }\n\n  let gi = 0\n  for (let r = 0; r < runs.length; r += masksPerGroup) {\n    const sliceRuns = runs.slice(r, r + masksPerGroup)\n    const last = sliceRuns[sliceRuns.length - 1]!\n    const isLastGroup = r + masksPerGroup >= runs.length\n\n    // 组起：首组从文首；其后从「上一组最后一个 mask 之后」\n    const start = r === 0 ? 0 : runs[r - 1]!.end\n    // 组止：本组末 mask 之后；末组吃到文末\n    const end = isLastGroup ? residual.length : last.end\n\n    const groupText = residual.slice(start, end)\n    // 组窗几乎全是 █、无可抄明文 → 跳过（补缺无事可做）\n    if (groupText.replace(/█/g, '').trim().length < 4) continue\n\n    gi += 1\n    const groupId = `g${String(gi).padStart(3, '0')}`\n    const packages = splitGroupTextSerial(groupText, { maxChars, groupId })\n    if (!packages.length) continue\n\n    groups.push({\n      groupId,\n      start,\n      end,\n      packages,\n      maskCount: sliceRuns.length,\n    })\n  }\n  return groups\n}\n\n/**\n * 从 plains/residualPlains 建补缺组（拼接残文上切组）。\n * plains 仅用于长度对齐校验；切组只看 residual（已 mask 的 A1.T 副本）。\n */\nexport function buildS1MaskGroupsFromPlains(input: {\n  plains: PlainText[]\n  residualPlains: PlainText[]\n  maxChars?: number\n  masksPerGroup?: number\n}): S1MaskGroup[] {\n  if (input.plains.length !== input.residualPlains.length) {\n    throw new Error(\n      'buildS1MaskGroupsFromPlains: plains 与 residualPlains 长度必须一致',\n    )\n  }\n  const residual = joinResidualBatchText(input.residualPlains)\n  return buildS1MaskGroups({\n    residual,\n    maxChars: input.maxChars,\n    masksPerGroup: input.masksPerGroup,\n  })\n}\n\ntype NounSpan = { start: number; end: number; text: string }"}
+````
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":"/**\n * @deprecated 旧主路径：按 S₀ **间隙**并行 + priorNouns。\n * 新产品口径请用 `buildS1MaskGroups` / `buildS1MaskGroupsFromPlains`\n * （双 mask 成组、组间并行、组内串联带前 █）。\n */\nexport function buildS1BatchesByS0Gaps(input: {"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","streamContent":"export function buildResidualPlainTexts(\n  plains: PlainText[],\n  s0: BookNounDraft[],\n): PlainText[] {\n  // plains = 从 A1.chunks 抽出的 T **副本**；此处 mask 只改副本，不写回 A1 表\n  const surfaces = s0.map((e) => e.text)\n  return plains.map((p) => ({ T: maskSurfacesInText(p.T, surfaces) }))\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"import {\n  type BookNounDraft,\n  type BookNounIndex,\n  type ResidualBatch,\n  type S1MaskGroup,\n  buildResidualPlainTexts,\n  buildS1MaskGroupsFromPlains,\n  collectPlainTexts,\n  dedupeNounDrafts,\n  extractS0FromPlainTexts,\n  maskSurfacesInText,\n  nounCanonical,\n  surfacesToDrafts,\n} from './bookNounIndex'\nimport { runBatchesParallel } from './parallelLlmBatch'\nimport { refineS0ByAdjacentMergeLlm } from './bookNounS0Merge'"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"/**\n * 建表入口：\n * 1) A1 → 纯 T 副本（不改 A1 存储）\n * 2) 短串 S₀ → 在 T 副本上 mask → 残文\n * 3) 双 mask 成组；组间并行包₁；组内过长则串联，后包带前 █，并用前包收卷再 mask\n * 4) S₁ 硬闸收卷 → 并集\n * 5) 补缺后：全部已提取名词再 mask 副本 → █ 紧贴簇 → LLM 合并 → S\n * 建表结束；**不 locate**\n */\nexport async function runBookNounS1Dictation(input: {\n  bookIndex: BookIndex\n  /** 已有 S₀ Draft；否则现场规则抽 */\n  s0?: BookNounDraft[]\n  maxCharsPerBatch?: number\n  maxRoundsPerBatch?: number\n  /** 组间并行度（同一波次内），默认 3 */\n  concurrency?: number\n  /** 每组几个 S₀ mask，默认 2 */\n  masksPerGroup?: number\n  signal?: AbortSignal\n  onProgress?: (msg: string) => void\n}): Promise<RunS1DictationResult> {\n  const plains = collectPlainTexts(input.bookIndex)\n  if (plains.length === 0) {\n    return {\n      ok: false,\n      index: {\n        docId: input.bookIndex.docId,\n        builtAt: Date.now(),\n        s0: [],\n        s1: [],\n        S: [],\n      },\n      batchResults: [],\n      note: '无可用原文 T（A1 空或不可检索）',\n    }\n  }\n\n  const s0 = dedupeNounDrafts(\n    input.s0?.length ? input.s0 : extractS0FromPlainTexts(plains),\n  )\n  input.onProgress?.(`S₀ 短串 Draft ×${s0.length} · 制残文（A1.T 副本 mask）…`)\n\n  // mask 只落在 plains 副本上，不写回 bookIndex.chunks\n  const residualPlains = buildResidualPlainTexts(plains, s0)\n\n  /**\n   * 分组：\n   * - 每 masksPerGroup（默认 2）个 █ → 一组\n   * - 组间可并行；组内 packages[k>0] 串联且带前 █\n   */\n  const groups = buildS1MaskGroupsFromPlains({\n    plains,\n    residualPlains,\n    maxChars: input.maxCharsPerBatch ?? 12_000,\n    masksPerGroup: input.masksPerGroup ?? 2,\n  })\n\n  const concurrency = Math.max(1, input.concurrency ?? 3)\n  const batchResults: S1BatchResult[] = []\n  const s1Acc: BookNounDraft[] = []\n\n  if (groups.length === 0) {\n    // 无可补缺明文窗：仍做合并审查（仅 S₀）\n    input.onProgress?.('无补缺窗 · 跳过 S₁ · 直接合并审查…')\n    const mergeRefine = await refineS0ByAdjacentMergeLlm({\n      plains,\n      s0,\n      concurrency,\n      signal: input.signal,\n      onProgress: input.onProgress,\n    })\n    return {\n      ok: true,\n      index: {\n        docId: input.bookIndex.docId,\n        builtAt: Date.now(),\n        s0,\n        s1: [],\n        S: mergeRefine.s0,\n      },\n      batchResults: [],\n      note: `无补缺窗 · S₀×${s0.length} · ${mergeRefine.note}`,\n    }\n  }\n\n  const maxWaves = Math.max(...groups.map((g) => g.packages.length))\n  /** 同组前包已收卷的明文串 → 下一波再 mask 进本包（「用前包结果」） */\n  const prevAcceptedByGroup = new Map<string, string[]>()\n\n  for (let wave = 0; wave < maxWaves; wave++) {\n    type WaveJob = { group: S1MaskGroup; batch: ResidualBatch }\n    const jobs: WaveJob[] = []\n\n    for (const group of groups) {\n      const pkg = group.packages[wave]\n      if (!pkg) continue\n      let text = pkg.text\n      if (wave > 0) {\n        // 波次≥2：把同组前包默写收卷串盖进本包，避免重复抄、并推进上下文\n        const prev = prevAcceptedByGroup.get(group.groupId) ?? []\n        if (prev.length) text = maskSurfacesInText(text, prev)\n      }\n      jobs.push({\n        group,\n        batch: { batchId: pkg.batchId, text },\n      })\n    }\n\n    if (!jobs.length) continue\n\n    input.onProgress?.(\n      `S₁ 默写 · 波次 ${wave + 1}/${maxWaves} · 组包 ×${jobs.length} · 并行≤${concurrency}…`,\n    )\n\n    const parallel = await runBatchesParallel({\n      batches: jobs,\n      concurrency,\n      signal: input.signal,\n      run: (job, _i, signal) =>\n        runS1DictationOnBatch({\n          batch: job.batch,\n          maxRounds: input.maxRoundsPerBatch ?? 2,\n          signal,\n          onProgress: input.onProgress,\n        }),\n    })\n\n    for (let ji = 0; ji < parallel.results.length; ji++) {\n      const r = parallel.results[ji]!\n      const job = jobs[ji]!\n      if (!r.ok) continue\n      batchResults.push(r.value)\n      s1Acc.push(...surfacesToS1Drafts(r.value.surfaces))\n      // 累积同组已收串，供下一波 mask\n      const prev = prevAcceptedByGroup.get(job.group.groupId) ?? []\n      prevAcceptedByGroup.set(job.group.groupId, [\n        ...prev,\n        ...r.value.surfaces,\n      ])\n    }\n  }\n\n  const s1 = dedupeNounDrafts(s1Acc)\n  const beforeMerge = dedupeNounDrafts([...s0, ...s1])\n\n  /** 补缺之后：对全部已提取名词在 A1.T 副本上再 mask → █ 紧贴簇 → 合并审查 */\n  input.onProgress?.(\n    `名词合并审查 · 已提取 ×${beforeMerge.length} · 紧贴簇…`,\n  )\n  const mergeRefine = await refineS0ByAdjacentMergeLlm({\n    plains,\n    s0: beforeMerge,\n    concurrency,\n    signal: input.signal,\n    onProgress: input.onProgress,\n  })\n  const S = mergeRefine.s0\n\n  const index: BookNounIndex = {\n    docId: input.bookIndex.docId,\n    builtAt: Date.now(),\n    s0,\n    s1,\n    S,\n  }\n\n  return {\n    ok: true,\n    index,\n    batchResults,\n    note: `S₀×${s0.length} · S₁×${s1.length} · S×${S.length} · 组×${groups.length} · 波×${maxWaves} · ${mergeRefine.note}`,\n  }\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","streamContent":"  buildS1BatchesByS0Gaps,\n  buildS1MaskGroups,\n  buildS1MaskGroupsFromPlains,\n  splitGroupTextSerial,\n  carryPriorMasksSuffix,\n  chunkLongTextSerial,"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","streamContent":"  ResidualBatch,\n  S0Span,\n  S0MaskHit,\n  S0TightCluster,\n  MaskRun,\n  S1MaskGroup,\n} from '../arch/bookNounIndex'"}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\parallelLlmBatch.ts","offset":60,"limit":80}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":" * 流水线：\n *   BEFORE  A1→T副本 → 短串 S₀ → 副本 mask → 双mask成组\n *   WAVE    组间并行包₁；组内过长串联，后包带前█ + 前包收卷再mask\n *   AFTER   本批子串硬闸 → S₁ Draft → 并集\n *   MERGE   全部已提取再在副本上 mask → █紧贴簇 → LLM合并 → S\n */"}
+```
+
+### Tool Read Lints
+
+```
+{"paths":["C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts"]}
+```
+
+## Assistant
+
+### 关于「mask 是否回到 A1」
+
+**是对 A1 抽出来的原文做的，但不写回 A1 表。**
+
+- `collectPlainTexts`：从 `BookIndex.chunks`（A1）取出 `T` → **副本** `plains`
+- `buildResidualPlainTexts`：只在副本上盖 `█`
+- `bookIndex.chunks` **不被改写**
+
+合并审查那步同样：再对这份 T 副本 mask，看 `█` 紧贴。
+
+---
+
+### 已规范的补缺分组 / 组内串联
+
+| 规则 | 代码 |
+|------|------|
+| 每 2 个 `█` 一组，组间并行 | `buildS1MaskGroups` |
+| 组内过长才切包；后包带上前面的 `█` | `splitGroupTextSerial` + `carryPriorMasksSuffix` |
+| 第 1 波：各组包₁并行；第 2 波起用前包收卷再 mask | `runBookNounS1Dictation` 波次循环 |
+
+旧的 `buildS1BatchesByS0Gaps`（按间隙切）已标 `@deprecated`，主路径不再用。
+
+**批内 `maxRounds` 掩串二轮**仍是同一包上的补缺收敛，不是组内串联；组内串联是包₁→包₂。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+合并审查那步同样：再对这份 T 副本 mask，看 █ 紧贴。
+```
+ 是的！
+
+## Assistant
+
+对，现码就是这样：`refineS0ByAdjacentMergeLlm` 用全部已提取名词在 T 副本上 mask → `clusterTightMaskRunsOnResidual` 看相邻 █ → 再送 LLM 合并。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+每 2 个 █ 一组，组间并行
+buildS1MaskGroups
+组内过长才切包；后包带上前面的 █
+splitGroupTextSerial + carryPriorMasksSuffix
+第 1 波：各组包₁并行；第 2 波起用前包收卷再 mask
+runBookNounS1Dictation 波次循环
+```
+ 给我看代码并且逐句解释如何做到我想要的效果
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":513,"limit":220}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":405,"limit":180}
+```
+
+## Assistant
+
+下面三段代码对应你要的三件事；按执行顺序说明。
+
+---
+
+### 1. 每 2 个 █ 一组（组间可并行的「组」）
+
+```622:683:src/arch/bookNounIndex.ts
+export function buildS1MaskGroups(input: {
+  residual: string
+  maxChars?: number
+  masksPerGroup?: number
+}): S1MaskGroup[] {
+  const maxChars = input.maxChars ?? 12_000
+  const masksPerGroup = Math.max(1, input.masksPerGroup ?? 2)
+  // ...
+  const runs = listMaskRunsInResidual(residual)  // 扫残文里连续 █ 块
+
+  for (let r = 0; r < runs.length; r += masksPerGroup) {
+    const sliceRuns = runs.slice(r, r + masksPerGroup)  // 一次取 2 块：█₁█₂ / █₃█₄
+    const last = sliceRuns[sliceRuns.length - 1]!
+    const isLastGroup = r + masksPerGroup >= runs.length
+
+    const start = r === 0 ? 0 : runs[r - 1]!.end  // 首组从文首；否则从上一组末 █ 之后
+    const end = isLastGroup ? residual.length : last.end  // 末组吃到文末
+
+    const groupText = residual.slice(start, end)
+    const packages = splitGroupTextSerial(groupText, { maxChars, groupId })
+    groups.push({ groupId, start, end, packages, maskCount: sliceRuns.length })
+  }
+}
+```
+
+| 句子 | 效果 |
+|------|------|
+| `listMaskRunsInResidual` | 在已 mask 的 A1.T 副本上找出所有 █ 块 |
+| `r += masksPerGroup`（默认 2） | 每两个 █ 绑成一组 → 组A=█₁…█₂，组B=█₃…█₄ |
+| `start = 上组末 █ 之后` | 组窗互不重叠，各管各的「mask 前 → 本组末 mask」 |
+| `末组 end = 文末` | 最后一组把尾部明文也吃进补缺窗 |
+| `splitGroupTextSerial(groupText)` | 组窗先整段留下；过长才在组内再切包 |
+
+各组彼此独立 → 后面可以组间并行。
+
+---
+
+### 2. 组内过长才切包；后包带上前面的 █
+
+```543:603:src/arch/bookNounIndex.ts
+export function carryPriorMasksSuffix(prevPackageText: string): string {
+  const firstMask = prevPackageText.indexOf(MASK_CHAR)
+  if (firstMask < 0) {
+    return prevPackageText.slice(Math.max(0, prevPackageText.length - 64))
+  }
+  return prevPackageText.slice(firstMask)  // 从上一包最早 █ 切到包末
+}
+
+export function splitGroupTextSerial(groupText, opts) {
+  if (raw.length <= maxChars) {
+    return [{ batchId: `${opts.groupId}_p01`, text: raw }]  // 不长：一包打完
+  }
+  // 按 maxChars 取 body；第 2 包起：
+  const text = n === 1 ? body : `${carryPriorMasksSuffix(prevText)}${body}`
+}
+```
+
+| 句子 | 效果 |
+|------|------|
+| `length <= maxChars → 只返回 p01` | 组不长就不串联，整组一包 |
+| `takeBudget` 软切空白 | 过长时在字数预算内切开，尽量不在词中间砍 |
+| `carryPriorMasksSuffix` | 后包开头粘上「上一包里从第一个 █ 到包末」 |
+| `text = 前缀█段 + 新 body` | 后包始终看得见前面已给出的 mask，直到组末 |
+
+这就是「组内串联、带上前面的 mask」。
+
+---
+
+### 3. 第 1 波各组包₁并行；第 2 波起用前包收卷再 mask
+
+```456:545:src/arch/bookNounS1Dictation.ts
+const groups = buildS1MaskGroupsFromPlains({ … masksPerGroup: 2 })
+
+const maxWaves = Math.max(...groups.map((g) => g.packages.length))
+const prevAcceptedByGroup = new Map<string, string[]>()
+
+for (let wave = 0; wave < maxWaves; wave++) {
+  const jobs = []
+  for (const group of groups) {
+    const pkg = group.packages[wave]
+    if (!pkg) continue
+    let text = pkg.text
+    if (wave > 0) {
+      // 用同组前包默写结果再 mask 进本包
+      const prev = prevAcceptedByGroup.get(group.groupId) ?? []
+      if (prev.length) text = maskSurfacesInText(text, prev)
+    }
+    jobs.push({ group, batch: { batchId: pkg.batchId, text } })
+  }
+  // 本波所有组的「第 wave 包」一起并行
+  await runBatchesParallel({ batches: jobs, concurrency, run: runS1DictationOnBatch })
+
+  // 收卷串记到该组，供下一波
+  prevAcceptedByGroup.set(job.group.groupId, [...prev, ...r.value.surfaces])
+}
+```
+
+| 句子 | 效果 |
+|------|------|
+| `wave = 0`：各组都取 `packages[0]` | 第 1 波 = 各组的包₁ |
+| `runBatchesParallel(jobs)` | 这些包₁ **同时**打给补缺 LLM（组间并行） |
+| `wave > 0` 才进下一轮循环 | 必须等上一波整波跑完（同组包₂不会抢跑） |
+| `maskSurfacesInText(text, prev)` | 「用前包结果」：前包抄到的词盖成 █，后包不再当漏网抄 |
+| `prevAcceptedByGroup` 按 `groupId` 存 | 只影响 **同组** 下一包；组 B 不等组 A 的内容，只等波次节奏 |
+
+---
+
+### 串起来（你要的效果）
+
+```text
+残文：… █₁ … █₂ … █₃ … █₄ …
+        └──组A──┘       └──组B──┘
+
+波1 并行：  组A包₁  +  组B包₁
+              ↓              ↓
+波2（若组内被切过长）：
+  组A包₂ = 带上包₁里的 █ + 前包收卷再 mask + 后半正文
+  组B包₂ = 同理（与组A包₂ 仍可并行）
+```
+
+不长的组只有包₁，波1做完就结束；只有过长组才会进入波2 串联。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+r += masksPerGroup（默认 2）
+每两个 █ 绑成一组 → 组A=█₁…█₂，组B=█₃…█₄
+```
+ 组a和组b不会出现重合吧？
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+过长时在字数预算内切开，尽量不在词中间砍
+```
+ 长度是不是可以去看deepseek api关于注意力的token呢？
+然后另外，还需要设计的就是分组然后串联执行完了，然后还需要执行多少次循环，我认为这个就是需要将截止目前为止所有已经提取的名词maskt原文，然后应该会有一个数值，如果这个数值达到多少就应该停，然后mask原文，开始执行那个审查合并的llm，最后执行到什么程度，也就是说某个参照值不再变化了，然后就可以直接合并所有的名词表，开始执行qs了
+
+## Assistant
+
+先确认组是否重叠，并查仓库里 DeepSeek/token 相关配置，再把外层循环的停法设计清楚。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":655,"limit":40}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"max_tokens|context|12000|12_000|deepseek|attention|token","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src","glob":"*.{ts,tsx,md}","caseInsensitive":false,"headLimit":40,"multiline":false,"toolCallId":"call-4e6d3963-4728-4535-a2fb-3a09a2187b13-129\nfc_bbd6da50-8226-9fbd-aa1d-420c1813c2a8_0","offset":0}
+```
+
+### Tool Web Search
+
+```
+{"searchTerm":"DeepSeek API context window max tokens attention 2026","toolCallId":"call-4e6d3963-4728-4535-a2fb-3a09a2187b13-130\nfc_bbd6da50-8226-9fbd-aa1d-420c1813c2a8_1"}
+```
+
+## Assistant
+
+### 1. 组 A / 组 B 会不会重合？
+
+**不会。** 组窗是半开区间、首尾相接：
+
+```text
+组A: [0, end(█₂) )
+组B: [end(█₂), end(█₄) )     ← start = 上一组最后一个 █ 的 end
+```
+
+`█₂` 本身只属于组 A；组 B 从 `█₂` **之后**才开始。正文不重叠，█ 块也不共享。
+
+---
+
+### 2. 长度能不能按 DeepSeek「注意力 / token」定？
+
+API **没有**「注意力分数 → 切多长」这种接口。能用的是：
+
+| 量 | DeepSeek V4（现文档） |
+|----|----------------------|
+| 上下文总窗 | **1M tokens**（输入+输出共享） |
+| 最大输出 | **384K**（`max_tokens` 上限） |
+
+现码 `maxChars: 12_000` 是字符软预算，和 API 无关。
+
+更稳的做法：用 tokenizer（或粗估：中文≈字，英文≈词/0.75）估 **本包 prompt tokens**，压在例如  
+`contextWindow × 0.05～0.15`（再留 system + `max_tokens` 输出），而不是死盯 1M——补缺任务不需要吃满窗，窗太大漏选更难审。
+
+仓库里的 `attention*` 是写信台「注意力到位」监控，**不是** DeepSeek 注意力权重，不能拿来切批。
+
+---
+
+### 3. 外层循环：跑到什么时候停 → 合并审查 → 再停 → 进 `S_q`
+
+建议把「参照值」钉成可算的量（都在 **A1.T 副本 mask 后**看）：
+
+```text
+循环 k = 1..Kmax
+  ① 用当前表 S^{(k-1)} 在 T 副本上 mask → R
+  ② 双 mask 组成组补缺 → 得到新增 Δ
+  ③ S^{(k)} = dedupe(S^{(k-1)} ∪ Δ)
+  ④ 再 mask → 算参照值 v_k
+  若 v_k 达标 / 相对 v_{k-1} 不再变 → 跳出补缺循环
+
+合并审查（一次或直到不动）
+  ⑤ 用 S 再 mask → 紧贴 █ 簇 → LLM 合并 → S'
+  ⑥ 再 mask → 算合并参照值 u
+  若 u 不再变（无新紧贴簇 / 无新合并）→ 停
+
+权威表 S_final = S'
+  → 开始 Q → S_q …
+```
+
+**建议的参照值（补缺阶段 `v`）** — 三选一作主闸，其余作辅：
+
+| 符号 | 含义 | 停条件（例） |
+|------|------|----------------|
+| `Δn` | 本轮新进表名词条数 | `Δn = 0` |
+| `open` | mask 后剩余明文里「名词样」span 数（或剩余非 █ 字数） | `open < τ` 或 `open` 两轮不变 |
+| `tight` | 紧贴 █ 簇个数（合并前也可盯） | 仅作观察；合并阶段主用 |
+
+**合并阶段 `u`：**
+
+| 符号 | 停条件 |
+|------|--------|
+| `Δmerge` | 本轮采纳合并条数 = 0 |
+| `tight` | 合并后再 mask，紧贴簇数不再降 |
+
+**默认建议：**  
+补缺：`Δn=0` 连续 **1～2** 轮，或 `k≥Kmax`（如 3）→ 停；  
+合并：`Δmerge=0` 或 `tight` 不变 → 停；  
+然后 `S_final` 进提问 / `S_q`。
+
+---
+
+若认这套参照值，下一步可以直接落：`maxChars` 改成按 DeepSeek tokenizer 估的 token 预算，以及补缺外环 + 合并外环的停闸。你定主闸用 `Δn` 还是 `open` 即可。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+更稳的做法：用 tokenizer（或粗估：中文≈字，英文≈词/0.75）估 本包 prompt tokens，压在例如
+contextWindow × 0.05～0.15（再留 system + max_tokens 输出），而不是死盯 1M——补缺任务不需要吃满窗，窗太大漏选更难审。
+```
+ 甚至我认为一定要确保就是送进去的先预留system然后控制剩下的，仍然能够就是保持最高水平的注意力
+
+## Assistant
+
+按「先扣 system + 输出预留，剩余再给残文，且刻意压短以保注意力」来落预算切批。
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src","globPattern":"**/*token*"}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","limit":80}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"LOCKED_LLM|contextWindow|max_tokens|chatModel","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-d7c0ce83-9a7c-4600-8c9c-b38570b38675-132\nfc_c9203325-aa24-9060-977e-07dfcb4c4601_0","offset":0}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Budget.ts","streamContent":"/**\n * S₁ 补缺 · 注意力优先的 token 预算\n *\n * DeepSeek V4 上下文可达 1M，但补缺任务必须 **刻意压短**：\n * 1) 先扣 system\n * 2) 再扣输出预留（max_tokens）与包装开销\n * 3) 剩余才给残文 body\n * 整窗再被 `totalTokensCap` 封顶（≠ API 上限），避免窗太大注意力稀释。\n *\n * 注：仓库 attention* 是写信台「注意力到位」监控，不是 API 注意力权重；\n * 这里「最高注意力」= 控制单次可见残文长度。\n */\n\nexport const S1_ATTENTION_BUDGET = {\n  /**\n   * 单次请求总 token 硬顶（system+user+预留输出都算进这顶）。\n   * 远小于 DeepSeek 1M；补缺要高注意力，不吃满窗。\n   */\n  totalTokensCap: 6_000,\n  /** 默写 JSON 输出预留（对应 flashChat max_tokens 量级，略留余量） */\n  outputReserveTokens: 1_024,\n  /** 估计/包装误差余量 */\n  slackTokens: 256,\n  /**\n   * 残文 body 再封一顶（字符），防止纯英文低估 token 时仍塞爆。\n   * 与 token 预算取 min。\n   */\n  residualCharsHardCap: 8_000,\n} as const\n\n/**\n * 粗估 token（无官方 tokenizer 时的可审计近似）：\n * - 汉字 / 全角：≈ 1 token / 字\n * - 其余：≈ 1 token / 4 字符\n */\nexport function estimateTextTokens(text: string): number {\n  let cjk = 0\n  let other = 0\n  for (const ch of text) {\n    if (/[\\u4e00-\\u9fff\\u3400-\\u4dbf]/.test(ch)) cjk += 1\n    else other += 1\n  }\n  return cjk + Math.ceil(other / 4)\n}\n\n/** 字符预算 → 粗估还能塞多少字符（偏保守：按「全汉字」反推） */\nexport function tokensToConservativeChars(tokens: number): number {\n  return Math.max(0, Math.floor(tokens))\n}\n\nexport type S1BudgetBreakdown = {\n  totalTokensCap: number\n  systemTokens: number\n  wrapperTokens: number\n  outputReserveTokens: number\n  slackTokens: number\n  /** 扣完预留后，残文 body 可用 token */\n  residualBodyTokens: number\n  /** 交给 splitGroupTextSerial 的 maxChars */\n  maxChars: number\n}\n\n/**\n * 先预留 system（+ user 壳），再控制剩下的残文长度。\n *\n * user 壳 = 不含残文正文的固定提示（batchId / 轮次说明 / 书名号等）。\n */\nexport function computeS1ResidualCharBudget(input: {\n  systemPrompt: string\n  /** 不含残文的 user 模板（可用空残文调 buildS1DictationUserPrompt 再剥掉残文段） */\n  userWrapper: string\n  totalTokensCap?: number\n  outputReserveTokens?: number\n  slackTokens?: number\n  residualCharsHardCap?: number\n}): S1BudgetBreakdown {\n  const totalTokensCap =\n    input.totalTokensCap ?? S1_ATTENTION_BUDGET.totalTokensCap\n  const outputReserveTokens =\n    input.outputReserveTokens ?? S1_ATTENTION_BUDGET.outputReserveTokens\n  const slackTokens = input.slackTokens ?? S1_ATTENTION_BUDGET.slackTokens\n  const residualCharsHardCap =\n    input.residualCharsHardCap ?? S1_ATTENTION_BUDGET.residualCharsHardCap\n\n  const systemTokens = estimateTextTokens(input.systemPrompt)\n  const wrapperTokens = estimateTextTokens(input.userWrapper)\n\n  const reserved =\n    systemTokens + wrapperTokens + outputReserveTokens + slackTokens\n  const residualBodyTokens = Math.max(0, totalTokensCap - reserved)\n\n  // 保守：按 1 token ≈ 1 字 反成 maxChars，再与硬顶取 min\n  const maxChars = Math.min(\n    residualCharsHardCap,\n    tokensToConservativeChars(residualBodyTokens),\n  )\n\n  return {\n    totalTokensCap,\n    systemTokens,\n    wrapperTokens,\n    outputReserveTokens,\n    slackTokens,\n    residualBodyTokens,\n    maxChars: Math.max(512, maxChars), // 至少给一小窗，避免预算算崩成 0\n  }\n}\n"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"import { runBatchesParallel } from './parallelLlmBatch'\nimport { refineS0ByAdjacentMergeLlm } from './bookNounS0Merge'\nimport { computeS1ResidualCharBudget } from './bookNounS1Budget'"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"  // mask 只落在 plains 副本上，不写回 bookIndex.chunks\n  const residualPlains = buildResidualPlainTexts(plains, s0)\n\n  /**\n   * 注意力优先预算：\n   * 先扣 system + user 壳 + 输出预留，剩余才给残文；\n   * 总窗用 totalTokensCap 封顶（远小于 API 1M），保证单包可见量可控。\n   */\n  const userWrapper = buildS1DictationUserPrompt({\n    batchId: 'BUDGET',\n    residualText: '',\n    round: 1,\n  })\n  const budget = computeS1ResidualCharBudget({\n    systemPrompt: S1_DICTATION_SYSTEM,\n    userWrapper,\n  })\n  const maxChars = input.maxCharsPerBatch ?? budget.maxChars\n  input.onProgress?.(\n    `S₁ 预算 · cap=${budget.totalTokensCap}tok · sys=${budget.systemTokens} · wrap=${budget.wrapperTokens} · out预留=${budget.outputReserveTokens} · 残文≤${maxChars}字`,\n  )\n\n  /**\n   * 分组：\n   * - 每 masksPerGroup（默认 2）个 █ → 一组\n   * - 组间可并行；组内 packages[k>0] 串联且带前 █\n   */\n  const groups = buildS1MaskGroupsFromPlains({\n    plains,\n    residualPlains,\n    maxChars,\n    masksPerGroup: input.masksPerGroup ?? 2,\n  })"}
+```
+
+### Tool Read Lints
+
+```
+{"paths":["C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Budget.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts"]}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","streamContent":"export {\n  S0_MERGE_SYSTEM,\n  buildS0MergeUserPrompt,\n  parseS0MergesFromLlm,\n  gateS0MergesAgainstCluster,\n  runS0MergeOnCluster,\n  refineS0ByAdjacentMergeLlm,\n} from '../arch/bookNounS0Merge'\nexport {\n  S1_ATTENTION_BUDGET,\n  estimateTextTokens,\n  computeS1ResidualCharBudget,\n} from '../arch/bookNounS1Budget'"}
+```
+
+## Assistant
+
+对，口径就是：**先锁死 system（和输出预留），再在剩下的里塞残文，而且总窗故意压短**——不是去蹭满 DeepSeek 1M。
+
+已落在 `bookNounS1Budget.ts`，补缺入口已接上：
+
+```text
+totalTokensCap（默认 6000，注意力硬顶）
+  − system
+  − user 壳（batchId/轮次等）
+  − output 预留（默认 1024）
+  − slack
+  ────────────────
+  = 残文 body 可用 token → maxChars → 组内切包
+```
+
+| 点 | 做法 |
+|----|------|
+| 先预留 system | `estimateTextTokens(S1_DICTATION_SYSTEM)` 先扣 |
+| 控制剩下的 | 只把扣完后的额度给残文 |
+| 保注意力 | `totalTokensCap=6000` ≪ API 1M；再加 `residualCharsHardCap=8000` |
+
+传 `maxCharsPerBatch` 仍可手动覆盖。若要把硬顶再收紧（例如总窗 4k），改 `S1_ATTENTION_BUDGET.totalTokensCap` 即可。
+
+## User
+
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+① 用当前表 S^{(k-1)} 在 T 副本上 mask → R
+  ② 双 mask 组成组补缺 → 得到新增 Δ
+  ③ S^{(k)} = dedupe(S^{(k-1)} ∪ Δ)
+  ④ 再 mask → 算参照值 v_k
+  若 v_k 达标 / 相对 v_{k-1} 不再变 → 跳出补缺循环
+```
+ 
+```chat_selection
+agent_id: 6e251ef1-5cbf-4963-b3d8-f493b9dd988a
+selected_text:
+循环 k = 1..Kmax
+  ① 用当前表 S^{(k-1)} 在 T 副本上 mask → R
+  ② 双 mask 组成组补缺 → 得到新增 Δ
+  ③ S^{(k)} = dedupe(S^{(k-1)} ∪ Δ)
+  ④ 再 mask → 算参照值 v_k
+  若 v_k 达标 / 相对 v_{k-1} 不再变 → 跳出补缺循环
+合并审查（一次或直到不动）
+  ⑤ 用 S 再 mask → 紧贴 █ 簇 → LLM 合并 → S'
+  ⑥ 再 mask → 算合并参照值 u
+  若 u 不再变（无新紧贴簇 / 无新合并）→ 停
+权威表 S_final = S'
+  → 开始 Q → S_q …
+```
+ 给出两种的参照值的机制给我，然后分析为何这样，有啥用
+
+## Assistant
+
+两套参照值管的是两件不同的事：**补缺还要不要再扫一遍**，和 **合并还要不要再审一轮**。
+
+---
+
+### 参照值 `v`（补缺外环）
+
+每轮补缺结束后：用当前表 `S^{(k)}` 在 T 副本上 **整表 mask** → 残文 `R_k`，再算 `v_k`。
+
+| 候选 `v` | 怎么算 | 停条件（例） |
+|----------|--------|----------------|
+| **A. `Δn`** | 本轮新进表条数 `\|S^{(k)}\| − \|S^{(k-1)}\|` | `Δn = 0`（可要求连续 1～2 轮） |
+| **B. `open`** | `R_k` 里剩余明文的「名词样」span 数（或非 █ 字数） | `open < τ`，或 `open_k ≈ open_{k-1}` |
+| **C. `tight₀`**（可选辅） | `R_k` 上紧贴 █ 簇数 | 只观察；主停仍用 A/B |
+
+**建议主闸：`Δn`；辅看 `open`。**
+
+**为何这样**
+
+- 补缺目标是「漏网明文还在不在」。`Δn=0` = 再跑一组并行也抄不出新的合法子串 → 召回已饱和。  
+- 只盯表长不够时（模型空转、硬闸全拒）：`open` 告诉你残文里是否 **还有像名词的明文**；`open` 仍高而 `Δn=0` = 模型/闸的问题，不是「没东西了」。  
+- 必须 **先整表 mask 再量**：否则旧词还敞着，`open`/`tight` 会假高，循环停不下来或误停。
+
+**有啥用**
+
+- 决定 `k` 要不要再来一轮双 mask 组补缺，避免固定跑满 `Kmax` 烧 token。  
+- 给审计一条可画的曲线：`Δn`、`open` 随 `k` 下降 → 收敛可见。
+
+---
+
+### 参照值 `u`（合并外环）
+
+合并审查每轮后：用当前表再 mask → 看紧贴 █，算 `u`。
+
+| 候选 `u` | 怎么算 | 停条件（例） |
+|----------|--------|----------------|
+| **A. `Δmerge`** | 本轮 LLM **采纳**的合并条数 | `Δmerge = 0` |
+| **B. `tight`** | 再 mask 后紧贴 █ 簇个数 | `tight_k = tight_{k-1}`（或降到 0） |
+| **C. `Δn_merge`**（可选） | 因合并 **新增长串** 条数 | `= 0`（与 A 近，但表可能短串仍在） |
+
+**建议主闸：`Δmerge`；辅看 `tight`。**
+
+**为何这样**
+
+- 合并目标不是再找漏词，而是「相邻 █ 是否同一短语」。`Δmerge=0` = 模型不再主张合并，或硬闸全拒。  
+- `tight` 是 **结构信号**：合并成功后，两块 █ 应并成一块（或表变长串后盖成一块），簇数应下降；`Δmerge=0` 但 `tight` 仍高 = 该合没合上（提示/闸/簇定义问题）。  
+- 同样必须 **合并后整表再 mask** 再量 `tight`，否则看不见「合完长什么样」。
+
+**有啥用**
+
+- 决定合并 LLM 要不要再开一轮，避免对同一批紧贴簇空转。  
+- 和 `v` 分工清楚：补缺看「还有没有明文漏网」；合并看「已提取的相邻洞要不要并成一条」。
+
+---
+
+### 对照一句
+
+| | 补缺 `v` | 合并 `u` |
+|--|----------|----------|
+| 问的问题 | 残文里还有没有该抄的？ | 相邻 mask 还要不要并？ |
+| 主信号 | 表是否还在变长（`Δn`） | 是否还有成功合并（`Δmerge`） |
+| 结构信号 | 剩余明文/名词样（`open`） | 紧贴簇是否还在（`tight`） |
+| 停了以后 | 进入合并审查 | `S_final` → `S_q` / 提问 |
+
+**推荐落地组合：**  
+补缺停：`Δn=0`（或连续两轮）且可选 `open` 不再降；  
+合并停：`Δmerge=0` 或 `tight` 两轮不变。
+
+## User
+
+对 Δn 当停闸来说，可以不去重。
+
+先前写 |S| 是「并进权威表之后、整串相同的只算一条」。你要的更直接：
+
+Δn_k = 本轮硬闸通过的抄写条数（本轮 Δ 的条数）
+不是「表去重后变长了几条」。
+
+这样 Δn 只回答：这一轮补缺有没有再抄出东西。已经在表里的词，本轮会先被 mask 成 █，硬闸也拒 █，一般抄不回来，所以不去重也不会把旧词再计一遍。
+
+表级「Lacan / lacan 并一条」仍是建表的事，不必绑在这个参照值上。
+
+## Assistant
+
+对，停闸用这个定义更干净：
+
+**`Δn_k` = 本轮硬闸通过的抄写条数**（本轮 `Δ` 的长度，**不做表级去重**）
+
+| | 停闸 `Δn` | 建表 `S` |
+|--|-----------|----------|
+| 问什么 | 这一轮还有没有抄出东西 | 权威表里有哪些不重复表面形 |
+| 计数 | 本轮 `accepted` 条数（可含与旧表整串相同的，但实务上已被 █ 挡掉） | `dedupe` 后整串 ignore-case 全等并一条 |
+| 停条件 | `Δn_k = 0`（可要求连续 1～2 轮） | 不参与停闸 |
+
+旧词已在本轮 mask 成 █，硬闸拒 █ / 非明文子串，一般回不来，所以停闸**不必**再做「相对上周 `|S|` 差分」。  
+`Lacan`/`lacan` 并一条只发生在写入权威表时，和 `Δn` 脱钩。
+
+## User
+
+OK，现在可以去改造代码了
+
+## Assistant
+
+开始把补缺外环（`Δn` 停闸）和合并外环接到现有建表入口上。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":400,"limit":120}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS0Merge.ts","offset":200,"limit":100}
+```
+
+### Tool Todo Write
+
+```
+{"todos":[{"id":"1","content":"Add metrics: Δn (raw accepted), open, tight, Δmerge","status":"TODO_STATUS_IN_PROGRESS","createdAt":"1789368727747","updatedAt":"1789371304244","dependencies":[]},{"id":"2","content":"Refactor runBookNounS1Dictation:补缺外环 + 合并外环停闸","status":"TODO_STATUS_PENDING","createdAt":"1789368727747","updatedAt":"1789371304244","dependencies":[]},{"id":"3","content":"Sync protocol brief + exports","status":"TODO_STATUS_PENDING","createdAt":"1789368727747","updatedAt":"1789371304244","dependencies":[]}],"merge":false}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"listNounSpansInText|listMaskRunsInResidual|clusterTight","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-cc9c369f-22a6-4026-a93c-5be9d1d1cd89-142\nfc_780afa4b-34e0-9cee-a007-e3064453f3f5_2","offset":0}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":510,"limit":120}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounLoopMetrics.ts","streamContent":"/**\n * 建表外环参照值（停闸）\n *\n * 补缺 v：\n *   Δn_k = 本轮硬闸通过的抄写条数（本轮 Δ 长度，**表级不去重**）\n *   open = mask 后残文里剩余「名词样」span 数（辅）\n *\n * 合并 u：\n *   Δmerge = 本轮 LLM 采纳的合并条数\n *   tight  = 再 mask 后紧贴 █ 簇数（辅）\n */\n\nimport {\n  type BookNounDraft,\n  type PlainText,\n  buildResidualPlainTexts,\n  buildS0TightMergeClusters,\n  joinResidualBatchText,\n  listNounSpansInText,\n} from './bookNounIndex'\n\nexport type MaskMetrics = {\n  /** mask 后剩余明文中的名词样 span 数 */\n  open: number\n  /** 紧贴 █ 簇数（≥2 块紧贴才成簇） */\n  tight: number\n  /** 残文非 █ 字符数 */\n  openChars: number\n}\n\n/** 对当前名词表整表 mask 后量 open / tight */\nexport function measureMaskMetrics(\n  plains: PlainText[],\n  nouns: BookNounDraft[],\n): MaskMetrics {\n  const residualPlains = buildResidualPlainTexts(plains, nouns)\n  const residual = joinResidualBatchText(residualPlains)\n  let open = 0\n  let openChars = 0\n  for (const p of residualPlains) {\n    const plain = p.T.replace(/█/g, '')\n    openChars += plain.length\n    open += listNounSpansInText(p.T).length\n  }\n  const tight = buildS0TightMergeClusters({\n    plains,\n    residualPlains,\n    s0: nouns,\n  }).length\n  void residual\n  return { open, tight, openChars }\n}\n\n/**\n * 补缺停闸主信号：本轮硬闸通过条数（不去重）。\n * 已在表中的词本轮已被 █ 盖住，硬闸拒 █，一般不会回灌进 Δn。\n */\nexport function dictationDeltaN(acceptedThisRound: readonly string[]): number {\n  return acceptedThisRound.length\n}\n\nexport const LOOP_DEFAULTS = {\n  /** 补缺外环最大轮次 */\n  maxDictationPasses: 3,\n  /** Δn=0 连续几轮才停（1=当轮为零即停） */\n  stopAfterZeroDeltaN: 1,\n  /** 合并外环最大轮次 */\n  maxMergePasses: 3,\n} as const\n"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"export type DictationPassAudit = {\n  pass: number\n  /** 本轮硬闸通过抄写条数（不去重）= Δn */\n  deltaN: number\n  open: number\n  tight: number\n  groupCount: number\n  waveCount: number\n}\n\nexport type MergePassAudit = {\n  pass: number\n  /** 本轮采纳合并条数 */\n  deltaMerge: number\n  tightBefore: number\n  tightAfter: number\n}\n\nexport type RunS1DictationResult = {\n  ok: boolean\n  index: BookNounIndex\n  batchResults: S1BatchResult[]\n  dictationPasses?: DictationPassAudit[]\n  mergePasses?: MergePassAudit[]\n  note: string\n}\n\n/**\n * 单轮补缺：用当前名词表 mask → 双 mask 组成组波次默写 → 返回本轮硬闸通过串（原始列表，不去重）。\n */\nasync function runOneDictationPass(input: {\n  plains: { T: string }[]\n  nouns: BookNounDraft[]\n  maxChars: number\n  masksPerGroup: number\n  maxRoundsPerBatch: number\n  concurrency: number\n  pass: number\n  signal?: AbortSignal\n  onProgress?: (msg: string) => void\n}): Promise<{\n  /** 本轮硬闸通过的抄写（Δ）；Δn = length，表级不去重 */\n  acceptedRaw: string[]\n  batchResults: S1BatchResult[]\n  groupCount: number\n  waveCount: number\n}> {\n  const residualPlains = buildResidualPlainTexts(input.plains, input.nouns)\n  const groups = buildS1MaskGroupsFromPlains({\n    plains: input.plains,\n    residualPlains,\n    maxChars: input.maxChars,\n    masksPerGroup: input.masksPerGroup,\n  })\n\n  if (groups.length === 0) {\n    return { acceptedRaw: [], batchResults: [], groupCount: 0, waveCount: 0 }\n  }\n\n  const maxWaves = Math.max(...groups.map((g) => g.packages.length))\n  const prevAcceptedByGroup = new Map<string, string[]>()\n  const batchResults: S1BatchResult[] = []\n  const acceptedRaw: string[] = []\n\n  for (let wave = 0; wave < maxWaves; wave++) {\n    type WaveJob = { group: S1MaskGroup; batch: ResidualBatch }\n    const jobs: WaveJob[] = []\n\n    for (const group of groups) {\n      const pkg = group.packages[wave]\n      if (!pkg) continue\n      let text = pkg.text\n      if (wave > 0) {\n        const prev = prevAcceptedByGroup.get(group.groupId) ?? []\n        if (prev.length) text = maskSurfacesInText(text, prev)\n      }\n      jobs.push({\n        group,\n        batch: { batchId: `${pkg.batchId}_k${input.pass}`, text },\n      })\n    }\n    if (!jobs.length) continue\n\n    input.onProgress?.(\n      `S₁ 补缺 · 外环${input.pass} · 波${wave + 1}/${maxWaves} · 组包×${jobs.length}…`,\n    )\n\n    const parallel = await runBatchesParallel({\n      batches: jobs,\n      concurrency: input.concurrency,\n      signal: input.signal,\n      run: (job, _i, signal) =>\n        runS1DictationOnBatch({\n          batch: job.batch,\n          maxRounds: input.maxRoundsPerBatch,\n          signal,\n          onProgress: input.onProgress,\n        }),\n    })\n\n    for (let ji = 0; ji < parallel.results.length; ji++) {\n      const r = parallel.results[ji]!\n      const job = jobs[ji]!\n      if (!r.ok) continue\n      batchResults.push(r.value)\n      acceptedRaw.push(...r.value.surfaces)\n      const prev = prevAcceptedByGroup.get(job.group.groupId) ?? []\n      prevAcceptedByGroup.set(job.group.groupId, [\n        ...prev,\n        ...r.value.surfaces,\n      ])\n    }\n  }\n\n  return {\n    acceptedRaw,\n    batchResults,\n    groupCount: groups.length,\n    waveCount: maxWaves,\n  }\n}\n\n/**\n * 建表入口：\n * 1) A1 → 纯 T 副本；短串 S₀\n * 2) 补缺外环 k：mask(S)→双mask组补缺→Δ；Δn=|Δ|（不去重）；Δn=0 停\n * 3) 合并外环：mask→紧贴簇→LLM合并；Δmerge=0 停\n * 4) S_final；不 locate\n */\nexport async function runBookNounS1Dictation(input: {\n  bookIndex: BookIndex\n  s0?: BookNounDraft[]\n  maxCharsPerBatch?: number\n  maxRoundsPerBatch?: number\n  concurrency?: number\n  masksPerGroup?: number\n  /** 补缺外环最大轮次，默认 3 */\n  maxDictationPasses?: number\n  /** Δn=0 连续几轮停，默认 1 */\n  stopAfterZeroDeltaN?: number\n  /** 合并外环最大轮次，默认 3 */\n  maxMergePasses?: number\n  signal?: AbortSignal\n  onProgress?: (msg: string) => void\n}): Promise<RunS1DictationResult> {\n  const plains = collectPlainTexts(input.bookIndex)\n  if (plains.length === 0) {\n    return {\n      ok: false,\n      index: {\n        docId: input.bookIndex.docId,\n        builtAt: Date.now(),\n        s0: [],\n        s1: [],\n        S: [],\n      },\n      batchResults: [],\n      dictationPasses: [],\n      mergePasses: [],\n      note: '无可用原文 T（A1 空或不可检索）',\n    }\n  }\n\n  const s0 = dedupeNounDrafts(\n    input.s0?.length ? input.s0 : extractS0FromPlainTexts(plains),\n  )\n  input.onProgress?.(`S₀ 短串 Draft ×${s0.length}`)\n\n  const userWrapper = buildS1DictationUserPrompt({\n    batchId: 'BUDGET',\n    residualText: '',\n    round: 1,\n  })\n  const budget = computeS1ResidualCharBudget({\n    systemPrompt: S1_DICTATION_SYSTEM,\n    userWrapper,\n  })\n  const maxChars = input.maxCharsPerBatch ?? budget.maxChars\n  const concurrency = Math.max(1, input.concurrency ?? 3)\n  const masksPerGroup = input.masksPerGroup ?? 2\n  const maxDictationPasses =\n    input.maxDictationPasses ?? LOOP_DEFAULTS.maxDictationPasses\n  const stopAfterZeroDeltaN =\n    input.stopAfterZeroDeltaN ?? LOOP_DEFAULTS.stopAfterZeroDeltaN\n  const maxMergePasses = input.maxMergePasses ?? LOOP_DEFAULTS.maxMergePasses\n\n  input.onProgress?.(\n    `S₁ 预算 · cap=${budget.totalTokensCap}tok · 残文≤${maxChars}字 · 补缺外环≤${maxDictationPasses}`,\n  )\n\n  // ── 补缺外环：Δn = 本轮硬闸通过条数（不去重）──\n  let table = [...s0]\n  const s1RawAll: string[] = []\n  const batchResults: S1BatchResult[] = []\n  const dictationPasses: DictationPassAudit[] = []\n  let zeroStreak = 0\n\n  for (let pass = 1; pass <= maxDictationPasses; pass++) {\n    input.onProgress?.(`S₁ 补缺外环 ${pass}/${maxDictationPasses} · 表×${table.length}…`)\n\n    const one = await runOneDictationPass({\n      plains,\n      nouns: table,\n      maxChars,\n      masksPerGroup,\n      maxRoundsPerBatch: input.maxRoundsPerBatch ?? 2,\n      concurrency,\n      pass,\n      signal: input.signal,\n      onProgress: input.onProgress,\n    })\n\n    const deltaN = dictationDeltaN(one.acceptedRaw)\n    s1RawAll.push(...one.acceptedRaw)\n    batchResults.push(...one.batchResults)\n\n    // 表级去重只用于更新权威候选表，不参与 Δn\n    table = dedupeNounDrafts([\n      ...table,\n      ...surfacesToDrafts(one.acceptedRaw),\n    ])\n\n    const after = measureMaskMetrics(plains, table)\n    dictationPasses.push({\n      pass,\n      deltaN,\n      open: after.open,\n      tight: after.tight,\n      groupCount: one.groupCount,\n      waveCount: one.waveCount,\n    })\n    input.onProgress?.(\n      `S₁ 外环${pass} · Δn=${deltaN}（不去重）· open=${after.open} · tight=${after.tight} · 表×${table.length}`,\n    )\n\n    if (deltaN === 0) {\n      zeroStreak += 1\n      if (zeroStreak >= stopAfterZeroDeltaN) {\n        input.onProgress?.(\n          `S₁ 补缺停闸 · Δn=0 连续×${zeroStreak} · 进入合并审查`,\n        )\n        break\n      }\n    } else {\n      zeroStreak = 0\n    }\n  }\n\n  const s1 = dedupeNounDrafts(surfacesToDrafts(s1RawAll))\n\n  // ── 合并外环：Δmerge = 本轮采纳合并条数；辅看 tight ──\n  const mergePasses: MergePassAudit[] = []\n  for (let pass = 1; pass <= maxMergePasses; pass++) {\n    const beforeMetrics = measureMaskMetrics(plains, table)\n    input.onProgress?.(\n      `合并外环 ${pass}/${maxMergePasses} · tight=${beforeMetrics.tight} · 表×${table.length}…`,\n    )\n\n    const mergeRefine = await refineS0ByAdjacentMergeLlm({\n      plains,\n      s0: table,\n      concurrency,\n      signal: input.signal,\n      onProgress: input.onProgress,\n    })\n\n    const deltaMerge = mergeRefine.results.reduce(\n      (n, r) => n + r.accepted.length,\n      0,\n    )\n    table = mergeRefine.s0\n    const afterMetrics = measureMaskMetrics(plains, table)\n\n    mergePasses.push({\n      pass,\n      deltaMerge,\n      tightBefore: beforeMetrics.tight,\n      tightAfter: afterMetrics.tight,\n    })\n    input.onProgress?.(\n      `合并外环${pass} · Δmerge=${deltaMerge} · tight ${beforeMetrics.tight}→${afterMetrics.tight} · 表×${table.length}`,\n    )\n\n    if (deltaMerge === 0) {\n      input.onProgress?.('合并停闸 · Δmerge=0')\n      break\n    }\n  }\n\n  const index: BookNounIndex = {\n    docId: input.bookIndex.docId,\n    builtAt: Date.now(),\n    s0,\n    s1,\n    S: table,\n  }\n\n  const lastD = dictationPasses[dictationPasses.length - 1]\n  const lastM = mergePasses[mergePasses.length - 1]\n  return {\n    ok: true,\n    index,\n    batchResults,\n    dictationPasses,\n    mergePasses,\n    note: `S₀×${s0.length} · S₁×${s1.length} · S×${table.length} · 补缺轮×${dictationPasses.length}(末Δn=${lastD?.deltaN ?? 0}) · 合并轮×${mergePasses.length}(末Δmerge=${lastM?.deltaMerge ?? 0})`,\n  }\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":"import { runBatchesParallel } from './parallelLlmBatch'\nimport { refineS0ByAdjacentMergeLlm } from './bookNounS0Merge'\nimport { computeS1ResidualCharBudget } from './bookNounS1Budget'\nimport {\n  LOOP_DEFAULTS,\n  dictationDeltaN,\n  measureMaskMetrics,\n} from './bookNounLoopMetrics'"}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"surfacesToS1Drafts|function surfacesTo","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-bfde6abb-1b1f-4d71-bd15-677439128110-148\nfc_67c936d4-b1b1-9b75-8452-a4d9e4ec35c7_1","offset":0}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","streamContent":" * 流水线：\n *   S₀ 短串 → 补缺外环（Δn=本轮硬闸条数不去重；Δn=0 停）\n *     每轮：整表 mask → 双mask组成组波次默写 → Δ 并进表（表级才 dedupe）\n *   合并外环（Δmerge=采纳合并数；Δmerge=0 停）\n *   S_final；不 locate\n */"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","streamContent":"export {\n  S1_ATTENTION_BUDGET,\n  estimateTextTokens,\n  computeS1ResidualCharBudget,\n} from '../arch/bookNounS1Budget'\nexport {\n  LOOP_DEFAULTS,\n  dictationDeltaN,\n  measureMaskMetrics,\n} from '../arch/bookNounLoopMetrics'\nexport type { MaskMetrics } from '../arch/bookNounLoopMetrics'"}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"RunS1DictationResult|bookNounS1Dictation","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-8f38e7b9-6aa5-4af5-b692-fbf6c35e21ad-151\nfc_c065ea5e-af4f-95e5-a5e4-9359218cc57c_1","offset":0}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\docs\\book-noun-pipeline-protocol-2026-09-14.md","streamContent":"3. **短语合并 + 外环停闸（2026-09-14）**：  \n   - 补缺外环：每轮用当前表整表 mask → 双 mask 组成组默写；**`Δn` = 本轮硬闸通过抄写条数（不去重）**；`Δn=0` 停（默认连续 1 轮）。表级 dedupe 只更新权威候选，不绑停闸。  \n   - 合并外环：再 mask → 紧贴 █ 簇 → LLM 合并；**`Δmerge` = 本轮采纳合并条数**；`Δmerge=0` 停。辅指标 `open` / `tight` 写入审计。  \n   - 实现：`bookNounLoopMetrics.ts` · `runBookNounS1Dictation`。"}
+```
+
+### Tool Read Lints
+
+```
+{"paths":["C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounLoopMetrics.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts"]}
+```
+
+### Tool Todo Write
+
+```
+{"todos":[{"id":"1","content":"Add metrics: Δn (raw accepted), open, tight, Δmerge","status":"TODO_STATUS_COMPLETED","createdAt":"1789368727747","updatedAt":"1789371413118","dependencies":[]},{"id":"2","content":"Refactor runBookNounS1Dictation:补缺外环 + 合并外环停闸","status":"TODO_STATUS_COMPLETED","createdAt":"1789368727747","updatedAt":"1789371413118","dependencies":[]},{"id":"3","content":"Sync protocol brief + exports","status":"TODO_STATUS_COMPLETED","createdAt":"1789368727747","updatedAt":"1789371413118","dependencies":[]}],"merge":true}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","offset":610,"limit":15}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","streamContent":"export type {\n  S1BatchResult,\n  S1BatchRoundAudit,\n  S1Reject,\n  RunS1DictationResult,\n  DictationPassAudit,\n  MergePassAudit,\n} from '../arch/bookNounS1Dictation'"}
+```
+
+## Assistant
+
+已改完。核心变化：
+
+### 补缺外环
+- 每轮：`mask(当前表)` → 双 mask 组默写 → **`Δn = 本轮硬闸通过条数（不去重）`**
+- `Δn=0` 停（默认连续 1 轮；`stopAfterZeroDeltaN` 可调）
+- 表级 `dedupe` 只更新候选表，**不参与** `Δn`
+
+### 合并外环
+- 每轮：再 mask → 紧贴簇 → LLM 合并 → **`Δmerge = 采纳条数`**
+- `Δmerge=0` 停
+- 审计里带 `tight` 前后值
+
+### 文件
+- `bookNounLoopMetrics.ts` — `dictationDeltaN` / `measureMaskMetrics` / `LOOP_DEFAULTS`
+- `runBookNounS1Dictation` — 外环调度；结果含 `dictationPasses` / `mergePasses`
+
+默认：补缺最多 3 轮、合并最多 3 轮。
+
+## User
+
+好的现在设计好一个专注在打造这个名词表的node，并且能够设计好如何监督质量，然后一键导出这些监督的信息，然后让你帮我比对如何迭代，甚至你根本不用在乎我的ui，只要能够导出你监督质量可以迭代的关键信息就可以了
+
+## Assistant
+
+先看现有建表入口和可导出的监督字段，再做一个专注名词表、一键导出质量审计包的 Node 脚本。
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index","globPattern":"**/scripts/**/*.{mjs,ts,js}"}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"runBookNounS1Dictation|buildBookNounIndex|DictationPassAudit|measureMaskMetrics","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src","caseInsensitive":false,"multiline":false,"toolCallId":"call-bd9d94e2-bb83-4dc7-8fad-7b8a14307f6a-158\nfc_f2edd224-9da3-9634-acd3-995b01ab0d57_1","offset":0}
+```
+
+### Tool Ask Question
+
+```
+{"title":"名词表监督 Node：材料从哪来？","questions":[{"id":"corpus_source","prompt":"这个专注造表的 Node，输入语料你更想怎么喂？","options":[{"id":"a1_global_md_or_jsonl","label":"已有的 A1 全局导出（.md / .jsonl KEY+T）"},{"id":"docuverse_json","label":"原始 .docuverse.json 语料包（从 chunks 抽 T）"},{"id":"both","label":"两种都支持（推荐）"}],"allowMultiple":false}],"runAsync":false,"asyncOriginalToolCallId":""}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\package.json","limit":80}
+```
+
+## Assistant
+
+输入定为 `.docuverse.json`。接着对接 `BookIndex` 与建表入口，写可一键导出监督包的 Node。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\scripts\\extract-a1-global.mjs","limit":80}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"export type BookIndex|type BookIndex|interface BookIndex|chunks:","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\pipelineA.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-77ac7262-fb42-421c-b504-79d73f35cbb1-162\nfc_686c5ded-2a62-92fa-a90d-a8b921f9dd53_1","offset":0}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":250,"limit":80}
+```
+
+### Tool Ask Question
+
+```
+{"title":"","questions":[{"id":"llm_mode","prompt":"这个 Node 第一版要不要立刻打 LLM？","options":[{"id":"full_with_llm","label":"完整：规则 S₀ + 补缺外环 + 合并外环（要调 DeepSeek）"},{"id":"rules_plus_metrics","label":"先规则-only 也能出监督包；可选再开 LLM"},{"id":"rules_only_first","label":"先只做规则 S₀ + mask 指标（不出 LLM，最快迭代形态）"}],"allowMultiple":false}],"runAsync":false,"asyncOriginalToolCallId":""}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\data\\corpusPack.ts","limit":100}
+```
+
+## Assistant
+
+完整管线要打 LLM；接着查 Node 里怎么直连 DeepSeek，以及 `BookIndex` 最小字段。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\pipelineA.ts","offset":50,"limit":80}
+```
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index","globPattern":"**/api/**/*.{ts,js}"}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":70,"limit":100}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"DEEPSEEK|apiKey|baseUrl|/api/llm|demoAuth","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning","glob":"*.{ts,tsx}","caseInsensitive":false,"headLimit":40,"multiline":false,"toolCallId":"call-79ebed62-4619-44f5-84fe-9909ce6388ed-169\nfc_90bc58f7-e4c0-91d4-a847-c9414a2b0d11_3","offset":0}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","offset":78,"limit":120}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\api\\_lib\\env.ts","limit":80}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\scripts\\smoke-infer-solution.ts","limit":60}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounIndex.ts","offset":390,"limit":80}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\demoAuth.ts","limit":40}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"^export function atomSearchText|^export function isRetrievableAtom","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\hybridRetrieve.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-dbcf8e02-6951-4b8b-b74c-def9b0137eef-175\nfc_407da4bf-a696-9671-96a5-f6e0ac6a0d6e_1","offset":0}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounLoopMetrics.ts","limit":40}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounS1Dictation.ts","offset":250,"limit":50}
+```
+
+## Assistant
+
+先让 LLM 配置在 Node 下可用，再写监督导出脚本与报告结构。
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","streamContent":"function nodeProcessEnv(name: string): string {\n  try {\n    const v = (globalThis as { process?: { env?: Record<string, string | undefined> } })\n      .process?.env?.[name]\n    return typeof v === 'string' ? v.trim() : ''\n  } catch {\n    return ''\n  }\n}\n\n/** Node / CLI：直连 DeepSeek（浏览器仍走 /api/llm 代理） */\nfunction nodeReasonSlotFromEnv(): ModelSlotConfig | null {\n  const apiKey =\n    nodeProcessEnv('DEEPSEEK_API_KEY') ||\n    nodeProcessEnv('LLM_API_KEY') ||\n    nodeProcessEnv('VITE_LLM_API_KEY')\n  if (!apiKey) return null\n  return {\n    baseUrl:\n      nodeProcessEnv('DEEPSEEK_BASE_URL') ||\n      nodeProcessEnv('LLM_BASE_URL') ||\n      'https://api.deepseek.com',\n    apiKey,\n    model:\n      nodeProcessEnv('DEEPSEEK_CHAT_MODEL') ||\n      nodeProcessEnv('LLM_CHAT_MODEL') ||\n      LOCKED_LLM.chatModel,\n  }\n}\n\nfunction lockedReasonSlot(): ModelSlotConfig {\n  const fromNode = nodeReasonSlotFromEnv()\n  if (fromNode) return fromNode\n  return {\n    baseUrl: LOCKED_LLM.baseUrl,\n    apiKey: '',\n    model: LOCKED_LLM.chatModel,\n  }\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","streamContent":"export function loadDualModelConfig(): DualModelConfig {\n  const fallback = defaultDualModelConfig()\n  // Node CLI：无 localStorage，直接用 env / 默认（含 DEEPSEEK_API_KEY）\n  if (typeof localStorage === 'undefined') return fallback\n  try {\n    const rawV2 = localStorage.getItem(STORAGE_KEY)"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounSupervise.ts","streamContent":"/**\n * 名词表监督包 · 可导出、可对比、可迭代\n * 给 CLI / 人工审计：不依赖 UI。\n */\n\nimport {\n  type BookNounDraft,\n  type PlainText,\n  buildResidualPlainTexts,\n  buildS0TightMergeClusters,\n  joinResidualBatchText,\n  listNounSpansInText,\n  nounCanonical,\n} from './bookNounIndex'\nimport type {\n  DictationPassAudit,\n  MergePassAudit,\n  S1BatchResult,\n} from './bookNounS1Dictation'\nimport { measureMaskMetrics } from './bookNounLoopMetrics'\nimport {\n  S1_ATTENTION_BUDGET,\n  computeS1ResidualCharBudget,\n  estimateTextTokens,\n} from './bookNounS1Budget'\nimport { S1_DICTATION_SYSTEM, buildS1DictationUserPrompt } from './bookNounS1Dictation'\n\nexport type NounSuperviseReport = {\n  kind: 'docuverse-noun-supervise'\n  version: 1\n  meta: {\n    docId: string\n    label: string\n    builtAt: number\n    sourcePath: string\n    params: Record<string, unknown>\n  }\n  /** 权威表与粗表（纯 text） */\n  tables: {\n    s0: string[]\n    s1: string[]\n    S: string[]\n    counts: { s0: number; s1: number; S: number }\n  }\n  /** 外环轨迹（停闸主信号） */\n  loops: {\n    dictation: DictationPassAudit[]\n    merge: MergePassAudit[]\n    stopReason: {\n      dictation: string\n      merge: string\n    }\n  }\n  /** 终态 mask 指标 */\n  finalMetrics: {\n    open: number\n    tight: number\n    openChars: number\n  }\n  /** 硬闸拒收汇总（可迭代提示词/闸） */\n  rejects: {\n    total: number\n    byReason: Record<string, number>\n    samples: Array<{ batchId: string; raw: string; reason: string }>\n  }\n  /** 仍紧贴、可能该合并却没并上 */\n  remainingTightClusters: Array<{\n    clusterId: string\n    parts: string[]\n    originalSlice: string\n    residualSlice: string\n  }>\n  /** 短串仍是更长表项子串（合并/抽短审计） */\n  shortInsideLong: Array<{ short: string; long: string }>\n  /** 注意力预算快照 */\n  budget: {\n    totalTokensCap: number\n    systemTokens: number\n    wrapperTokens: number\n    outputReserveTokens: number\n    residualBodyTokens: number\n    maxChars: number\n  }\n  /** 残文抽样（前几段，方便肉眼看 █） */\n  residualSamples: Array<{ index: number; chars: number; preview: string }>\n  /** 给人/给下一轮 Agent 的迭代勾选 */\n  iterationChecklist: string[]\n  note: string\n}\n\nfunction tallyRejects(batchResults: S1BatchResult[]) {\n  const byReason: Record<string, number> = {}\n  const samples: Array<{ batchId: string; raw: string; reason: string }> = []\n  let total = 0\n  for (const b of batchResults) {\n    for (const round of b.rounds) {\n      for (const r of round.rejected) {\n        total += 1\n        byReason[r.reason] = (byReason[r.reason] ?? 0) + 1\n        if (samples.length < 40) {\n          samples.push({\n            batchId: b.batchId,\n            raw: r.raw.slice(0, 120),\n            reason: r.reason,\n          })\n        }\n      }\n    }\n  }\n  return { total, byReason, samples }\n}\n\n/** 表内：短串是更长串的真子串（ignore-case），提示合并/抽短问题 */\nexport function findShortInsideLong(drafts: BookNounDraft[]): Array<{\n  short: string\n  long: string\n}> {\n  const texts = drafts.map((d) => d.text.trim()).filter((t) => t.length >= 2)\n  const out: Array<{ short: string; long: string }> = []\n  for (const short of texts) {\n    const sc = nounCanonical(short)\n    for (const long of texts) {\n      if (short === long) continue\n      const lc = nounCanonical(long)\n      if (lc.length <= sc.length) continue\n      if (lc.includes(sc) && new RegExp(`(?:^|\\\\s)${escapeRe(sc)}(?:\\\\s|$)`).test(lc)) {\n        out.push({ short, long })\n        break\n      }\n    }\n  }\n  return out.slice(0, 80)\n}\n\nfunction escapeRe(s: string): string {\n  return s.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&')\n}\n\nfunction stopReasonDictation(passes: DictationPassAudit[]): string {\n  if (passes.length === 0) return 'no_pass'\n  const last = passes[passes.length - 1]!\n  if (last.deltaN === 0) return `deltaN_zero_at_pass_${last.pass}`\n  return `hit_max_passes_last_deltaN_${last.deltaN}`\n}\n\nfunction stopReasonMerge(passes: MergePassAudit[]): string {\n  if (passes.length === 0) return 'no_pass'\n  const last = passes[passes.length - 1]!\n  if (last.deltaMerge === 0) return `deltaMerge_zero_at_pass_${last.pass}`\n  return `hit_max_passes_last_deltaMerge_${last.deltaMerge}`\n}\n\nexport function buildNounSuperviseReport(input: {\n  docId: string\n  label: string\n  sourcePath: string\n  s0: BookNounDraft[]\n  s1: BookNounDraft[]\n  S: BookNounDraft[]\n  plains: PlainText[]\n  dictationPasses: DictationPassAudit[]\n  mergePasses: MergePassAudit[]\n  batchResults: S1BatchResult[]\n  params?: Record<string, unknown>\n  note?: string\n}): NounSuperviseReport {\n  const residualPlains = buildResidualPlainTexts(input.plains, input.S)\n  const clusters = buildS0TightMergeClusters({\n    plains: input.plains,\n    residualPlains,\n    s0: input.S,\n  })\n  const finalMetrics = measureMaskMetrics(input.plains, input.S)\n  const rejects = tallyRejects(input.batchResults)\n  const shortInsideLong = findShortInsideLong(input.S)\n\n  const userWrapper = buildS1DictationUserPrompt({\n    batchId: 'BUDGET',\n    residualText: '',\n    round: 1,\n  })\n  const budget = computeS1ResidualCharBudget({\n    systemPrompt: S1_DICTATION_SYSTEM,\n    userWrapper,\n  })\n\n  const residualSamples = residualPlains.slice(0, 8).map((p, index) => ({\n    index,\n    chars: p.T.length,\n    preview: p.T.slice(0, 400),\n  }))\n\n  const iterationChecklist: string[] = []\n  if (rejects.byReason.not_substring) {\n    iterationChecklist.push(\n      `硬闸 not_substring×${rejects.byReason.not_substring}：查默写是否改写/跨批串/抄了█邻域`,\n    )\n  }\n  if (rejects.byReason.noise) {\n    iterationChecklist.push(\n      `硬闸 noise×${rejects.byReason.noise}：扩停用或收紧形态`,\n    )\n  }\n  const lastD = input.dictationPasses[input.dictationPasses.length - 1]\n  if (lastD && lastD.open > 50 && lastD.deltaN === 0) {\n    iterationChecklist.push(\n      `Δn=0 但 open=${lastD.open} 仍高：漏网明文在，模型/窗/预算可能不足`,\n    )\n  }\n  if (clusters.length > 0) {\n    iterationChecklist.push(\n      `合并后仍有紧贴簇×${clusters.length}：看 remainingTightClusters，调合并提示或紧贴定义`,\n    )\n  }\n  if (shortInsideLong.length > 0) {\n    iterationChecklist.push(\n      `短串⊂长串×${shortInsideLong.length}：规则抽短或合并未清；对照 shortInsideLong`,\n    )\n  }\n  if (budget.maxChars < 800) {\n    iterationChecklist.push(\n      `残文预算 maxChars=${budget.maxChars} 偏紧：调 S1_ATTENTION_BUDGET.totalTokensCap`,\n    )\n  }\n  if (iterationChecklist.length === 0) {\n    iterationChecklist.push('本轮无自动红旗；对照 loops 轨迹与 residualSamples 人工抽查')\n  }\n\n  void joinResidualBatchText\n  void listNounSpansInText\n  void estimateTextTokens\n  void S1_ATTENTION_BUDGET\n\n  return {\n    kind: 'docuverse-noun-supervise',\n    version: 1,\n    meta: {\n      docId: input.docId,\n      label: input.label,\n      builtAt: Date.now(),\n      sourcePath: input.sourcePath,\n      params: input.params ?? {},\n    },\n    tables: {\n      s0: input.s0.map((d) => d.text),\n      s1: input.s1.map((d) => d.text),\n      S: input.S.map((d) => d.text),\n      counts: {\n        s0: input.s0.length,\n        s1: input.s1.length,\n        S: input.S.length,\n      },\n    },\n    loops: {\n      dictation: input.dictationPasses,\n      merge: input.mergePasses,\n      stopReason: {\n        dictation: stopReasonDictation(input.dictationPasses),\n        merge: stopReasonMerge(input.mergePasses),\n      },\n    },\n    finalMetrics,\n    rejects,\n    remainingTightClusters: clusters.slice(0, 30).map((c) => ({\n      clusterId: c.clusterId,\n      parts: c.hits.map((h) => h.text),\n      originalSlice: c.originalSlice.slice(0, 240),\n      residualSlice: c.residualSlice.slice(0, 240),\n    })),\n    shortInsideLong,\n    budget: {\n      totalTokensCap: budget.totalTokensCap,\n      systemTokens: budget.systemTokens,\n      wrapperTokens: budget.wrapperTokens,\n      outputReserveTokens: budget.outputReserveTokens,\n      residualBodyTokens: budget.residualBodyTokens,\n      maxChars: budget.maxChars,\n    },\n    residualSamples,\n    iterationChecklist,\n    note: input.note ?? '',\n  }\n}\n"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\scripts\\run-noun-table-supervise.ts","streamContent":"/**\n * 专注造名词表 + 一键导出监督包（无 UI）\n *\n * 用法：\n *   npx tsx scripts/run-noun-table-supervise.ts --in path/to/foo.docuverse.json\n *   npx tsx scripts/run-noun-table-supervise.ts --in foo.docuverse.json --out-dir ./noun-runs\n *\n * 环境（Node 直连 DeepSeek）：\n *   DEEPSEEK_API_KEY=sk-...\n *   可选 DEEPSEEK_BASE_URL / DEEPSEEK_CHAT_MODEL\n *\n * 产出目录 noun-runs/<slug>-<ts>/：\n *   supervise.json     · 完整监督包（迭代主文件）\n *   S.txt / s0.txt / s1.txt\n *   loops.csv          · Δn / open / tight / Δmerge 轨迹\n *   checklist.md       · 迭代勾选\n *   run.note.txt\n */\n\nimport fs from 'node:fs'\nimport path from 'node:path'\nimport process from 'node:process'\n\nimport type { BookIndex } from '../src/reasoning/pipelineA'\nimport {\n  collectPlainTexts,\n  type BookNounDraft,\n} from '../src/arch/bookNounIndex'\nimport { runBookNounS1Dictation } from '../src/arch/bookNounS1Dictation'\nimport { buildNounSuperviseReport } from '../src/arch/bookNounSupervise'\nimport { reasonEndpointReady, loadDualModelConfig } from '../src/reasoning/modelRuntimeConfig'\n\nfunction argValue(argv: string[], name: string): string | undefined {\n  const i = argv.indexOf(name)\n  if (i < 0) return undefined\n  return argv[i + 1]\n}\n\nfunction hasFlag(argv: string[], name: string): boolean {\n  return argv.includes(name)\n}\n\nfunction safeSlug(s: string): string {\n  return (\n    String(s)\n      .replace(/^upload:/, '')\n      .replace(/[^\\w\\u4e00-\\u9fff.-]+/g, '_')\n      .slice(0, 48) || 'doc'\n  )\n}\n\nfunction loadBookIndexFromDocuverse(filePath: string): {\n  bookIndex: BookIndex\n  label: string\n  docId: string\n} {\n  const raw = fs.readFileSync(filePath, 'utf8')\n  const parsed: unknown = JSON.parse(raw)\n  if (!parsed || typeof parsed !== 'object') {\n    throw new Error('语料不是 JSON 对象')\n  }\n  const pack = parsed as Record<string, unknown>\n  const bi = pack.bookIndex\n  if (!bi || typeof bi !== 'object') {\n    throw new Error('缺少 bookIndex（需要 .docuverse.json 语料包）')\n  }\n  const bookIndex = bi as BookIndex\n  if (!Array.isArray(bookIndex.chunks)) {\n    throw new Error('bookIndex.chunks 缺失')\n  }\n  const label =\n    typeof pack.label === 'string' && pack.label.trim()\n      ? pack.label.trim()\n      : path.basename(filePath)\n  const docId =\n    (typeof pack.docId === 'string' && pack.docId) ||\n    bookIndex.docId ||\n    path.basename(filePath)\n  return {\n    bookIndex: {\n      docId,\n      stream: typeof bookIndex.stream === 'string' ? bookIndex.stream : '',\n      chunks: bookIndex.chunks,\n      builtAt: typeof bookIndex.builtAt === 'number' ? bookIndex.builtAt : Date.now(),\n    },\n    label,\n    docId,\n  }\n}\n\nfunction writeLines(file: string, texts: string[]) {\n  fs.writeFileSync(file, texts.join('\\n') + (texts.length ? '\\n' : ''), 'utf8')\n}\n\nfunction loopsToCsv(\n  dictation: Array<{\n    pass: number\n    deltaN: number\n    open: number\n    tight: number\n    groupCount: number\n    waveCount: number\n  }>,\n  merge: Array<{\n    pass: number\n    deltaMerge: number\n    tightBefore: number\n    tightAfter: number\n  }>,\n): string {\n  const lines = [\n    'phase,pass,deltaN,deltaMerge,open,tight,tightBefore,tightAfter,groupCount,waveCount',\n  ]\n  for (const d of dictation) {\n    lines.push(\n      [\n        'dictation',\n        d.pass,\n        d.deltaN,\n        '',\n        d.open,\n        d.tight,\n        '',\n        '',\n        d.groupCount,\n        d.waveCount,\n      ].join(','),\n    )\n  }\n  for (const m of merge) {\n    lines.push(\n      [\n        'merge',\n        m.pass,\n        '',\n        m.deltaMerge,\n        '',\n        '',\n        m.tightBefore,\n        m.tightAfter,\n        '',\n        '',\n      ].join(','),\n    )\n  }\n  return lines.join('\\n') + '\\n'\n}\n\nasync function main() {\n  const argv = process.argv.slice(2)\n  const inPath = argValue(argv, '--in')\n  if (!inPath) {\n    console.error(\n      '用法: npx tsx scripts/run-noun-table-supervise.ts --in <file.docuverse.json> [--out-dir ./noun-runs]',\n    )\n    process.exit(1)\n  }\n  const absIn = path.resolve(inPath)\n  if (!fs.existsSync(absIn)) {\n    console.error(`找不到文件: ${absIn}`)\n    process.exit(1)\n  }\n\n  const cfg = loadDualModelConfig()\n  if (!reasonEndpointReady(cfg.reason)) {\n    console.error(\n      '推理 LLM 未就绪。请设置环境变量 DEEPSEEK_API_KEY（可选 DEEPSEEK_BASE_URL）。',\n    )\n    process.exit(1)\n  }\n  console.log(\n    `LLM: model=${cfg.reason.model} base=${cfg.reason.baseUrl.replace(/\\/\\/.*@/, '//')}`,\n  )\n\n  const { bookIndex, label, docId } = loadBookIndexFromDocuverse(absIn)\n  const plains = collectPlainTexts(bookIndex)\n  console.log(\n    `语料: ${label} · docId=${docId} · chunks=${bookIndex.chunks.length} · plains=${plains.length}`,\n  )\n  if (plains.length === 0) {\n    console.error('无可用原文 T（plains 空）')\n    process.exit(1)\n  }\n\n  const maxDictationPasses = Number(argValue(argv, '--max-dictation') ?? 3)\n  const maxMergePasses = Number(argValue(argv, '--max-merge') ?? 3)\n  const concurrency = Number(argValue(argv, '--concurrency') ?? 3)\n  const masksPerGroup = Number(argValue(argv, '--masks-per-group') ?? 2)\n\n  const started = Date.now()\n  const result = await runBookNounS1Dictation({\n    bookIndex,\n    maxDictationPasses,\n    maxMergePasses,\n    concurrency,\n    masksPerGroup,\n    onProgress: (msg) => console.log(`  · ${msg}`),\n  })\n\n  if (!result.ok) {\n    console.error(`建表失败: ${result.note}`)\n    process.exit(1)\n  }\n\n  const report = buildNounSuperviseReport({\n    docId,\n    label,\n    sourcePath: absIn,\n    s0: result.index.s0,\n    s1: result.index.s1,\n    S: result.index.S,\n    plains,\n    dictationPasses: result.dictationPasses ?? [],\n    mergePasses: result.mergePasses ?? [],\n    batchResults: result.batchResults,\n    params: {\n      maxDictationPasses,\n      maxMergePasses,\n      concurrency,\n      masksPerGroup,\n      elapsedMs: Date.now() - started,\n    },\n    note: result.note,\n  })\n\n  const outRoot = path.resolve(argValue(argv, '--out-dir') ?? './noun-runs')\n  const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19)\n  const outDir = path.join(outRoot, `${safeSlug(docId)}-${stamp}`)\n  fs.mkdirSync(outDir, { recursive: true })\n\n  const supervisePath = path.join(outDir, 'supervise.json')\n  fs.writeFileSync(supervisePath, JSON.stringify(report, null, 2), 'utf8')\n  writeLines(\n    path.join(outDir, 'S.txt'),\n    report.tables.S,\n  )\n  writeLines(path.join(outDir, 's0.txt'), report.tables.s0)\n  writeLines(path.join(outDir, 's1.txt'), report.tables.s1)\n  fs.writeFileSync(\n    path.join(outDir, 'loops.csv'),\n    loopsToCsv(report.loops.dictation, report.loops.merge),\n    'utf8',\n  )\n  fs.writeFileSync(\n    path.join(outDir, 'checklist.md'),\n    [\n      `# 名词表迭代勾选 · ${label}`,\n      ``,\n      `- docId: \\`${docId}\\``,\n      `- S₀×${report.tables.counts.s0} · S₁×${report.tables.counts.s1} · S×${report.tables.counts.S}`,\n      `- 停闸: 补缺 \\`${report.loops.stopReason.dictation}\\` · 合并 \\`${report.loops.stopReason.merge}\\``,\n      `- final open=${report.finalMetrics.open} tight=${report.finalMetrics.tight} openChars=${report.finalMetrics.openChars}`,\n      ``,\n      `## 自动勾选`,\n      ...report.iterationChecklist.map((c) => `- [ ] ${c}`),\n      ``,\n      `## 对比下一轮时请带上`,\n      `- \\`supervise.json\\`（完整）`,\n      `- \\`loops.csv\\`（Δn / open / tight / Δmerge）`,\n      `- 若改提示词：对照 \\`rejects.samples\\` 与 \\`remainingTightClusters\\``,\n      ``,\n    ].join('\\n'),\n    'utf8',\n  )\n  fs.writeFileSync(path.join(outDir, 'run.note.txt'), result.note + '\\n', 'utf8')\n\n  // 精简对照摘要（方便聊天粘贴）\n  const summary = {\n    outDir,\n    counts: report.tables.counts,\n    stopReason: report.loops.stopReason,\n    finalMetrics: report.finalMetrics,\n    rejects: report.rejects.byReason,\n    remainingTight: report.remainingTightClusters.length,\n    shortInsideLong: report.shortInsideLong.length,\n    checklist: report.iterationChecklist,\n    note: result.note,\n  }\n  fs.writeFileSync(\n    path.join(outDir, 'summary.json'),\n    JSON.stringify(summary, null, 2),\n    'utf8',\n  )\n\n  console.log('')\n  console.log('=== 监督包已写出 ===')\n  console.log(outDir)\n  console.log(JSON.stringify(summary, null, 2))\n\n  if (hasFlag(argv, '--print-S')) {\n    console.log('\\n--- S ---')\n    console.log(report.tables.S.slice(0, 50).join('\\n'))\n    if (report.tables.S.length > 50) console.log(`… +${report.tables.S.length - 50}`)\n  }\n\n  void (null as unknown as BookNounDraft)\n}\n\nmain().catch((e) => {\n  console.error(e instanceof Error ? e.stack ?? e.message : e)\n  process.exit(1)\n})\n"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\package.json","streamContent":"  \"scripts\": {\n    \"dev\": \"vite --port 5175 --strictPort --host 127.0.0.1\",\n    \"build\": \"tsc -b && vite build\",\n    \"lint\": \"oxlint\",\n    \"preview\": \"vite preview --port 5176 --strictPort\",\n    \"noun:supervise\": \"tsx scripts/run-noun-table-supervise.ts\"\n  },"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\package.json","streamContent":"    \"oxlint\": \"^1.75.0\",\n    \"tsx\": \"^4.20.5\",\n    \"typescript\": \"~6.0.2\","}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\index.ts","streamContent":"export {\n  S1_DICTATION_SYSTEM,\n  buildS1DictationUserPrompt,\n  previewS1DictationMessages,\n  parseS1NounsFromLlm,\n  gateNounsAgainstBatchText,\n  runS1DictationOnBatch,\n  runBookNounS1Dictation,\n} from '../arch/bookNounS1Dictation'\nexport type {\n  S1BatchResult,\n  S1BatchRoundAudit,\n  S1Reject,\n  RunS1DictationResult,\n  DictationPassAudit,\n  MergePassAudit,\n} from '../arch/bookNounS1Dictation'\nexport { buildNounSuperviseReport, findShortInsideLong } from '../arch/bookNounSupervise'\nexport type { NounSuperviseReport } from '../arch/bookNounSupervise'"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounSupervise.ts","streamContent":"  for (const short of texts) {\n    const sc = nounCanonical(short)\n    for (const long of texts) {\n      if (short === long) continue\n      const lc = nounCanonical(long)\n      if (lc.length <= sc.length) continue\n      // 真子串：长串包含短串，且不是偶然夹在字母中间（拉丁用空白边界；汉字直接包含）\n      const latinish = /[a-z]/i.test(sc)\n      const hit = latinish\n        ? new RegExp(`(?:^|\\\\s)${escapeRe(sc)}(?:\\\\s|$)`, 'i').test(lc)\n        : lc.includes(sc)\n      if (hit) {\n        out.push({ short, long })\n        break\n      }\n    }\n  }"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounSupervise.ts","streamContent":"  if (iterationChecklist.length === 0) {\n    iterationChecklist.push('本轮无自动红旗；对照 loops 轨迹与 residualSamples 人工抽查')\n  }\n\n  return {"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounSupervise.ts","streamContent":"import {\n  type BookNounDraft,\n  type PlainText,\n  buildResidualPlainTexts,\n  buildS0TightMergeClusters,\n  nounCanonical,\n} from './bookNounIndex'\nimport type {\n  DictationPassAudit,\n  MergePassAudit,\n  S1BatchResult,\n} from './bookNounS1Dictation'\nimport { measureMaskMetrics } from './bookNounLoopMetrics'\nimport { computeS1ResidualCharBudget } from './bookNounS1Budget'\nimport { S1_DICTATION_SYSTEM, buildS1DictationUserPrompt } from './bookNounS1Dictation'"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\scripts\\run-noun-table-supervise.ts","streamContent":"  if (hasFlag(argv, '--print-S')) {\n    console.log('\\n--- S ---')\n    console.log(report.tables.S.slice(0, 50).join('\\n'))\n    if (report.tables.S.length > 50) console.log(`… +${report.tables.S.length - 50}`)\n  }\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\scripts\\run-noun-table-supervise.ts","streamContent":"import type { BookIndex } from '../src/reasoning/pipelineA'\nimport { collectPlainTexts } from '../src/arch/bookNounIndex'\nimport { runBookNounS1Dictation } from '../src/arch/bookNounS1Dictation'\nimport { buildNounSuperviseReport } from '../src/arch/bookNounSupervise'\nimport { reasonEndpointReady, loadDualModelConfig } from '../src/reasoning/modelRuntimeConfig'"}
+```
+
+### Tool Read Lints
+
+```
+{"paths":["C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\arch\\bookNounSupervise.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\scripts\\run-noun-table-supervise.ts","C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts"]}
+```
+
+### Tool Glob File Search
+
+```
+{"targetDirectory":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index","globPattern":".gitignore"}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\.gitignore","limit":40}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{"command":"npm install --save-dev tsx@^4.20.5","workingDirectory":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index","timeout":30000,"toolCallId":"call-d036bcb8-375e-4294-93f2-54c84247abab-193\nfc_17b1e7d1-61e4-9f67-83c0-077d2d3be61b_0","simpleCommands":["npm"],"hasInputRedirect":false,"hasOutputRedirect":false,"parsingResult":{"parsingFailed":false,"executableCommands":[{"name":"npm","args":[{"type":"word","value":"install"},{"type":"word","value":"--save-dev"},{"type":"word","value":"tsx@^4.20.5"}],"fullText":"npm install --save-dev tsx@^4.20.5"}],"hasRedirects":false,"hasCommandSubstitution":false,"redirects":[]},"requestedSandboxPolicy":{"type":"TYPE_INSECURE_NONE","additionalReadwritePaths":[],"additionalReadonlyPaths":[],"enableSharedBuildCache":true,"readBoundary":"READ_BOUNDARY_MODE_UNSPECIFIED","additionalReadPaths":[]},"fileOutputThresholdBytes":"40000","isBackground":false,"skipApproval":true,"timeoutBehavior":"TIMEOUT_BEHAVIOR_BACKGROUND","hardTimeout":86400000,"description":"Install tsx with full permissions","closeStdin":true,"conversationId":"6e251ef1-5cbf-4963-b3d8-f493b9dd988a","adminCommandDenylist":[],"requestId":"fe9f87b2-76a9-46d9-91cf-42e6b096dc48"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\.gitignore","streamContent":".vercel\n\n# Noun table supervise runs\nnoun-runs/\n\n# Local portable tooling (git/gh)\n.tools/"}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{"command":"$env:Path = \"C:\\Program Files\\nodejs;\" + $env:LOCALAPPDATA + \"\\fnm;\" + $env:Path; Get-Command npm,node,npx -ErrorAction SilentlyContinue | Format-Table Name,Source; if (Test-Path \".\\node_modules\\tsx\\dist\\cli.mjs\") { \"tsx already present\" } else { \"tsx missing\" }; if (Test-Path \".\\.tools\") { Get-ChildItem .\\.tools -Recurse -Filter \"npm.cmd\" -ErrorAction SilentlyContinue | Select-Object -First 3 FullName }","workingDirectory":"","timeout":30000,"toolCallId":"call-0a7ae1eb-aba5-4ccf-8478-a50537c44a9c-195\nfc_ea7532bc-4c7c-95bc-bb0b-28d430d7abe5_0","simpleCommands":["$env:Path","Get-Command","Format-Table","Test-Path","\"tsx already present\"","Test-Path","Get-ChildItem","Select-Object"],"hasInputRedirect":false,"hasOutputRedirect":false,"parsingResult":{"parsingFailed":false,"executableCommands":[{"name":"$env:Path","args":[{"type":"word","value":"="},{"type":"string","value":"\"C:\\Program Files\\nodejs;\""},{"type":"word","value":"+"},{"type":"concatenation","value":"$env:LOCALAPPDATA"},{"type":"word","value":"+"},{"type":"string","value":"\"\\fnm;\""},{"type":"word","value":"+"},{"type":"concatenation","value":"$env:Path"}],"fullText":"$env:Path = \"C:\\Program Files\\nodejs;\" + $env:LOCALAPPDATA + \"\\fnm;\" + $env:Path"},{"name":"Get-Command","args":[{"type":"word","value":"npm,node,npx"},{"type":"word","value":"-ErrorAction"},{"type":"word","value":"SilentlyContinue"}],"fullText":"Get-Command npm,node,npx -ErrorAction SilentlyContinue"},{"name":"Format-Table","args":[{"type":"word","value":"Name,Source"}],"fullText":"Format-Table Name,Source"},{"name":"Test-Path","args":[{"type":"string","value":"\".\\node_modules\\tsx\\dist\\cli.mjs\""}],"fullText":"Test-Path \".\\node_modules\\tsx\\dist\\cli.mjs\""},{"name":"\"tsx already present\"","args":[{"type":"word","value":"}"},{"type":"word","value":"else"},{"type":"word","value":"{"},{"type":"string","value":"\"tsx missing\""},{"type":"word","value":"}"}],"fullText":"\"tsx already present\" } else { \"tsx missing\" }"},{"name":"Test-Path","args":[{"type":"string","value":"\".\\.tools\""}],"fullText":"Test-Path \".\\.tools\""},{"name":"Get-ChildItem","args":[{"type":"word","value":".\\.tools"},{"type":"word","value":"-Recurse"},{"type":"word","value":"-Filter"},{"type":"string","value":"\"npm.cmd\""},{"type":"word","value":"-ErrorAction"},{"type":"word","value":"SilentlyContinue"}],"fullText":"Get-ChildItem .\\.tools -Recurse -Filter \"npm.cmd\" -ErrorAction SilentlyContinue"},{"name":"Select-Object","args":[{"type":"word","value":"-First"},{"type":"number","value":"3"},{"type":"word","value":"FullName"},{"type":"word","value":"}"}],"fullText":"Select-Object -First 3 FullName }"}],"hasRedirects":false,"hasCommandSubstitution":false,"redirects":[]},"requestedSandboxPolicy":{"type":"TYPE_INSECURE_NONE","additionalReadwritePaths":[],"additionalReadonlyPaths":[],"enableSharedBuildCache":true,"readBoundary":"READ_BOUNDARY_MODE_UNSPECIFIED","additionalReadPaths":[]},"fileOutputThresholdBytes":"40000","isBackground":false,"skipApproval":true,"timeoutBehavior":"TIMEOUT_BEHAVIOR_BACKGROUND","hardTimeout":86400000,"description":"Locate npm/node and tsx availability","closeStdin":true,"conversationId":"6e251ef1-5cbf-4963-b3d8-f493b9dd988a","adminCommandDenylist":[],"requestId":"fe9f87b2-76a9-46d9-91cf-42e6b096dc48"}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{"command":"node -v; node --experimental-strip-types -e \"const x: number = 1; console.log(x)\" 2>&1","workingDirectory":"","timeout":30000,"toolCallId":"call-29dcf10f-0c22-49b3-8a2e-84ea3084d35f-197\nfc_8418bca3-0f3e-9f9b-b81d-8caff4217b0b_0","simpleCommands":["node","node"],"hasInputRedirect":false,"hasOutputRedirect":true,"parsingResult":{"parsingFailed":false,"executableCommands":[{"name":"node","args":[{"type":"word","value":"-v"}],"fullText":"node -v"},{"name":"node","args":[{"type":"word","value":"--experimental-strip-types"},{"type":"word","value":"-e"},{"type":"string","value":"\"const x: number = 1; console.log(x)\""}],"fullText":"node --experimental-strip-types -e \"const x: number = 1; console.log(x)\""}],"hasRedirects":true,"hasCommandSubstitution":false,"allRedirectsAreDevNull":true,"redirects":[{"operator":">&","destinationFds":[2],"targetNodeType":"number","targetText":"1"}]},"requestedSandboxPolicy":{"type":"TYPE_INSECURE_NONE","additionalReadwritePaths":[],"additionalReadonlyPaths":[],"enableSharedBuildCache":true,"readBoundary":"READ_BOUNDARY_MODE_UNSPECIFIED","additionalReadPaths":[]},"fileOutputThresholdBytes":"40000","isBackground":false,"skipApproval":true,"timeoutBehavior":"TIMEOUT_BEHAVIOR_BACKGROUND","hardTimeout":86400000,"description":"Check Node version and strip-types support","closeStdin":true,"conversationId":"6e251ef1-5cbf-4963-b3d8-f493b9dd988a","adminCommandDenylist":[],"requestId":"fe9f87b2-76a9-46d9-91cf-42e6b096dc48"}
+```
+
+## Assistant
+
+Node 24 可用 `--experimental-strip-types`；先修 `import.meta.env` 在 Node 下的兼容，再验证脚本能加载。
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","limit":55}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\llmThinking.ts","limit":40}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","streamContent":"function env(name: string): string {\n  try {\n    const meta = import.meta as { env?: Record<string, unknown> }\n    const v = meta.env?.[name]\n    if (typeof v === 'string' && v.trim()) return v.trim()\n  } catch {\n    /* Node 无 Vite env */\n  }\n  return nodeProcessEnv(name)\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\demoAuth.ts","streamContent":"/**\n * Browser → backend demo token (optional).\n * Set VITE_DEMO_ACCESS_TOKEN to match server DEMO_ACCESS_TOKEN.\n */\nexport function demoAuthHeaders(): Record<string, string> {\n  let token = ''\n  try {\n    const meta = import.meta as { env?: Record<string, unknown> }\n    const v = meta.env?.VITE_DEMO_ACCESS_TOKEN\n    if (typeof v === 'string') token = v.trim()\n  } catch {\n    /* Node */\n  }\n  if (!token) {\n    try {\n      const v = (globalThis as { process?: { env?: Record<string, string | undefined> } })\n        .process?.env?.DEMO_ACCESS_TOKEN\n      if (typeof v === 'string') token = v.trim()\n    } catch {\n      /* ignore */\n    }\n  }\n  if (!token) return {}\n  return {\n    Authorization: `Bearer ${token}`,\n    'x-demo-token': token,\n  }\n}"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\package.json","streamContent":"    \"noun:supervise\": \"node --experimental-strip-types scripts/run-noun-table-supervise.ts\""}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\package.json","streamContent":"    \"oxlint\": \"^1.75.0\",\n    \"typescript\": \"~6.0.2\","}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\scripts\\run-noun-table-supervise.ts","streamContent":" * 用法：\n *   node --experimental-strip-types scripts/run-noun-table-supervise.ts --in path/to/foo.docuverse.json\n *   npm run noun:supervise -- --in path/to/foo.docuverse.json --out-dir ./noun-runs\n *\n * （若本机有 tsx：npx tsx scripts/run-noun-table-supervise.ts --in ...）\n *"}
+```
+
+### Tool Ripgrep Raw Search
+
+```
+{"pattern":"function env|function nodeProcessEnv|function lockedReasonSlot","path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","caseInsensitive":false,"multiline":false,"toolCallId":"call-bada1710-1bed-414e-9aad-6e00d19d9029-205\nfc_02e39f66-b5ed-95ff-8277-3d55ef145935_0","offset":0}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{"command":"node --experimental-strip-types -e \"import { loadDualModelConfig, reasonEndpointReady } from './src/reasoning/modelRuntimeConfig.ts'; const c=loadDualModelConfig(); console.log(JSON.stringify({base:c.reason.baseUrl,model:c.reason.model,ready:reasonEndpointReady(c.reason),hasKey:!!c.reason.apiKey}))\"","workingDirectory":"","timeout":30000,"toolCallId":"call-bada1710-1bed-414e-9aad-6e00d19d9029-206\nfc_02e39f66-b5ed-95ff-8277-3d55ef145935_1","simpleCommands":["node"],"hasInputRedirect":false,"hasOutputRedirect":false,"parsingResult":{"parsingFailed":false,"executableCommands":[{"name":"node","args":[{"type":"word","value":"--experimental-strip-types"},{"type":"word","value":"-e"},{"type":"string","value":"\"import { loadDualModelConfig, reasonEndpointReady } from './src/reasoning/modelRuntimeConfig.ts'; const c=loadDualModelConfig(); console.log(JSON.stringify({base:c.reason.baseUrl,model:c.reason.model,ready:reasonEndpointReady(c.reason),hasKey:!!c.reason.apiKey}))\""}],"fullText":"node --experimental-strip-types -e \"import { loadDualModelConfig, reasonEndpointReady } from './src/reasoning/modelRuntimeConfig.ts'; const c=loadDualModelConfig(); console.log(JSON.stringify({base:c.reason.baseUrl,model:c.reason.model,ready:reasonEndpointReady(c.reason),hasKey:!!c.reason.apiKey}))\""}],"hasRedirects":false,"hasCommandSubstitution":false,"redirects":[]},"requestedSandboxPolicy":{"type":"TYPE_INSECURE_NONE","additionalReadwritePaths":[],"additionalReadonlyPaths":[],"enableSharedBuildCache":true,"readBoundary":"READ_BOUNDARY_MODE_UNSPECIFIED","additionalReadPaths":[]},"fileOutputThresholdBytes":"40000","isBackground":false,"skipApproval":true,"timeoutBehavior":"TIMEOUT_BEHAVIOR_BACKGROUND","hardTimeout":86400000,"description":"Smoke-import model config under Node","closeStdin":true,"conversationId":"6e251ef1-5cbf-4963-b3d8-f493b9dd988a","adminCommandDenylist":[],"requestId":"fe9f87b2-76a9-46d9-91cf-42e6b096dc48"}
+```
+
+### Tool Edit File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","streamContent":"/** Reason via /api/protocol/infer (server assembles prompt + calls LLM). */\nexport function reasonEndpointReady(slot: ModelSlotConfig): boolean {\n  if (slot.model.trim().length === 0) return false\n  if (slot.apiKey.trim().length > 0) return true\n  // 浏览器可走 Vite/Vercel 代理免密钥；Node CLI 必须带 DEEPSEEK_API_KEY\n  if (typeof localStorage === 'undefined') return false\n  const base = slot.baseUrl.trim()\n  return (\n    base.startsWith('/api/llm') ||\n    base.startsWith('/api/protocol') ||\n    base.length === 0\n  )\n}"}
+```
+
+### Tool Run Terminal Command V2
+
+```
+{"command":"node --experimental-strip-types -e \"import { loadDualModelConfig, reasonEndpointReady } from './src/reasoning/modelRuntimeConfig.ts'; const c=loadDualModelConfig(); console.log('noKey', reasonEndpointReady(c.reason)); process.env.DEEPSEEK_API_KEY='sk-test'; const { loadDualModelConfig: load2, reasonEndpointReady: r2 } = await import('./src/reasoning/modelRuntimeConfig.ts?'+Date.now()); const c2=load2(); console.log('withKey', r2(c2.reason), c2.reason.baseUrl)\"","workingDirectory":"","timeout":30000,"toolCallId":"call-b3c473d7-cfe2-43ef-83ef-eac2d351b24f-208\nfc_c8a8368d-49ab-9790-8446-f5fe600abd4e_1","simpleCommands":["node"],"hasInputRedirect":false,"hasOutputRedirect":false,"parsingResult":{"parsingFailed":false,"executableCommands":[{"name":"node","args":[{"type":"word","value":"--experimental-strip-types"},{"type":"word","value":"-e"},{"type":"string","value":"\"import { loadDualModelConfig, reasonEndpointReady } from './src/reasoning/modelRuntimeConfig.ts'; const c=loadDualModelConfig(); console.log('noKey', reasonEndpointReady(c.reason)); process.env.DEEPSEEK_API_KEY='sk-test'; const { loadDualModelConfig: load2, reasonEndpointReady: r2 } = await import('./src/reasoning/modelRuntimeConfig.ts?'+Date.now()); const c2=load2(); console.log('withKey', r2(c2.reason), c2.reason.baseUrl)\""}],"fullText":"node --experimental-strip-types -e \"import { loadDualModelConfig, reasonEndpointReady } from './src/reasoning/modelRuntimeConfig.ts'; const c=loadDualModelConfig(); console.log('noKey', reasonEndpointReady(c.reason)); process.env.DEEPSEEK_API_KEY='sk-test'; const { loadDualModelConfig: load2, reasonEndpointReady: r2 } = await import('./src/reasoning/modelRuntimeConfig.ts?'+Date.now()); const c2=load2(); console.log('withKey', r2(c2.reason), c2.reason.baseUrl)\""}],"hasRedirects":false,"hasCommandSubstitution":false,"redirects":[]},"requestedSandboxPolicy":{"type":"TYPE_INSECURE_NONE","additionalReadwritePaths":[],"additionalReadonlyPaths":[],"enableSharedBuildCache":true,"readBoundary":"READ_BOUNDARY_MODE_UNSPECIFIED","additionalReadPaths":[]},"fileOutputThresholdBytes":"40000","isBackground":false,"skipApproval":true,"timeoutBehavior":"TIMEOUT_BEHAVIOR_BACKGROUND","hardTimeout":86400000,"description":"Verify Node LLM readiness with/without key","closeStdin":true,"conversationId":"6e251ef1-5cbf-4963-b3d8-f493b9dd988a","adminCommandDenylist":[],"requestId":"fe9f87b2-76a9-46d9-91cf-42e6b096dc48"}
+```
+
+### Tool Edit File V2
+
+```
+{}
+```
+
+### Tool Read File V2
+
+```
+{"path":"C:\\Users\\Administrator\\Desktop\\docuverse-shanchule-peek-experiment-no-peek-prospect-as-index\\src\\reasoning\\modelRuntimeConfig.ts","offset":40,"limit":90}
+```
+
+## Assistant
+
+已做好一个**专注造名词表 + 一键导出监督包**的 Node，不依赖 UI。
+
+### 怎么跑
+
+```bash
+set DEEPSEEK_API_KEY=sk-你的密钥
+
+node --experimental-strip-types scripts/run-noun-table-supervise.ts --in "你的语料.docuverse.json"
+
+# 或
+npm run noun:supervise -- --in "你的语料.docuverse.json" --out-dir ./noun-runs
+```
+
+可选：`--max-dictation 3 --max-merge 3 --concurrency 3 --masks-per-group 2`
+
+### 导出目录里有什么（迭代用这些）
+
+| 文件 | 用途 |
+|------|------|
+| **`supervise.json`** | 完整监督包（下次丢给我比对用这个） |
+| **`summary.json`** | 短摘要：counts / 停闸 / rejects / checklist |
+| **`loops.csv`** | `Δn` / `open` / `tight` / `Δmerge` 轨迹 |
+| **`checklist.md`** | 自动红旗勾选 |
+| `S.txt` / `s0.txt` / `s1.txt` | 表明文 |
+
+`supervise.json` 里重点盯：
+
+- `loops`：补缺/合并停闸原因  
+- `rejects`：硬闸拒收原因与样例  
+- `remainingTightClusters`：该并没并  
+- `shortInsideLong`：短串⊂长串  
+- `finalMetrics` / `budget` / `residualSamples`  
+- `iterationChecklist`：下一轮改什么  
+
+### 代码位置
+
+- `scripts/run-noun-table-supervise.ts` — CLI  
+- `src/arch/bookNounSupervise.ts` — 监督包结构  
+- Node 下用 `DEEPSEEK_API_KEY` 直连 DeepSeek（已接好）
+
+跑完把 `summary.json` 或整个 `supervise.json` 丢过来，我就可以按轨迹帮你比对怎么迭代。
