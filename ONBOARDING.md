@@ -1,35 +1,35 @@
 # decide-design-main 入库指南
 
-这是名词表评测的 9 月 16 日快照，同时保留了原 Web/CLI 调用和多套偏移量试验。接手时先确定要维护哪一个入口，再把对应产物和金标登记到实验记录。基线为 [main · 092d464](https://github.com/18926119195/decide-design-main/commit/092d4646a083d21aa5eef0f44f43a0187512c349)。
+[一分钟定位](#一分钟定位) · [沿聊天时间线看灵感](#沿聊天时间线看灵感) · [从代码反查来由](#从代码反查来由) · [走读与维护记录](#走读与维护记录)
 
-## 开发沿革与入口
+## 一分钟定位
 
-| 时间 | 协作意图 | 可用代码及边界 |
+这是 9 月 16 日保存的独立名词表选材评测仓。现行 Web/CLI 从问题出发，选出书上应看的段落并打分；同一快照还有用全文偏移表示名词出现位置的两套实验。首次进入时先认清入口，因为三个流程使用的构表模块不同。阅读基线为 [main · 092d464](https://github.com/18926119195/decide-design-main/commit/092d4646a083d21aa5eef0f44f43a0187512c349)。
+
+## 沿聊天时间线看灵感
+
+**如何读状态。** 已实现表示在所列版本找到与灵感相符的代码路径。部分实现表示已有其中一段。未实现表示已查的入口尚无对应实现。证据不足时标待确认。归档与设计文稿按资料本身的状态描述。
+
+会话采用北京时间。[9 月 13 日 Markdown 导出](docs/chat-export/decide-design-chat-29c55109.md)有逐轮时间。[9 月 14 日聊天](9.14的聊天记录)按会话行号查。9 月 16 日是代码快照日期。
+
+| 编号与聊天原件 | 当时提出的思路 | 当前状态与代码证据 |
 | --- | --- | --- |
-| 9 月 13 日的协作记录 | 从名词候选到原文位置和上下文，最终检验选材质量。 [脱敏会话](docs/chat-export/decide-design-chat-29c55109.md) | [Web](src/server/main.ts) 与 [CLI](scripts/eval-decide.ts) 都走 [runNounTableMaterial](src/harness/runNounTableMaterial.ts)。[设计契约](docs/book-noun-pipeline-contract.md) 里的 CLI 描述是旧状态。 |
-| 9 月 14 日的协作记录 | 相邻 S₀ 遮罩定分组，区分并行与局部串联，要求便于迭代的监督导出。 [分批原件 L422 与末段](https://github.com/18926119195/decide-design-main/blob/092d4646a083d21aa5eef0f44f43a0187512c349/9.14%E7%9A%84%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95#L422-L429) | [监督模块](src/harness/superviseS0S1.ts) 有残文和轮次报告。分批契约仍需用相同输入比较监督模块与递归补缺实现。 |
-| 9 月 16 日，[初始快照](https://github.com/18926119195/decide-design-main/commit/8c4f556) | 入库时出现以纯文、全局偏移做定位的新实验和独立发布脚本。 | [旧偏移量实验](scripts/test-complete-pipeline.ts) 直接调用 [nounS0](src/core/nounS0.ts)、[nounS1](src/core/nounS1.ts) 和 [recallParagraphs](src/core/recallParagraphs.ts)。[递归构表](src/core/pipeline.ts) 在示例引用中，缺少被导入的 `src/core/batchUtil.ts`。 |
-| 9 月 16 日，[PowerShell 修订](https://github.com/18926119195/decide-design-main/commit/092d4646a083d21aa5eef0f44f43a0187512c349) | 支持 Git 和 gh 的非标准安装路径。 | HEAD 只改 [发布脚本](scripts/push-to-github.ps1)，交互、登录和改远程属于发布环节。工程验收使用下列命令。 |
+| <a name="idea-i01"></a>I01 · 9 月 13 日 10:23–10:36，[会话 6–9](https://github.com/18926119195/decide-design-main/blob/092d4646a083d21aa5eef0f44f43a0187512c349/docs/chat-export/decide-design-chat-29c55109.md?plain=1#L64-L177) | 规则抽词、残文可选补词、同形去重、真实位置和邻词依次服务选材。 | **已实现于现行评测。** Web 和 CLI 调用同一个材料选择器，生成预测 bookKey。 [材料选择器](src/harness/runNounTableMaterial.ts) · [CLI](scripts/eval-decide.ts#L64-L101) |
+| <a name="idea-i02"></a>I02 · 9 月 13 日 16:13，[会话 40](https://github.com/18926119195/decide-design-main/blob/092d4646a083d21aa5eef0f44f43a0187512c349/docs/chat-export/decide-design-chat-29c55109.md?plain=1#L669-L675) | 把准度试验抽成独立项目。 | **已实现。** 评测脚本用人工题单比较预测书块和预测页，本仓不用启动 Docuverse 应用。 [入口配置](package.json) · [评分](src/harness/score.ts) |
+| <a name="idea-i03"></a>I03 · 9 月 14 日，[分批 L422](9.14的聊天记录#L422-L429) | 两个 S₀ 遮罩定一组，组间并行，长组内部顺序补缺。 | **未落地到现行评测。** 监督器按残文批循环；另有递归补缺模块，但两种流程的切分和驱动方式不同。 [监督循环](src/harness/superviseS0S1.ts#L228-L304) · [递归模块](src/core/nounS1Fill.ts) |
+| <a name="idea-i04"></a>I04 · 9 月 14 日，[L2170–2176](9.14的聊天记录#L2170-L2176) | 集中导出构表质量，让人和 AI 能比较前后。 | **已实现导出。** Web 有监督和评测监视报告，记录足够追到输入和构表摘要。 [监督入口](src/server/main.ts#L219-L305) · [监视报告](src/harness/buildMonitorExport.ts) |
+| <a name="idea-i05"></a>I05 · 9 月 16 日，[相邻归纳版本 L1–74](https://github.com/18926119195/decide-design-v2/blob/e61d9de9ef27b838b94a2102db449a40d162feec/%E8%81%8A%E5%A4%A9%E5%BD%92%E7%BA%B3#L1-L74) · [本库代码快照](https://github.com/18926119195/decide-design-main/commit/8c4f556) | 用词在纯文中的位置解释残文和后续段落。本库这个快照未保存后来的《聊天归纳》，同日的相邻快照保留了讨论原件。 | **部分实现。** 独立实验能将全书文字放到同一偏移坐标、抽取 S₀ 和召回段落。第二套递归编排源码存在，且缺少被导入的 `src/core/batchUtil.ts`，未接入 CLI、Web 或 `test:full`。 [纯文及偏移](src/core/pureTextTable.ts) · [实验命令](scripts/test-complete-pipeline.ts) · [递归编排](src/core/pipeline.ts) |
 
-[v2 快照](https://github.com/18926119195/decide-design-v2/commit/e61d9de9ef27b838b94a2102db449a40d162feec) 相对当前基线增加聊天归纳。比较行为前先记录两边的代码提交及测试入口。
+HEAD 的 [PowerShell 提交](https://github.com/18926119195/decide-design-main/commit/092d4646a083d21aa5eef0f44f43a0187512c349) 改的是 Git/gh 路径处理。与 [decide-design-v2 的当时快照](https://github.com/18926119195/decide-design-v2/commit/e61d9de9ef27b838b94a2102db449a40d162feec) 比较，后者比本快照多的是《聊天归纳》一个文件。
 
-## 第一次运行
+## 从代码反查来由
 
-```sh
-npm run smoke
-npm run test:s0
-mkdir -p output
-CORPUS_PATH=/path/to/book.docuverse.json LLM_API_KEY= npm run test:full
-```
+- [Web](src/server/main.ts) 与 [材料选择器](src/harness/runNounTableMaterial.ts) 回看 [I01](#idea-i01)、[I04](#idea-i04)，入口是一问一选材或构表监督。
+- [CLI](scripts/eval-decide.ts) → [score](src/harness/score.ts) 回看 [I02](#idea-i02)。输入题单的页和书块 key 是人工标注。
+- [pureTextTable](src/core/pureTextTable.ts) → [nounS0](src/core/nounS0.ts) → [recallParagraphs](src/core/recallParagraphs.ts) 回看 [I05](#idea-i05) 的段落实验。另查 [pipeline](src/core/pipeline.ts) 理解 [I03](#idea-i03)/[I05](#idea-i05) 的递归版本。[早期实验说明](README-NEW-PIPELINE.md)
 
-把 `CORPUS_PATH` 指向实际的非敏感导出。Node 24.22.1 下 smoke 和 S₀ 偏移检查实跑通过。S₀ 内置短样例得到 0 段，因此另用 126 字、单书块的合成包跑过 `test:full`，得到 1 段、“拉康和弗洛伊德的关系”召回 1 段，另两道内置查询没有词命中。干净克隆中默认的 `./corpus/example.json` 缺失，输出目录也需预建。真实模型及 PowerShell 发布行为未实跑。[新实验说明](README-NEW-PIPELINE.md)
+## 走读与维护记录
 
-## 变更与验收
+第一次查“一个词怎样连回书页”，打开 [夹具](scripts/test-s0-only.ts) 找用 `slice(start,end)` 还原词面的断言，再回看 [I05](#idea-i05)。要查看输出时可运行 `npm run test:s0`。Node 24 下 `smoke`、`test:s0` 通过，短样例输出 0 段；预建 `output/` 并指定 126 字合成语料后，`test:full` 的一条题召回 1 段，另外两条无匹配。默认路径的语料文件未随仓提供，真实模型与 PowerShell 发布未试。修改指南时保留编号与原件，再贴上能够复查的调用、版本和实测。
 
-1. **表的可追溯性**。固定 BookIndex、书块顺序和题单。为短段、重复词、中文标点、跨块起止分别构造用例。记录 `fullText.slice(start,end)`、来源 key 和页码，目标为 0 条不能还原的偏移或未知 key。偏差先定位 [纯文表](src/core/pureTextTable.ts)，再查具体的 S₀ 版本。
-2. **建立可运行的实验入口**。先恢复缺失的批处理模块，再向 [pipeline](src/core/pipeline.ts) 传入与签名一致的 BookIndex 所构造的纯文表。将旧的 `test:full` 和新递归流程分别编号。用 Mock 输出记录批次数、失败与停止原因，验收以可独立运行、错误可追溯和偏移零误差为门。
-3. **判断是否切换**。基线和候选使用同一语料、gold、模型与预算。报告每题选择的段、key、P/R、模型调用次数和耗时。评测维护者根据主要错例和预先约定的容忍度批准接到 Web/CLI，发布维护者单独评审远程操作。新增退化时退回对应入口版本，保留输入快照与失败报告用于复跑。
-
-## 方法依据
-
-本指南把总体设计落实为边界、目标和任务接口，把工程控制中的反馈落实为观测、判据和纠偏。维护者用原始协作记录、代码和固定样本共同核验定性判断与量化结果，据此决定下一轮行动。[《工程控制论》](https://openlibrary.org/books/OL49218199M/Engineering_cybernetics) · [《组织管理的技术——系统工程》](https://doi.org/10.13255/j.cnki.jusst.2011.06.020) · [《一个科学新领域——开放的复杂巨系统及其方法论》](https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CPFD&dbname=cpfd1999&filename=ZGXC199008001001)
+**指南如何更新。** 以仓库和版本划定范围，从聊天提取原始目标，再用代码与产物校正对当时决策的理解。新证据出现时，回到原编号修订记录。这种读法借鉴了钱学森的系统工程和工程控制论。 [《组织管理的技术——系统工程》](https://doi.org/10.13255/j.cnki.jusst.2011.06.020) · [《工程控制论》](https://openlibrary.org/books/OL49218199M/Engineering_cybernetics)
